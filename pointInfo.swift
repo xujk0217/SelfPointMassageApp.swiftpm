@@ -18,7 +18,7 @@ struct Point: Equatable, Identifiable {
     var messageTime: Double
     
     static let hexamples = [
-        Point(name: "湧泉穴", healPart: "head", symptom: "Insomnia", lacation: "feet", detail: "wwwwwww", image: "🦶", messageTime: 10),
+        Point(name: "湧泉穴", healPart: "head", symptom: "Insomnia", lacation: "feet", detail: "wwwwwww", image: "1030", messageTime: 10),
         Point(name: "湧泉", healPart: "head", symptom: "Ins", lacation: "feet", detail: "wwwwwww", image: "🦶", messageTime: 10),
         Point(name: "湧穴", healPart: "head", symptom: "nia", lacation: "feet", detail: "wwwwwww", image: "🦶", messageTime: 10)
     ]

@@ -1,12 +1,10 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var whichView = 2
+    @State private var whichView = 1
     @State private var hpoint = Point.hexamples
     @State private var bpoint = Point.bexamples
     @State private var opoint = Point.oexamples
-    
-    @State var selectedSym = Set<Point.ID>()
     
     @Environment (\.colorScheme) var colorScaheme
     
@@ -14,7 +12,6 @@ struct ContentView: View {
         NavigationStack{
             VStack {
                 Apptitle
-                
                 barButton
                 
                 if whichView == 1{
@@ -84,15 +81,18 @@ private extension ContentView{
         Text("What's bothering you today?")
             .font(.title3.bold())
             .padding(.top)
-        
         VStack(alignment: .leading) {
-            List(/*selection: $selectedSym*/) {
+            List() {
                 Section("Head"){
                     ForEach($hpoint) { $hpoint in
                         NavigationLink {
                             ScrollView{
                                 VStack {
-                                    VStack{
+                                    VStack(alignment: .leading){
+                                        Image("\(hpoint.image)")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                         Text("Point name: \(hpoint.name)")
                                         Text("Point location: \(hpoint.lacation)")
                                             .padding(.vertical)
@@ -100,8 +100,6 @@ private extension ContentView{
                                     }
                                         .padding()
                                         .font(.headline)
-                                        
-                                    Text("\(hpoint.image)")
                                     Text("Detail: \(hpoint.detail)")
                                         .font(.headline)
                                     Spacer()
@@ -109,10 +107,13 @@ private extension ContentView{
                                 .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
                                 .padding()
                             }
-                            .background(Color(.secondarySystemBackground))
+                            //.background(Color(.secondarySystemBackground))
                             .navigationTitle(hpoint.symptom)
                         } label: {
                             HStack {
+                                Image(hpoint.image)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
                                 Text(hpoint.symptom)
                                     .padding(.vertical, 10)
                                     .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
@@ -129,6 +130,9 @@ private extension ContentView{
                             
                         } label: {
                             HStack {
+                                Image("119")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
                                 Text(bpoint.symptom)
                                     .padding(.vertical, 10)
                                     .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
@@ -145,6 +149,9 @@ private extension ContentView{
                             
                         } label: {
                             HStack {
+                                Image("120")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
                                 Text(opoint.symptom)
                                     .padding(.vertical, 10)
                                     .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
@@ -161,91 +168,124 @@ private extension ContentView{
     
     @ViewBuilder var pointView: some View{
         ScrollView{
-            VStack {
-                HStack {
-                    Button{
-                        
-                    }label: {
-                        VStack {
-                            Text("head")
-                                .font(.system(size: 20))
-                                .frame(width: 150, height: 150)
-                                .background(Color.accentColor.opacity(0.8))
-                                .cornerRadius(100)
-                            Text("head")
+            ZStack {
+                Image("1091")
+                VStack {
+                    HStack {
+                        Button{
+                            
+                        }label: {
+                            VStack {
+                                Text("head")
+                                    .font(.system(size: 20))
+                                    .frame(width: 170, height: 230)
+                                    .background(Color.secondary.opacity(0.1))
+                                    .cornerRadius(100)
+                                    .foregroundColor(.secondary.opacity(0))
+                            }
                         }
                     }
-                }
-                HStack(alignment: .top) {
-                    Spacer()
-                    Button{
-                        
-                    }label: {
-                        VStack {
-                            Text("")
-                                .font(.system(size: 50))
-                                .frame(width: 50, height: 220)
-                                .background(Color.accentColor.opacity(0.8))
-                                .cornerRadius(6)
-                            Text("other")
+                    HStack(alignment: .top) {
+                        Spacer()
+                        Button{
+                            
+                        }label: {
+                            VStack {
+                                Text("hand")
+                                    .font(.system(size: 20))
+                                    .frame(width: 50, height: 370)
+                                    .background(Color.secondary.opacity(0.1))
+                                    .cornerRadius(6)
+                                    .foregroundColor(.secondary.opacity(0))
+                                    .padding(.top, 20)
+                                    .padding(.trailing, -20)
+                            }
                         }
-                    }
-                    Button{
-                        
-                    }label: {
                         VStack {
-                            Text("")
-                                .font(.system(size: 100))
-                                .frame(width: 150, height: 200)
-                                .background(Color.accentColor.opacity(0.8))
-                            .cornerRadius(6)
-                            Text("body")
+                            Button{
+                                
+                            }label: {
+                                VStack {
+                                    Text("body")
+                                        .font(.system(size: 20))
+                                        .frame(width: 200, height: 320)
+                                        .background(Color.secondary.opacity(0.1))
+                                    .cornerRadius(8)
+                                    .foregroundColor(.secondary.opacity(0))
+                                    //.padding(.horizontal)
+                                }
+                            }
+                            HStack(alignment: .bottom) {
+                                Button{
+                                    
+                                }label: {
+                                    VStack {
+                                        Text("feet")
+                                            .font(.system(size: 20))
+                                            .frame(width: 50, height: 50)
+                                            .background(Color.secondary.opacity(0.1))
+                                            .cornerRadius(6)
+                                            .foregroundColor(.secondary.opacity(0))
+                                            .padding(.horizontal, -10)
+                                    }
+                                }
+                                Button{
+                                    
+                                }label: {
+                                    VStack {
+                                        Text("feet")
+                                            .font(.system(size: 20))
+                                            .frame(width: 70, height: 430)
+                                            .background(Color.secondary.opacity(0.1))
+                                            .cornerRadius(6)
+                                            .foregroundColor(.secondary.opacity(0))
+                                    }
+                                }
+                                Button{
+                                    
+                                }label: {
+                                    VStack {
+                                        Text("feet")
+                                            .font(.system(size: 20))
+                                            .frame(width: 70, height: 430)
+                                            .background(Color.secondary.opacity(0.1))
+                                            .cornerRadius(6)
+                                            .foregroundColor(.secondary.opacity(0))
+                                    }
+                                }
+                                Button{
+                                    
+                                }label: {
+                                    VStack {
+                                        Text("feet")
+                                            .font(.system(size: 20))
+                                            .frame(width: 50, height: 50)
+                                            .background(Color.secondary.opacity(0.1))
+                                            .cornerRadius(6)
+                                            .foregroundColor(.secondary.opacity(0))
+                                            .padding(.horizontal, -10)
+                                    }
+                                }
+                            }.padding(.horizontal, 5)
                         }
-                    }
-                    Button{
-                        
-                    }label: {
-                        VStack {
-                            Text("")
-                                .font(.system(size: 50))
-                                .frame(width: 50, height: 220)
-                                .background(Color.accentColor.opacity(0.8))
-                                .cornerRadius(6)
-                            Text("other")
+                        Button{
+                            
+                        }label: {
+                            VStack {
+                                Text("hand")
+                                    .font(.system(size: 20))
+                                    .frame(width: 50, height: 370)
+                                    .background(Color.secondary.opacity(0.1))
+                                    .cornerRadius(6)
+                                    .foregroundColor(.secondary.opacity(0))
+                                    .padding(.top, 20)
+                                    .padding(.leading, -20)
+                            }
                         }
+                        Spacer()
                     }
-                    Spacer()
-                }
-                
-                HStack(alignment: .top) {
-                    Spacer()
-                    Button{
-                        
-                    }label: {
-                        VStack {
-                            Text("")
-                                .font(.system(size: 50))
-                                .frame(width: 70, height: 250)
-                                .background(Color.accentColor.opacity(0.8))
-                                .cornerRadius(6)
-                            Text("other")
-                        }
-                    }
-                    Button{
-                        
-                    }label: {
-                        VStack {
-                            Text("")
-                                .font(.system(size: 50))
-                                .frame(width: 70, height: 250)
-                                .background(Color.accentColor.opacity(0.8))
-                                .cornerRadius(6)
-                            Text("other")
-                        }
-                    }
-                    Spacer()
-                }
-            }
-        }
+                }.padding(.top, -40)
+            }.padding(.top, -70)
+        }.background(Color(.systemBackground))
     }
 }
