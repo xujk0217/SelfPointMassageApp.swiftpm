@@ -19,45 +19,27 @@ struct Point: Equatable, Identifiable {
     
     static let hexamples = [
         Point(name: "湧泉穴", healPart: "head", symptom: "Insomnia", lacation: "feet", detail: "wwwwwww", image: "1030", messageTime: 10),
-        Point(name: "湧泉", healPart: "head", symptom: "Ins", lacation: "feet", detail: "wwwwwww", image: "🦶", messageTime: 10),
-        Point(name: "湧穴", healPart: "head", symptom: "nia", lacation: "feet", detail: "wwwwwww", image: "🦶", messageTime: 10)
+        Point(name: "湧泉", healPart: "head", symptom: "Ins", lacation: "feet", detail: "wwwwwww", image: "194", messageTime: 10),
+        Point(name: "湧穴", healPart: "head", symptom: "nia", lacation: "feet", detail: "wwwwwww", image: "194", messageTime: 10)
     ]
     static let bexamples = [
-        Point(name: "湧泉穴", healPart: "body", symptom: "Insomnia", lacation: "feet", detail: "wwwwwww", image: "🦶", messageTime: 10)
+        Point(name: "湧泉穴", healPart: "body", symptom: "Insomnia", lacation: "feet", detail: "wwwwwww", image: "119", messageTime: 10)
     ]
     static let oexamples = [
-        Point(name: "湧泉穴", healPart: "other", symptom: "Insomnia", lacation: "feet", detail: "wwwwwww", image: "🦶", messageTime: 10)
+        Point(name: "湧泉穴", healPart: "other", symptom: "Insomnia", lacation: "feet", detail: "wwwwwww", image: "120", messageTime: 10)
     ]
-}
-/*
-struct BodyPoint: Equatable, Identifiable {
-    let id = UUID()
-    var name: String
-    let healPart = "body"
-    var symptom: String
-    var lacation: String
-    var detail: String
-    var image: String
-    var messageTime: Double
     
-    static let bexamples = [
-        BodyPoint(name: "湧泉穴", symptom: "Insomnia", lacation: "feet", detail: "wwwwwww", image: "🦶", messageTime: 10)
-    ]
-}
-
-struct OtherPoint: Equatable, Identifiable {
-    let id = UUID()
-    var name: String
-    let healPart = "other"
-    var symptom: String
-    var lacation: String
-    var detail: String
-    var image: String
-    var messageTime: Double
     
-    static let oexamples = [
-        OtherPoint(name: "湧泉穴", symptom: "Insomnia", lacation: "feet", detail: "wwwwwww", image: "🦶", messageTime: 10)
+    static let headPoint = [
+        Point(name: "湧泉穴", healPart: "other", symptom: "Insomnia", lacation: "feet", detail: "wwwwwww", image: "120", messageTime: 10)
+    ]
+    static let bodyPoint = [
+        Point(name: "湧泉穴", healPart: "other", symptom: "Insomnia", lacation: "feet", detail: "wwwwwww", image: "120", messageTime: 10)
+    ]
+    static let handPoint = [
+        Point(name: "湧泉穴", healPart: "other", symptom: "Insomnia", lacation: "feet", detail: "wwwwwww", image: "120", messageTime: 10)
+    ]
+    static let feetPoint = [
+        Point(name: "湧泉穴", healPart: "head", symptom: "Insomnia", lacation: "feet", detail: "wwwwwww", image: "1030", messageTime: 10),
     ]
 }
-
-*/

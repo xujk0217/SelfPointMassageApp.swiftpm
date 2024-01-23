@@ -19,8 +19,8 @@ let package = Package(
             bundleIdentifier: "com.xujk.SelfPointMassageApp",
             displayVersion: "1.0",
             bundleVersion: "1",
-            appIcon: .placeholder(icon: .openBook),
-            accentColor: .presetColor(.orange),
+            appIcon: .asset("AppIcon"),
+            accentColor: .presetColor(.yellow),
             supportedDeviceFamilies: [
                 .pad,
                 .phone
@@ -30,7 +30,8 @@ let package = Package(
                 .landscapeRight,
                 .landscapeLeft,
                 .portraitUpsideDown(.when(deviceFamilies: [.pad]))
-            ]
+            ],
+            appCategory: .healthcareFitness
         )
     ],
     targets: [

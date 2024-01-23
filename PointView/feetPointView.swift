@@ -9,7 +9,15 @@ import SwiftUI
 
 struct feetPointView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView{
+            VStack {
+                Image("896")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                
+                    .navigationTitle("Feet Point")
+            }
+        }.background(Color(.secondarySystemBackground))
     }
 }
 
