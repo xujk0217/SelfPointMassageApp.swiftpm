@@ -6,7 +6,7 @@ struct ContentView: View {
     @State private var bpoint = Point.bexamples
     @State private var opoint = Point.oexamples
     
-    
+    @State private var shouldShowTips = true
     
     @Environment (\.colorScheme) var colorScaheme
     
@@ -20,11 +20,16 @@ struct ContentView: View {
                     symptomView
                 }else if whichView == 2{
                     pointView
-                }else{
+                }else if whichView == 3{
                     ScrollView{
                         
                     }
+                }else if whichView == 4{
+                    Text("How to use this app?")
+                        .font(.title2.bold())
+                    tipsView
                 }
+                
             }.background(Color(.secondarySystemBackground))
         }
     }
@@ -35,10 +40,49 @@ struct ContentView: View {
 private extension ContentView{
     
     var Apptitle: some View{
-        Text("Self Point Massage")
-            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/.bold())
-            .padding()
+        HStack {
+            Text("Self Point Massage")
+                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/.bold())
+                .padding()
             .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+            
+            Button{
+                shouldShowTips = true
+                if whichView == 4{
+                    whichView = 1
+                }
+            } label: {
+                Image(systemName: "questionmark.circle.fill")
+                    .padding(.horizontal)
+                    .font(.title2)
+            }
+            .sheet(isPresented: $shouldShowTips){
+                VStack {
+                    Color.gray
+                        .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 5, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .cornerRadius(10)
+                        .padding(.top, 15)
+                    HStack {
+                        Text("")
+                            .frame(width: 50)
+                        Spacer()
+                        Text("How to use this app?")
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.1)
+                            .font(.title.bold())
+                            .padding(.bottom, -5)
+                        Spacer()
+                        Button{
+                            shouldShowTips = false
+                        }label: {
+                            Text("skip")
+                                .padding(.horizontal)
+                        }
+                    }
+                    tipsView
+                }
+            }
+        }
     }
     
     @ViewBuilder var barButton: some View{
@@ -69,10 +113,20 @@ private extension ContentView{
                 whichView = 3
             }label: {
                 VStack {
-                    Text("test")
+                    Text("AR")
                         .font(.headline)
                         .padding(.horizontal, 10)
                         .foregroundColor(whichView == 3 ? .accentColor : .gray)
+                }
+            }
+            Button{
+                whichView = 4
+            }label: {
+                VStack {
+                    Text("tips")
+                        .font(.headline)
+                        .padding(.horizontal, 10)
+                        .foregroundColor(whichView == 4 ? .accentColor : .gray)
                 }
             }
             Spacer()
@@ -96,14 +150,31 @@ private extension ContentView{
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
                                             .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                        Text("Point name: \(hpoint.name)")
-                                        Text("Point location: \(hpoint.lacation)")
-                                            .padding(.vertical)
+                                        Text("Point name: \n\(hpoint.name)")
+                                            .padding(.bottom)
                                         Text("Healing part: \(hpoint.healPart)")
+                                            .padding(.bottom)
+                                        ZStack {
+                                            Button{
+                                                
+                                            } label:{
+                                                if hpoint.name == "Yongquan acupoint (湧泉穴)"{
+                                                    Text("")
+                                                        .frame(width: 10, height: 10)
+                                                        .background(Color.red)
+                                                        .cornerRadius(50)
+                                                        .padding(.top, -20)
+                                                }
+                                                
+                                            }
+                                            Image(hpoint.lacation)
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fit)
+                                            .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                        }
+                                        Text("Detail: \(hpoint.detail)")
                                     }
                                         .padding()
-                                        .font(.headline)
-                                    Text("Detail: \(hpoint.detail)")
                                         .font(.headline)
                                     Spacer()
                                 }
@@ -123,7 +194,7 @@ private extension ContentView{
                                     //.background(colorScaheme == .dark ? Color(red: 1, green: 1, blue: 1, opacity: 0.1) : Color(red: 1, green: 1, blue: 1, opacity: 1))
                                     .cornerRadius(6)
                                     .foregroundColor(colorScaheme == .dark ? .white : .black)
-                            }.padding(.vertical, -3)
+                            }.padding(.vertical, -5)
                         }
                     }
                 }
@@ -172,8 +243,11 @@ private extension ContentView{
     @ViewBuilder var pointView: some View{
         VStack {
             Text("Choose the place of the point you want to know!!")
-                .font(.title3.bold())
-                .padding()
+                .font(.headline)
+                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                .padding(.horizontal)
+                .padding(.bottom, 5)
+                .background(Color(.secondarySystemBackground))
             ScrollView{
                 ZStack {
                     Image("1091")
@@ -234,7 +308,7 @@ private extension ContentView{
             VStack {
                 Text("head")
                     .font(.system(size: 20))
-                    .frame(width: 170, height: 230)
+                    .frame(width: 140, height: 230)
                     .background(Color.secondary.opacity(0.1))
                     .cornerRadius(100)
                     .foregroundColor(.secondary.opacity(0))
@@ -264,6 +338,18 @@ private extension ContentView{
                     .cornerRadius(6)
                     .foregroundColor(.secondary.opacity(0))
             }
+        }
+    }
+    
+    @ViewBuilder var tipsView: some View{
+        ScrollView{
+            VStack(alignment: .leading) {
+                Text("1. when you ...")
+                    .font(shouldShowTips ? .title3 :.subheadline)
+                Image("896")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+            }.padding()
         }
     }
 }

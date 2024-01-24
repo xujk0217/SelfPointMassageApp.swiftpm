@@ -11,7 +11,7 @@ struct feetPointView: View {
     var body: some View {
         ScrollView{
             VStack {
-                Image("896")
+                Image("1502")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                 
