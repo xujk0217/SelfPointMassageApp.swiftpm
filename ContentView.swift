@@ -1,36 +1,49 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var whichView = 2
+    @State private var whichView = 3
     @State private var hpoint = Point.hexamples
     @State private var bpoint = Point.bexamples
     @State private var opoint = Point.oexamples
     
-    @State private var shouldShowTips = true
+    @State private var shouldShowTips = false
     
     @Environment (\.colorScheme) var colorScaheme
     
     var body: some View {
-        NavigationStack{
-            VStack {
-                Apptitle
-                barButton
-                
-                if whichView == 1{
-                    symptomView
-                }else if whichView == 2{
-                    pointView
-                }else if whichView == 3{
-                    ScrollView{
-                        
+        GeometryReader { geometry in
+            NavigationStack{
+                VStack {
+                    Apptitle
+                    barButton
+                    if whichView == 1{
+                        symptomView
+                    }else if whichView == 2{
+                        pointView
+                    }else if whichView == 3{
+                        ScrollView{
+                            Image("1434")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: geometry.size.width)
+                            NavigationLink(destination: ARDetailView()){
+                                Text("Start AR point map!!")
+                                    .font(geometry.size.width >= 400 ? .title.bold(): .title2.bold())
+                                    .frame(width: geometry.size.width >= 400 ? geometry.size.width-100: geometry.size.width-50, height: 100, alignment: .center)
+                                    .foregroundColor(.white)
+                                    .background(Color.accentColor.opacity(0.8))
+                                    .cornerRadius(50)
+                                    .padding()
+                            }
+                        }
+                    }else if whichView == 4{
+                        Text("How to use this app?")
+                            .font(.title2.bold())
+                        tipsView
                     }
-                }else if whichView == 4{
-                    Text("How to use this app?")
-                        .font(.title2.bold())
-                    tipsView
-                }
-                
-            }.background(Color(.secondarySystemBackground))
+                    
+                }.background(Color(.secondarySystemBackground))
+            }
         }
     }
 }
@@ -38,7 +51,6 @@ struct ContentView: View {
 
 // MARK: - Subview
 private extension ContentView{
-    
     var Apptitle: some View{
         HStack {
             Text("Self Point Massage")
@@ -91,7 +103,7 @@ private extension ContentView{
                 whichView = 1
             }label: {
                 VStack {
-                    Text("symptom")
+                    Text("Symptom")
                         .font(.headline)
                         .padding(.horizontal, 10)
                         .foregroundColor(whichView == 1 ? .accentColor : .gray)
@@ -102,7 +114,7 @@ private extension ContentView{
                 whichView = 2
             }label: {
                 VStack {
-                    Text("point")
+                    Text("Point")
                         .font(.headline)
                         .padding(.horizontal, 10)
                         .foregroundColor(whichView == 2 ? .accentColor : .gray)
@@ -123,7 +135,7 @@ private extension ContentView{
                 whichView = 4
             }label: {
                 VStack {
-                    Text("tips")
+                    Text("Tips")
                         .font(.headline)
                         .padding(.horizontal, 10)
                         .foregroundColor(whichView == 4 ? .accentColor : .gray)
@@ -146,14 +158,19 @@ private extension ContentView{
                             ScrollView{
                                 VStack {
                                     VStack(alignment: .leading){
-                                        Image("\(hpoint.image)")
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                        Text("Point name: \n\(hpoint.name)")
-                                            .padding(.bottom)
-                                        Text("Healing part: \(hpoint.healPart)")
-                                            .padding(.bottom)
+                                        HStack(alignment: .center) {
+                                                /*Image("\(hpoint.image)")
+                                                    .resizable()
+                                                    .aspectRatio(contentMode: .fit)
+                                                    .frame(maxWidth: 350)
+                                                 */
+                                                VStack(alignment: .leading){
+                                                    Text("Point name: \(hpoint.name)")
+                                                        .padding(.bottom)
+                                                    Text("Healing part: \(hpoint.healPart)")
+                                                        .padding(.bottom)
+                                                }
+                                            }
                                         ZStack {
                                             Button{
                                                 
@@ -188,6 +205,7 @@ private extension ContentView{
                                 Image(hpoint.image)
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
+                                    .frame(maxWidth: 150)
                                 Text(hpoint.symptom)
                                     .padding(.vertical, 10)
                                     .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
@@ -207,6 +225,7 @@ private extension ContentView{
                                 Image(bpoint.image)
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
+                                    .frame(maxWidth: 150)
                                 Text(bpoint.symptom)
                                     .padding(.vertical, 10)
                                     .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
@@ -226,6 +245,7 @@ private extension ContentView{
                                 Image(opoint.image)
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
+                                    .frame(maxWidth: 150)
                                 Text(opoint.symptom)
                                     .padding(.vertical, 10)
                                     .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
@@ -283,7 +303,7 @@ private extension ContentView{
                 Text("hand")
                     .font(.system(size: 20))
                     .frame(width: 50, height: 370)
-                    .background(Color.secondary.opacity(0.1))
+                    .background(Color.secondary.opacity(0.05))
                     .cornerRadius(50)
                     .foregroundColor(.secondary.opacity(0))
                     .padding(.top, 20)
