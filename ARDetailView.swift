@@ -12,6 +12,7 @@ import ARKit
 struct ARDetailView: View {
     var body: some View {
         return ARViewContainer()
+            .navigationTitle("AR point map")
     }
 }
 

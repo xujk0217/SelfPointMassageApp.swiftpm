@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var whichView = 3
+    @State private var whichView = 1
     @State private var hpoint = Point.hexamples
     @State private var bpoint = Point.bexamples
     @State private var opoint = Point.oexamples
@@ -256,18 +256,16 @@ private extension ContentView{
                         }
                     }
                 }
-            }.listStyle(.sidebar)
+            }
         }
     }
     
     @ViewBuilder var pointView: some View{
         VStack {
             Text("Choose the place of the point you want to know!!")
-                .font(.headline)
-                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
-                .padding(.horizontal)
+                .font(.title3.bold())
+                .padding(.horizontal, 20)
                 .padding(.bottom, 5)
-                .background(Color(.secondarySystemBackground))
             ScrollView{
                 ZStack {
                     Image("1091")
