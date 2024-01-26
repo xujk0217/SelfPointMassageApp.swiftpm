@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var whichView = 1
+    @State private var whichView = 2
     @State private var hpoint = Point.hexamples
     @State private var bpoint = Point.bexamples
     @State private var opoint = Point.oexamples
@@ -25,7 +25,7 @@ struct ContentView: View {
                             Image("1434")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: geometry.size.width)
+                                .frame(maxWidth: 600)
                             NavigationLink(destination: ARDetailView()){
                                 Text("Start AR point map!!")
                                     .font(geometry.size.width >= 400 ? .title.bold(): .title2.bold())
@@ -184,10 +184,11 @@ private extension ContentView{
                                                 }
                                                 
                                             }
+                                            
                                             Image(hpoint.lacation)
                                                 .resizable()
                                                 .aspectRatio(contentMode: .fit)
-                                            .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                                .frame(maxWidth: 600, alignment: .center)
                                         }
                                         Text("Detail: \(hpoint.detail)")
                                     }
@@ -292,7 +293,7 @@ private extension ContentView{
                     }.padding(.top, -40)
                 }.padding(.top, -70)
             }
-        }.background(Color(.systemBackground))
+        }.background(Color(.secondarySystemBackground))
     }
     
     @ViewBuilder var handPointButton: some View{
