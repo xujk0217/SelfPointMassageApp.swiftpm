@@ -14,9 +14,9 @@ struct feetPointView: View {
                 Image("1502")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                
+                    .frame(maxWidth: 900)
                     .navigationTitle("Feet Point")
-            }
+            }.frame(maxWidth: .infinity)
         }.background(Color(.secondarySystemBackground))
     }
 }

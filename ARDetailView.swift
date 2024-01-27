@@ -34,8 +34,8 @@ struct ARViewContainer: UIViewRepresentable {
 }
 
 
-//拓展方法
 extension ARView {
+    //識別手勢
     func enableTapGesture() {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(recognizer:)))
         

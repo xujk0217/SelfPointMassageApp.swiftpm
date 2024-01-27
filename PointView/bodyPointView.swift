@@ -14,9 +14,9 @@ struct bodyPointView: View {
                 Image("896")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                
+                    .frame(maxWidth: 900)
                     .navigationTitle("Body Point")
-            }
+            }.frame(maxWidth: .infinity)
         }.background(Color(.secondarySystemBackground))
     }
 }

@@ -14,9 +14,9 @@ struct handPointView: View {
                 Image("1342")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                
+                    .frame(maxWidth: 900)
                     .navigationTitle("Hand Point")
-            }
+            }.frame(maxWidth: .infinity)
             //.background(Color(.secondarySystemBackground))
         }.background(Color(.secondarySystemBackground))
     }

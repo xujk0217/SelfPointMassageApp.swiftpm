@@ -14,9 +14,9 @@ struct headPointView: View {
                 Image("194")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                
+                    .frame(maxWidth: 900)
                     .navigationTitle("Head Point")
-            }
+            }.frame(maxWidth: .infinity)
         }.background(Color(.secondarySystemBackground))
     }
 }

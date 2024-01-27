@@ -5,6 +5,7 @@ struct ContentView: View {
     @State private var hpoint = Point.hexamples
     @State private var bpoint = Point.bexamples
     @State private var opoint = Point.oexamples
+    @State private var showPopover = false
     
     @State private var shouldShowTips = false
     
@@ -22,19 +23,22 @@ struct ContentView: View {
                         pointView
                     }else if whichView == 3{
                         ScrollView{
+                            VStack{
                             Image("1434")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(maxWidth: 600)
-                            NavigationLink(destination: ARDetailView()){
-                                Text("Start AR point map!!")
-                                    .font(geometry.size.width >= 400 ? .title.bold(): .title2.bold())
-                                    .frame(width: geometry.size.width >= 400 ? geometry.size.width-100: geometry.size.width-50, height: 100, alignment: .center)
-                                    .foregroundColor(.white)
-                                    .background(Color.accentColor.opacity(0.8))
-                                    .cornerRadius(50)
-                                    .padding()
-                            }
+                                NavigationLink(destination: ARDetailView()){
+                                    Text("Start AR point map!!")
+                                        .font(geometry.size.width >= 400 ? .title.bold(): .title2.bold())
+                                        .frame(width: geometry.size.width >= 400 ? geometry.size.width-100: geometry.size.width-50, height: 100, alignment: .center)
+                                        .frame(maxWidth: 700)
+                                        .foregroundColor(.white)
+                                        .background(Color.accentColor.opacity(0.8))
+                                        .cornerRadius(50)
+                                        .padding()
+                                }
+                            }.frame(maxWidth: .infinity)
                         }
                     }else if whichView == 4{
                         Text("How to use this app?")
@@ -159,11 +163,6 @@ private extension ContentView{
                                 VStack {
                                     VStack(alignment: .leading){
                                         HStack(alignment: .center) {
-                                                /*Image("\(hpoint.image)")
-                                                    .resizable()
-                                                    .aspectRatio(contentMode: .fit)
-                                                    .frame(maxWidth: 350)
-                                                 */
                                                 VStack(alignment: .leading){
                                                     Text("Point name: \(hpoint.name)")
                                                         .padding(.bottom)
@@ -173,18 +172,16 @@ private extension ContentView{
                                             }
                                         ZStack {
                                             Button{
-                                                
+                                                showPopover = true
                                             } label:{
                                                 if hpoint.name == "Yongquan acupoint (湧泉穴)"{
                                                     Text("")
                                                         .frame(width: 10, height: 10)
                                                         .background(Color.red)
                                                         .cornerRadius(50)
-                                                        .padding(.top, -20)
+                                                        .padding(.top, -40)
                                                 }
-                                                
                                             }
-                                            
                                             Image(hpoint.lacation)
                                                 .resizable()
                                                 .aspectRatio(contentMode: .fit)
@@ -268,30 +265,32 @@ private extension ContentView{
                 .padding(.horizontal, 20)
                 .padding(.bottom, 5)
             ScrollView{
-                ZStack {
-                    Image("1091")
-                    VStack {
-                        HStack {
-                            headPointButton
-                        }
-                        HStack(alignment: .top) {
-                            Spacer()
-                            handPointButton
-                            VStack {
-                                bodyPointButton
-                                HStack(alignment: .bottom) {
-                                    feetOutPointButton
-                                    feetPointButton
-                                    feetPointButton
-                                    feetOutPointButton
-                                }.padding(.horizontal, 5)
+                VStack {
+                    ZStack {
+                        Image("1091")
+                        VStack {
+                            HStack {
+                                headPointButton
                             }
-                            .padding(.horizontal, -20)
-                            handPointButton
-                            Spacer()
-                        }
-                    }.padding(.top, -40)
-                }.padding(.top, -70)
+                            HStack(alignment: .top) {
+                                Spacer()
+                                handPointButton
+                                VStack {
+                                    bodyPointButton
+                                    HStack(alignment: .bottom) {
+                                        feetOutPointButton
+                                        feetPointButton
+                                        feetPointButton
+                                        feetOutPointButton
+                                    }.padding(.horizontal, 5)
+                                }
+                                .padding(.horizontal, -20)
+                                handPointButton
+                                Spacer()
+                            }
+                        }.padding(.top, -40)
+                    }.padding(.top, -70)
+                }.frame(maxWidth: .infinity)
             }
         }.background(Color(.secondarySystemBackground))
     }
