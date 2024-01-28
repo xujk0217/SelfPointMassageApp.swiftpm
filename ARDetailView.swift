@@ -43,7 +43,7 @@ extension ARView {
     }
     
    @objc func handleTap(recognizer: UITapGestureRecognizer) {
-        //获取Tap的位置
+        //取得Tap的位置
        let tapLocation = recognizer.location(in: self)
        
        //确保有触碰的物体

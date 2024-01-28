@@ -171,21 +171,30 @@ private extension ContentView{
                                                 }
                                             }
                                         ZStack {
-                                            Button{
-                                                showPopover = true
-                                            } label:{
-                                                if hpoint.name == "Yongquan acupoint (湧泉穴)"{
-                                                    Text("")
-                                                        .frame(width: 10, height: 10)
-                                                        .background(Color.red)
-                                                        .cornerRadius(50)
-                                                        .padding(.top, -40)
-                                                }
-                                            }
                                             Image(hpoint.lacation)
                                                 .resizable()
                                                 .aspectRatio(contentMode: .fit)
-                                                .frame(maxWidth: 600, alignment: .center)
+                                                .frame(maxWidth: 600)
+                                            VStack {
+                                                Button{
+                                                    showPopover = true
+                                                } label:{
+                                                    if hpoint.name == "Yongquan acupoint (湧泉穴)"{
+                                                        Text("")
+                                                            .frame(width: 10, height: 10)
+                                                            .background(Color.red)
+                                                            .cornerRadius(50)
+                                                    }
+                                                }.popover(isPresented: $showPopover, content: {
+                                                    VStack(alignment: .leading) {
+                                                        Text("Point name: \(hpoint.name)")
+                                                        Text("Healing part: \(hpoint.healPart)")
+                                                    }
+                                                })
+                                                Color.clear
+                                                    .frame(height: 100)
+                                                    .frame(maxWidth: 600)
+                                            }
                                         }
                                         Text("Detail: \(hpoint.detail)")
                                     }
@@ -193,7 +202,7 @@ private extension ContentView{
                                         .font(.headline)
                                     Spacer()
                                 }
-                                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+                                .frame(maxWidth: .infinity, alignment: .leading)
                                 .padding()
                             }
                             //.background(Color(.secondarySystemBackground))
