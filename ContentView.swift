@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var whichView = 2
+    @State private var whichView = 1
     @State private var hpoint = Point.hexamples
     @State private var bpoint = Point.bexamples
     @State private var opoint = Point.oexamples
@@ -189,7 +189,7 @@ private extension ContentView{
                                                     VStack(alignment: .leading) {
                                                         Text("Point name: \(hpoint.name)")
                                                         Text("Healing part: \(hpoint.healPart)")
-                                                    }
+                                                    }.padding()
                                                 })
                                                 Color.clear
                                                     .frame(height: 100)
