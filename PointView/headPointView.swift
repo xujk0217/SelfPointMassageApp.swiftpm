@@ -8,14 +8,36 @@
 import SwiftUI
 
 struct headPointView: View {
+    @State private var headPoint = Point.hexamples
+    @Environment (\.colorScheme) var colorScaheme
+    
     var body: some View {
         ScrollView{
-            VStack {
+            HStack {
                 Image("194")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(maxWidth: 900)
                     .navigationTitle("Head Point")
+                VStack(alignment: .leading) {
+                    List(){
+                        Section("head"){
+                            ForEach($headPoint){ $headPoint in
+                                NavigationLink{
+                                    
+                                } label: {
+                                    HStack {
+                                        Text(headPoint.name)
+                                            .padding()
+                                            .frame(maxWidth: .infinity, alignment: .leading)
+                                            .cornerRadius(6)
+                                            .foregroundColor(colorScaheme == .dark ? .white : .black)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }.frame(maxWidth: .infinity)
         }.background(Color(.secondarySystemBackground))
     }

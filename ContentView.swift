@@ -2,9 +2,9 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var whichView = 1
-    @State private var hpoint = Point.hexamples
-    @State private var bpoint = Point.bexamples
-    @State private var opoint = Point.oexamples
+    @State private var hsym = Symptom.hSymExamples
+    @State private var bsym = Symptom.bSymExamples
+    @State private var osym = Symptom.oSymExamples
     @State private var showPopover = false
     
     @State private var shouldShowTips = false
@@ -157,19 +157,20 @@ private extension ContentView{
         VStack(alignment: .leading) {
             List() {
                 Section("Head"){
-                    ForEach($hpoint) { $hpoint in
+                    ForEach($hsym) { $hsym in
                         NavigationLink {
                             ScrollView{
                                 VStack {
                                     VStack(alignment: .leading){
                                         HStack(alignment: .center) {
                                                 VStack(alignment: .leading){
-                                                    Text("Point name: \(hpoint.name)")
+                                                    Text("name: \(hsym.symptom)")
                                                         .padding(.bottom)
-                                                    Text("Healing part: \(hpoint.healPart)")
+                                                    Text("symptom detail: \(hsym.exDetail)")
                                                         .padding(.bottom)
                                                 }
                                             }
+                                        /*
                                         ZStack {
                                             Image(hpoint.lacation)
                                                 .resizable()
@@ -196,7 +197,7 @@ private extension ContentView{
                                                     .frame(maxWidth: 600)
                                             }
                                         }
-                                        Text("Detail: \(hpoint.detail)")
+                                        */
                                     }
                                         .padding()
                                         .font(.headline)
@@ -206,14 +207,14 @@ private extension ContentView{
                                 .padding()
                             }
                             //.background(Color(.secondarySystemBackground))
-                            .navigationTitle(hpoint.symptom)
+                            .navigationTitle(hsym.symptom)
                         } label: {
                             HStack {
-                                Image(hpoint.image)
+                                Image(hsym.image)
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(maxWidth: 150)
-                                Text(hpoint.symptom)
+                                Text(hsym.symptom)
                                     .padding(.vertical, 10)
                                     .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
                                     //.background(colorScaheme == .dark ? Color(red: 1, green: 1, blue: 1, opacity: 0.1) : Color(red: 1, green: 1, blue: 1, opacity: 1))
@@ -224,16 +225,16 @@ private extension ContentView{
                     }
                 }
                 Section("Body"){
-                    ForEach($bpoint) { $bpoint in
+                    ForEach($bsym) { $bsym in
                         NavigationLink {
                             
                         } label: {
                             HStack {
-                                Image(bpoint.image)
+                                Image(bsym.image)
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(maxWidth: 150)
-                                Text(bpoint.symptom)
+                                Text(bsym.symptom)
                                     .padding(.vertical, 10)
                                     .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
                                     //.background(colorScaheme == .dark ? Color(red: 1, green: 1, blue: 1, opacity: 0.1) : Color(red: 1, green: 1, blue: 1, opacity: 1))
@@ -244,16 +245,16 @@ private extension ContentView{
                     }
                 }
                 Section("Other"){
-                    ForEach($opoint) { $opoint in
+                    ForEach($osym ) { $osym in
                         NavigationLink {
                             
                         } label: {
                             HStack {
-                                Image(opoint.image)
+                                Image(osym.image)
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(maxWidth: 150)
-                                Text(opoint.symptom)
+                                Text(osym.symptom)
                                     .padding(.vertical, 10)
                                     .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
                                     //.background(colorScaheme == .dark ? Color(red: 1, green: 1, blue: 1, opacity: 0.1) : Color(red: 1, green: 1, blue: 1, opacity: 1))
