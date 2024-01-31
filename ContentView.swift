@@ -170,34 +170,18 @@ private extension ContentView{
                                                         .padding(.bottom)
                                                 }
                                             }
-                                        /*
-                                        ZStack {
-                                            Image(hpoint.lacation)
-                                                .resizable()
-                                                .aspectRatio(contentMode: .fit)
-                                                .frame(maxWidth: 600)
+                                        if hsym.pointCode == "A"{
                                             VStack {
-                                                Button{
-                                                    showPopover = true
-                                                } label:{
-                                                    if hpoint.name == "Yongquan acupoint (湧泉穴)"{
-                                                        Text("")
-                                                            .frame(width: 10, height: 10)
-                                                            .background(Color.red)
-                                                            .cornerRadius(50)
-                                                    }
-                                                }.popover(isPresented: $showPopover, content: {
-                                                    VStack(alignment: .leading) {
-                                                        Text("Point name: \(hpoint.name)")
-                                                        Text("Healing part: \(hpoint.healPart)")
-                                                    }.padding()
-                                                })
-                                                Color.clear
-                                                    .frame(height: 100)
-                                                    .frame(maxWidth: 600)
+                                                CodeOne
+                                                CodeTwo
+                                                CodeThree
                                             }
                                         }
-                                        */
+                                        if hsym.pointCode == "B"{
+                                            VStack {
+                                                CodeNin
+                                            }
+                                        }
                                     }
                                         .padding()
                                         .font(.headline)
@@ -227,7 +211,52 @@ private extension ContentView{
                 Section("Body"){
                     ForEach($bsym) { $bsym in
                         NavigationLink {
-                            
+                            ScrollView{
+                                VStack {
+                                    VStack(alignment: .leading){
+                                        HStack(alignment: .center) {
+                                                VStack(alignment: .leading){
+                                                    Text("name: \(bsym.symptom)")
+                                                        .padding(.bottom)
+                                                    Text("symptom detail: \(bsym.exDetail)")
+                                                        .padding(.bottom)
+                                                }
+                                            }
+                                        if bsym.pointCode == "C"{
+                                            VStack {
+                                                CodeSev
+                                                CodeTen
+                                            }
+                                        }
+                                        if bsym.pointCode == "D"{
+                                            VStack {
+                                                CodeSix
+                                                CodeEle
+                                                CodeTtr
+                                            }
+                                        }
+                                        if bsym.pointCode == "E"{
+                                            VStack {
+                                                CodeEle
+                                            }
+                                        }
+                                        if bsym.pointCode == "F"{
+                                            VStack {
+                                                CodeEig
+                                                CodeEle
+                                                CodeTwe
+                                            }
+                                        }
+                                    }
+                                        .padding()
+                                        .font(.headline)
+                                    Spacer()
+                                }
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding()
+                            }
+                            //.background(Color(.secondarySystemBackground))
+                            .navigationTitle(bsym.symptom)
                         } label: {
                             HStack {
                                 Image(bsym.image)
@@ -247,7 +276,58 @@ private extension ContentView{
                 Section("Other"){
                     ForEach($osym ) { $osym in
                         NavigationLink {
-                            
+                            ScrollView{
+                                VStack {
+                                    VStack(alignment: .leading){
+                                        HStack(alignment: .center) {
+                                                VStack(alignment: .leading){
+                                                    Text("name: \(osym.symptom)")
+                                                        .padding(.bottom)
+                                                    Text("symptom detail: \(osym.exDetail)")
+                                                        .padding(.bottom)
+                                                }
+                                            }
+                                        if osym.pointCode == "G"{
+                                            VStack {
+                                                CodeOne
+                                                CodeFour
+                                                CodeEle
+                                                CodeTwe
+                                            }
+                                        }
+                                        if osym.pointCode == "H"{
+                                            VStack {
+                                                CodeFif
+                                            }
+                                        }
+                                        if osym.pointCode == "I"{
+                                            VStack {
+                                                CodeSix
+                                                CodeEle
+                                            }
+                                        }
+                                        if osym.pointCode == "J"{
+                                            VStack {
+                                                CodeEig
+                                                CodeEle
+                                                CodeTtr
+                                            }
+                                        }
+                                        if osym.pointCode == "K"{
+                                            VStack {
+                                                CodeTen
+                                            }
+                                        }
+                                    }
+                                        .padding()
+                                        .font(.headline)
+                                    Spacer()
+                                }
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding()
+                            }
+                            //.background(Color(.secondarySystemBackground))
+                            .navigationTitle(osym.symptom)
                         } label: {
                             HStack {
                                 Image(osym.image)
@@ -378,6 +458,397 @@ private extension ContentView{
                     .resizable()
                     .aspectRatio(contentMode: .fit)
             }.padding()
+        }
+    }
+    
+    @ViewBuilder var CodeOne: some View{
+        VStack(alignment: .leading) {
+            Text("Point name: Yongquan acupoint (印堂穴)")
+            ZStack {
+                Image("195")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 600)
+                VStack {
+                    Button{
+                        showPopover = true
+                    } label:{
+                        Text("")
+                            .frame(width: 10, height: 10)
+                            .background(Color.red)
+                            .cornerRadius(50)
+                    }.popover(isPresented: $showPopover, content: {
+                        VStack(alignment: .leading) {
+                            Text("Point name: Yongquan acupoint (印堂穴)")
+                            Text("symptom: Insomnia")
+                            Text("detail: wwwwwww")
+                        }.padding()
+                    })
+                    Color.clear
+                        .frame(height: 100)
+                        .frame(maxWidth: 600)
+                }
+            }
+        }
+    }
+    @ViewBuilder var CodeTwo: some View{
+        VStack(alignment: .leading) {
+            Text("Point name: Yongquan acupoint (太陽穴)")
+            ZStack {
+                Image("194")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 600)
+                VStack {
+                    Button{
+                        showPopover = true
+                    } label:{
+                        Text("")
+                            .frame(width: 10, height: 10)
+                            .background(Color.red)
+                            .cornerRadius(50)
+                    }.popover(isPresented: $showPopover, content: {
+                        VStack(alignment: .leading) {
+                            Text("Point name: Yongquan acupoint (太陽穴)")
+                            Text("symptom: Insomnia")
+                            Text("detail: wwwwwww")
+                        }.padding()
+                    })
+                    Color.clear
+                        .frame(height: 100)
+                        .frame(maxWidth: 600)
+                }
+            }
+        }
+    }
+    @ViewBuilder var CodeThree: some View{
+        VStack(alignment: .leading) {
+            Text("Point name: Yongquan acupoint (風池穴)")
+            ZStack {
+                Image("194")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 600)
+                VStack {
+                    Button{
+                        showPopover = true
+                    } label:{
+                        Text("")
+                            .frame(width: 10, height: 10)
+                            .background(Color.red)
+                            .cornerRadius(50)
+                    }.popover(isPresented: $showPopover, content: {
+                        VStack(alignment: .leading) {
+                            Text("Point name: Yongquan acupoint (風池穴)")
+                            Text("symptom: Insomnia")
+                            Text("detail: wwwwwww")
+                        }.padding()
+                    })
+                    Color.clear
+                        .frame(height: 100)
+                        .frame(maxWidth: 600)
+                }
+            }
+        }
+    }
+    @ViewBuilder var CodeFour: some View{
+        VStack(alignment: .leading) {
+            Text("Point name: Yongquan acupoint (百會穴)")
+            ZStack {
+                Image("194")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 600)
+                VStack {
+                    Button{
+                        showPopover = true
+                    } label:{
+                        Text("")
+                            .frame(width: 10, height: 10)
+                            .background(Color.red)
+                            .cornerRadius(50)
+                    }.popover(isPresented: $showPopover, content: {
+                        VStack(alignment: .leading) {
+                            Text("Point name: Yongquan acupoint (百會穴)")
+                            Text("symptom: Insomnia")
+                            Text("detail: wwwwwww")
+                        }.padding()
+                    })
+                    Color.clear
+                        .frame(height: 100)
+                        .frame(maxWidth: 600)
+                }
+            }
+        }
+    }
+    @ViewBuilder var CodeFif: some View{
+        VStack(alignment: .leading) {
+            Text("Point name: Yongquan acupoint (天樞穴)")
+            ZStack {
+                Image("15041")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 600)
+                VStack {
+                    Button{
+                        showPopover = true
+                    } label:{
+                        Text("")
+                            .frame(width: 10, height: 10)
+                            .background(Color.red)
+                            .cornerRadius(50)
+                    }.popover(isPresented: $showPopover, content: {
+                        VStack(alignment: .leading) {
+                            Text("Point name: Yongquan acupoint (天樞穴)")
+                            Text("symptom: Insomnia")
+                            Text("detail: wwwwwww")
+                        }.padding()
+                    })
+                    Color.clear
+                        .frame(height: 100)
+                        .frame(maxWidth: 600)
+                }
+            }
+        }
+    }
+    @ViewBuilder var CodeSix: some View{
+        VStack(alignment: .leading) {
+            Text("Point name: Yongquan acupoint (中脘穴)")
+            ZStack {
+                Image("15041")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 600)
+                VStack {
+                    Button{
+                        showPopover = true
+                    } label:{
+                        Text("")
+                            .frame(width: 10, height: 10)
+                            .background(Color.red)
+                            .cornerRadius(50)
+                    }.popover(isPresented: $showPopover, content: {
+                        VStack(alignment: .leading) {
+                            Text("Point name: Yongquan acupoint (中脘穴)")
+                            Text("symptom: Insomnia")
+                            Text("detail: wwwwwww")
+                        }.padding()
+                    })
+                    Color.clear
+                        .frame(height: 100)
+                        .frame(maxWidth: 600)
+                }
+            }
+        }
+    }
+    @ViewBuilder var CodeSev: some View{
+        VStack(alignment: .leading) {
+            Text("Point name: Yongquan acupoint (腰眼穴)")
+            ZStack {
+                Image("15051")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 600)
+                VStack {
+                    Button{
+                        showPopover = true
+                    } label:{
+                        Text("")
+                            .frame(width: 10, height: 10)
+                            .background(Color.red)
+                            .cornerRadius(50)
+                    }.popover(isPresented: $showPopover, content: {
+                        VStack(alignment: .leading) {
+                            Text("Point name: Yongquan acupoint (腰眼穴)")
+                            Text("symptom: Insomnia")
+                            Text("detail: wwwwwww")
+                        }.padding()
+                    })
+                    Color.clear
+                        .frame(height: 100)
+                        .frame(maxWidth: 600)
+                }
+            }
+        }
+    }
+    @ViewBuilder var CodeEig: some View{
+        VStack(alignment: .leading) {
+            Text("Point name: Yongquan acupoint (合谷穴)")
+            ZStack {
+                Image("15061")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 600)
+                VStack {
+                    Button{
+                        showPopover = true
+                    } label:{
+                        Text("")
+                            .frame(width: 10, height: 10)
+                            .background(Color.red)
+                            .cornerRadius(50)
+                    }.popover(isPresented: $showPopover, content: {
+                        VStack(alignment: .leading) {
+                            Text("Point name: Yongquan acupoint (合谷穴)")
+                            Text("symptom: Insomnia")
+                            Text("detail: wwwwwww")
+                        }.padding()
+                    })
+                    Color.clear
+                        .frame(height: 100)
+                        .frame(maxWidth: 600)
+                }
+            }
+        }
+    }
+    @ViewBuilder var CodeNin: some View{
+        VStack(alignment: .leading) {
+            Text("Point name: Yongquan acupoint (落枕穴)")
+            ZStack {
+                Image("15061")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 600)
+                VStack {
+                    Button{
+                        showPopover = true
+                    } label:{
+                        Text("")
+                            .frame(width: 10, height: 10)
+                            .background(Color.red)
+                            .cornerRadius(50)
+                    }.popover(isPresented: $showPopover, content: {
+                        VStack(alignment: .leading) {
+                            Text("Point name: Yongquan acupoint (落枕穴)")
+                            Text("symptom: Insomnia")
+                            Text("detail: wwwwwww")
+                        }.padding()
+                    })
+                    Color.clear
+                        .frame(height: 100)
+                        .frame(maxWidth: 600)
+                }
+            }
+        }
+    }
+    @ViewBuilder var CodeTen: some View{
+        VStack(alignment: .leading) {
+            Text("Point name: Yongquan acupoint (腰腿點穴)")
+            ZStack {
+                Image("15061")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 600)
+                VStack {
+                    Button{
+                        showPopover = true
+                    } label:{
+                        Text("")
+                            .frame(width: 10, height: 10)
+                            .background(Color.red)
+                            .cornerRadius(50)
+                    }.popover(isPresented: $showPopover, content: {
+                        VStack(alignment: .leading) {
+                            Text("Point name: Yongquan acupoint (腰腿點穴)")
+                            Text("symptom: Insomnia")
+                            Text("detail: wwwwwww")
+                        }.padding()
+                    })
+                    Color.clear
+                        .frame(height: 100)
+                        .frame(maxWidth: 600)
+                }
+            }
+        }
+    }
+    @ViewBuilder var CodeEle: some View{
+        VStack(alignment: .leading) {
+            Text("Point name: Yongquan acupoint (內關穴)")
+            ZStack {
+                Image("15071")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 600)
+                VStack {
+                    Button{
+                        showPopover = true
+                    } label:{
+                        Text("")
+                            .frame(width: 10, height: 10)
+                            .background(Color.red)
+                            .cornerRadius(50)
+                    }.popover(isPresented: $showPopover, content: {
+                        VStack(alignment: .leading) {
+                            Text("Point name: Yongquan acupoint (內關穴)")
+                            Text("symptom: Insomnia")
+                            Text("detail: wwwwwww")
+                        }.padding()
+                    })
+                    Color.clear
+                        .frame(height: 100)
+                        .frame(maxWidth: 600)
+                }
+            }
+        }
+    }
+    @ViewBuilder var CodeTwe: some View{
+        VStack(alignment: .leading) {
+            Text("Point name: Yongquan acupoint (湧泉穴)")
+            ZStack {
+                Image("1502")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 600)
+                VStack {
+                    Button{
+                        showPopover = true
+                    } label:{
+                        Text("")
+                            .frame(width: 10, height: 10)
+                            .background(Color.red)
+                            .cornerRadius(50)
+                    }.popover(isPresented: $showPopover, content: {
+                        VStack(alignment: .leading) {
+                            Text("Point name: Yongquan acupoint (湧泉穴)")
+                            Text("symptom: Insomnia")
+                            Text("detail: wwwwwww")
+                        }.padding()
+                    })
+                    Color.clear
+                        .frame(height: 100)
+                        .frame(maxWidth: 600)
+                }
+            }
+        }
+    }
+    @ViewBuilder var CodeTtr: some View{
+        VStack(alignment: .leading) {
+            Text("Point name: Yongquan acupoint (足三里穴)")
+            ZStack {
+                Image("15081")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 600)
+                VStack {
+                    Button{
+                        showPopover = true
+                    } label:{
+                        Text("")
+                            .frame(width: 10, height: 10)
+                            .background(Color.red)
+                            .cornerRadius(50)
+                    }.popover(isPresented: $showPopover, content: {
+                        VStack(alignment: .leading) {
+                            Text("Point name: Yongquan acupoint (足三里穴)")
+                            Text("symptom: Insomnia")
+                            Text("detail: wwwwwww")
+                        }.padding()
+                    })
+                    Color.clear
+                        .frame(height: 100)
+                        .frame(maxWidth: 600)
+                }
+            }
         }
     }
 }
