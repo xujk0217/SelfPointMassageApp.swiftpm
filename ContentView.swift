@@ -5,7 +5,13 @@ struct ContentView: View {
     @State private var hsym = Symptom.hSymExamples
     @State private var bsym = Symptom.bSymExamples
     @State private var osym = Symptom.oSymExamples
+    @State private var showPopovera = false
+    @State private var showPopoverb = false
+    @State private var showPopoverc = false
+    @State private var showPopoverd = false
     @State private var showPopover = false
+    
+    @State private var shouldSmallImage = false
     
     @State private var shouldShowTips = false
     
@@ -240,11 +246,9 @@ private extension ContentView{
                                                 CodeEle
                                             }
                                         }
-                                        if bsym.pointCode == "F"{
+                                        if bsym.pointCode == "K"{
                                             VStack {
-                                                CodeEig
-                                                CodeEle
-                                                CodeTwe
+                                                CodeTen
                                             }
                                         }
                                     }
@@ -313,9 +317,11 @@ private extension ContentView{
                                                 CodeTtr
                                             }
                                         }
-                                        if osym.pointCode == "K"{
+                                        if osym.pointCode == "F"{
                                             VStack {
-                                                CodeTen
+                                                CodeEig
+                                                CodeEle
+                                                CodeTwe
                                             }
                                         }
                                     }
@@ -463,27 +469,32 @@ private extension ContentView{
     
     @ViewBuilder var CodeOne: some View{
         VStack(alignment: .leading) {
-            Text("Point name: Yongquan acupoint (印堂穴)")
+            Text("Point name: Yintang acupoint (印堂穴)")
             ZStack {
                 Image("195")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(maxWidth: 600)
                 VStack {
-                    Button{
-                        showPopover = true
-                    } label:{
-                        Text("")
-                            .frame(width: 10, height: 10)
-                            .background(Color.red)
-                            .cornerRadius(50)
-                    }.popover(isPresented: $showPopover, content: {
-                        VStack(alignment: .leading) {
-                            Text("Point name: Yongquan acupoint (印堂穴)")
-                            Text("symptom: Insomnia")
-                            Text("detail: wwwwwww")
-                        }.padding()
+                    HStack {
+                        Button{
+                            showPopovera = true
+                        } label:{
+                            Text("")
+                                .frame(width: 10, height: 10)
+                                .background(Color.red)
+                                .cornerRadius(50)
+                        }.popover(isPresented: $showPopovera, content: {
+                            VStack(alignment: .leading) {
+                                Text("Point name: Yintang acupoint (印堂穴)")
+                                Text("symptom: Insomnia")
+                                Text("detail: wwwwwww")
+                            }.padding()
                     })
+                        Color.clear
+                            .frame(height: 10)
+                            .frame(width: 10)
+                    }
                     Color.clear
                         .frame(height: 100)
                         .frame(maxWidth: 600)
@@ -493,29 +504,34 @@ private extension ContentView{
     }
     @ViewBuilder var CodeTwo: some View{
         VStack(alignment: .leading) {
-            Text("Point name: Yongquan acupoint (太陽穴)")
+            Text("Point name: temples acupoint (太陽穴)")
             ZStack {
                 Image("194")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(maxWidth: 600)
                 VStack {
-                    Button{
-                        showPopover = true
-                    } label:{
-                        Text("")
-                            .frame(width: 10, height: 10)
-                            .background(Color.red)
-                            .cornerRadius(50)
-                    }.popover(isPresented: $showPopover, content: {
-                        VStack(alignment: .leading) {
-                            Text("Point name: Yongquan acupoint (太陽穴)")
-                            Text("symptom: Insomnia")
-                            Text("detail: wwwwwww")
-                        }.padding()
+                    HStack {
+                        Button{
+                            showPopoverb = true
+                        } label:{
+                            Text("")
+                                .frame(width: 10, height: 10)
+                                .background(Color.red)
+                                .cornerRadius(50)
+                        }.popover(isPresented: $showPopoverb, content: {
+                            VStack(alignment: .leading) {
+                                Text("Point name: temples acupoint (太陽穴)")
+                                Text("symptom: Insomnia")
+                                Text("detail: wwwwwww")
+                            }.padding()
                     })
+                        Color.clear
+                            .frame(height: 40)
+                            .frame(width: 120)
+                    }
                     Color.clear
-                        .frame(height: 100)
+                        .frame(height: 40)
                         .frame(maxWidth: 600)
                 }
             }
@@ -523,37 +539,42 @@ private extension ContentView{
     }
     @ViewBuilder var CodeThree: some View{
         VStack(alignment: .leading) {
-            Text("Point name: Yongquan acupoint (風池穴)")
+            Text("Point name: Fengchi acupoint (風池穴)")
             ZStack {
                 Image("194")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(maxWidth: 600)
                 VStack {
-                    Button{
-                        showPopover = true
-                    } label:{
-                        Text("")
-                            .frame(width: 10, height: 10)
-                            .background(Color.red)
-                            .cornerRadius(50)
-                    }.popover(isPresented: $showPopover, content: {
-                        VStack(alignment: .leading) {
-                            Text("Point name: Yongquan acupoint (風池穴)")
-                            Text("symptom: Insomnia")
-                            Text("detail: wwwwwww")
-                        }.padding()
-                    })
                     Color.clear
-                        .frame(height: 100)
-                        .frame(maxWidth: 600)
+                        .frame(height: 110)
+                        .frame(maxWidth: 60)
+                    HStack {
+                        Color.clear
+                            .frame(height: 100)
+                            .frame(width: 180)
+                        Button{
+                            showPopoverc = true
+                        } label:{
+                            Text("")
+                                .frame(width: 10, height: 10)
+                                .background(Color.red)
+                                .cornerRadius(50)
+                        }.popover(isPresented: $showPopoverc, content: {
+                            VStack(alignment: .leading) {
+                                Text("Point name: Fengchi acupoint (風池穴)")
+                                Text("symptom: Insomnia")
+                                Text("detail: wwwwwww")
+                            }.padding()
+                    })
+                    }
                 }
             }
         }
     }
     @ViewBuilder var CodeFour: some View{
         VStack(alignment: .leading) {
-            Text("Point name: Yongquan acupoint (百會穴)")
+            Text("Point name: Baihui acupoint (百會穴)")
             ZStack {
                 Image("194")
                     .resizable()
@@ -561,21 +582,21 @@ private extension ContentView{
                     .frame(maxWidth: 600)
                 VStack {
                     Button{
-                        showPopover = true
+                        showPopoverb = true
                     } label:{
                         Text("")
                             .frame(width: 10, height: 10)
                             .background(Color.red)
                             .cornerRadius(50)
-                    }.popover(isPresented: $showPopover, content: {
+                    }.popover(isPresented: $showPopoverb, content: {
                         VStack(alignment: .leading) {
-                            Text("Point name: Yongquan acupoint (百會穴)")
+                            Text("Point name: Baihui acupoint (百會穴)")
                             Text("symptom: Insomnia")
                             Text("detail: wwwwwww")
                         }.padding()
                     })
                     Color.clear
-                        .frame(height: 100)
+                        .frame(height: 320)
                         .frame(maxWidth: 600)
                 }
             }
@@ -583,210 +604,283 @@ private extension ContentView{
     }
     @ViewBuilder var CodeFif: some View{
         VStack(alignment: .leading) {
-            Text("Point name: Yongquan acupoint (天樞穴)")
+            Text("Point name: Tianshu acupoint (天樞穴)")
             ZStack {
                 Image("15041")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(maxWidth: 600)
                 VStack {
-                    Button{
-                        showPopover = true
-                    } label:{
-                        Text("")
-                            .frame(width: 10, height: 10)
-                            .background(Color.red)
-                            .cornerRadius(50)
-                    }.popover(isPresented: $showPopover, content: {
-                        VStack(alignment: .leading) {
-                            Text("Point name: Yongquan acupoint (天樞穴)")
-                            Text("symptom: Insomnia")
-                            Text("detail: wwwwwww")
-                        }.padding()
-                    })
                     Color.clear
-                        .frame(height: 100)
+                        .frame(height: 450)
                         .frame(maxWidth: 600)
+                    HStack {
+                        Button{
+                            showPopovera = true
+                        } label:{
+                            Text("")
+                                .frame(width: 10, height: 10)
+                                .background(Color.red)
+                                .cornerRadius(50)
+                        }.popover(isPresented: $showPopovera, content: {
+                            VStack(alignment: .leading) {
+                                Text("Point name: Tianshu acupoint (天樞穴)")
+                                Text("symptom: Insomnia")
+                                Text("detail: wwwwwww")
+                            }.padding()
+                    })
+                        Color.clear
+                            .frame(height: 10)
+                            .frame(width: 120)
+                        Button{
+                            showPopoverb = true
+                        } label:{
+                            Text("")
+                                .frame(width: 10, height: 10)
+                                .background(Color.red)
+                                .cornerRadius(50)
+                        }.popover(isPresented: $showPopoverb, content: {
+                            VStack(alignment: .leading) {
+                                Text("Point name: Tianshu acupoint (天樞穴)")
+                                Text("symptom: Insomnia")
+                                Text("detail: wwwwwww")
+                            }.padding()
+                        })
+                        Color.clear
+                            .frame(height: 10)
+                            .frame(width: 2)
+                    }
                 }
             }
         }
     }
     @ViewBuilder var CodeSix: some View{
         VStack(alignment: .leading) {
-            Text("Point name: Yongquan acupoint (中脘穴)")
+            Text("Point name: Zhongwan acupoint (中脘穴)")
             ZStack {
                 Image("15041")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(maxWidth: 600)
                 VStack {
+                    Color.clear
+                        .frame(height: 200)
+                        .frame(maxWidth: 600)
                     Button{
-                        showPopover = true
+                        showPopoverc = true
                     } label:{
                         Text("")
                             .frame(width: 10, height: 10)
                             .background(Color.red)
                             .cornerRadius(50)
-                    }.popover(isPresented: $showPopover, content: {
+                    }.popover(isPresented: $showPopoverc, content: {
                         VStack(alignment: .leading) {
-                            Text("Point name: Yongquan acupoint (中脘穴)")
+                            Text("Point name: Zhongwan acupoint (中脘穴)")
                             Text("symptom: Insomnia")
                             Text("detail: wwwwwww")
                         }.padding()
                     })
-                    Color.clear
-                        .frame(height: 100)
-                        .frame(maxWidth: 600)
                 }
             }
         }
     }
     @ViewBuilder var CodeSev: some View{
         VStack(alignment: .leading) {
-            Text("Point name: Yongquan acupoint (腰眼穴)")
+            Text("Point name: Yaoyan acupoint (腰眼穴)")
             ZStack {
                 Image("15051")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(maxWidth: 600)
                 VStack {
-                    Button{
-                        showPopover = true
-                    } label:{
-                        Text("")
-                            .frame(width: 10, height: 10)
-                            .background(Color.red)
-                            .cornerRadius(50)
-                    }.popover(isPresented: $showPopover, content: {
-                        VStack(alignment: .leading) {
-                            Text("Point name: Yongquan acupoint (腰眼穴)")
-                            Text("symptom: Insomnia")
-                            Text("detail: wwwwwww")
-                        }.padding()
-                    })
                     Color.clear
-                        .frame(height: 100)
+                        .frame(height: 400)
                         .frame(maxWidth: 600)
+                    HStack {
+                        Button{
+                            showPopoverb = true
+                        } label:{
+                            Text("")
+                                .frame(width: 10, height: 10)
+                                .background(Color.red)
+                                .cornerRadius(50)
+                        }.popover(isPresented: $showPopoverb, content: {
+                            VStack(alignment: .leading) {
+                                Text("Point name: Yaoyan acupoint (腰眼穴)")
+                                Text("symptom: Insomnia")
+                                Text("detail: wwwwwww")
+                            }.padding()
+                    })
+                        Color.clear
+                            .frame(height: 400)
+                            .frame(width: 170)
+                        Button{
+                            showPopoverc = true
+                        } label:{
+                            Text("")
+                                .frame(width: 10, height: 10)
+                                .background(Color.red)
+                                .cornerRadius(50)
+                        }.popover(isPresented: $showPopoverc, content: {
+                            VStack(alignment: .leading) {
+                                Text("Point name: Yaoyan acupoint (腰眼穴)")
+                                Text("symptom: Insomnia")
+                                Text("detail: wwwwwww")
+                            }.padding()
+                    })
+                    }
                 }
             }
         }
     }
     @ViewBuilder var CodeEig: some View{
         VStack(alignment: .leading) {
-            Text("Point name: Yongquan acupoint (合谷穴)")
+            Text("Point name: Hegu acupoint (合谷穴)")
             ZStack {
                 Image("15061")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(maxWidth: 600)
                 VStack {
-                    Button{
-                        showPopover = true
-                    } label:{
-                        Text("")
-                            .frame(width: 10, height: 10)
-                            .background(Color.red)
-                            .cornerRadius(50)
-                    }.popover(isPresented: $showPopover, content: {
-                        VStack(alignment: .leading) {
-                            Text("Point name: Yongquan acupoint (合谷穴)")
-                            Text("symptom: Insomnia")
-                            Text("detail: wwwwwww")
-                        }.padding()
-                    })
                     Color.clear
-                        .frame(height: 100)
+                        .frame(height: 200)
                         .frame(maxWidth: 600)
+                    HStack {
+                        Color.clear
+                            .frame(height: 100)
+                            .frame(width: 100)
+                        Button{
+                            showPopoverb = true
+                        } label:{
+                            Text("")
+                                .frame(width: 10, height: 10)
+                                .background(Color.red)
+                                .cornerRadius(50)
+                        }.popover(isPresented: $showPopoverb, content: {
+                            VStack(alignment: .leading) {
+                                Text("Point name: Hegu acupoint (合谷穴)")
+                                Text("symptom: Insomnia")
+                                Text("detail: wwwwwww")
+                            }.padding()
+                    })
+                    }
                 }
             }
         }
     }
     @ViewBuilder var CodeNin: some View{
         VStack(alignment: .leading) {
-            Text("Point name: Yongquan acupoint (落枕穴)")
+            Text("Point name: Xiangqiang acupoint (項強穴)")
             ZStack {
                 Image("15061")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(maxWidth: 600)
                 VStack {
-                    Button{
-                        showPopover = true
-                    } label:{
-                        Text("")
-                            .frame(width: 10, height: 10)
-                            .background(Color.red)
-                            .cornerRadius(50)
-                    }.popover(isPresented: $showPopover, content: {
-                        VStack(alignment: .leading) {
-                            Text("Point name: Yongquan acupoint (落枕穴)")
-                            Text("symptom: Insomnia")
-                            Text("detail: wwwwwww")
-                        }.padding()
+                    HStack {
+                        Button{
+                            showPopovera = true
+                        } label:{
+                            Text("")
+                                .frame(width: 10, height: 10)
+                                .background(Color.red)
+                                .cornerRadius(50)
+                        }.popover(isPresented: $showPopovera, content: {
+                            VStack(alignment: .leading) {
+                                Text("Point name: Xiangqiang acupoint (項強穴)")
+                                Text("symptom: Insomnia")
+                                Text("detail: wwwwwww")
+                            }.padding()
                     })
-                    Color.clear
-                        .frame(height: 100)
-                        .frame(maxWidth: 600)
+                        Color.clear
+                            .frame(height: 100)
+                            .frame(width: 10)
+                    }
                 }
             }
         }
     }
     @ViewBuilder var CodeTen: some View{
         VStack(alignment: .leading) {
-            Text("Point name: Yongquan acupoint (腰腿點穴)")
+            Text("Point name: acupoints for the lower back and legs (腰腿點穴)")
             ZStack {
                 Image("15061")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(maxWidth: 600)
                 VStack {
-                    Button{
-                        showPopover = true
-                    } label:{
-                        Text("")
-                            .frame(width: 10, height: 10)
-                            .background(Color.red)
-                            .cornerRadius(50)
-                    }.popover(isPresented: $showPopover, content: {
-                        VStack(alignment: .leading) {
-                            Text("Point name: Yongquan acupoint (腰腿點穴)")
-                            Text("symptom: Insomnia")
-                            Text("detail: wwwwwww")
-                        }.padding()
-                    })
                     Color.clear
-                        .frame(height: 100)
+                        .frame(height: 200)
                         .frame(maxWidth: 600)
+                    HStack {
+                        Color.clear
+                            .frame(height: 200)
+                            .frame(width: 100)
+                        Button{
+                            showPopovera = true
+                        } label:{
+                            Text("")
+                                .frame(width: 10, height: 10)
+                                .background(Color.red)
+                                .cornerRadius(50)
+                        }.popover(isPresented: $showPopovera, content: {
+                            VStack(alignment: .leading) {
+                                Text("Point name: acupoints for the lower back and legs (腰腿點穴)")
+                                Text("symptom: Insomnia")
+                                Text("detail: wwwwwww")
+                            }.padding()
+                    })
+                        Color.clear
+                            .frame(height: 200)
+                            .frame(width: 100)
+                        Button{
+                            showPopover = true
+                        } label:{
+                            Text("")
+                                .frame(width: 10, height: 10)
+                                .background(Color.red)
+                                .cornerRadius(50)
+                        }.popover(isPresented: $showPopover, content: {
+                            VStack(alignment: .leading) {
+                                Text("Point name: acupoints for the lower back and legs (腰腿點穴)")
+                                Text("symptom: Insomnia")
+                                Text("detail: wwwwwww")
+                            }.padding()
+                    })
+                        Color.clear
+                            .frame(height: 200)
+                            .frame(width: 200)
+                    }
                 }
             }
         }
     }
     @ViewBuilder var CodeEle: some View{
         VStack(alignment: .leading) {
-            Text("Point name: Yongquan acupoint (內關穴)")
+            Text("Point name: Neiguan acupoint (內關穴)")
             ZStack {
                 Image("15071")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(maxWidth: 600)
                 VStack {
+                    Color.clear
+                        .frame(height: 300)
+                        .frame(maxWidth: 600)
                     Button{
-                        showPopover = true
+                        showPopoverd = true
                     } label:{
                         Text("")
                             .frame(width: 10, height: 10)
                             .background(Color.red)
                             .cornerRadius(50)
-                    }.popover(isPresented: $showPopover, content: {
+                    }.popover(isPresented: $showPopoverd, content: {
                         VStack(alignment: .leading) {
-                            Text("Point name: Yongquan acupoint (內關穴)")
+                            Text("Point name: Neiguan acupoint (內關穴)")
                             Text("symptom: Insomnia")
                             Text("detail: wwwwwww")
                         }.padding()
                     })
-                    Color.clear
-                        .frame(height: 100)
-                        .frame(maxWidth: 600)
                 }
             }
         }
@@ -801,13 +895,13 @@ private extension ContentView{
                     .frame(maxWidth: 600)
                 VStack {
                     Button{
-                        showPopover = true
+                        showPopoverc = true
                     } label:{
                         Text("")
                             .frame(width: 10, height: 10)
                             .background(Color.red)
                             .cornerRadius(50)
-                    }.popover(isPresented: $showPopover, content: {
+                    }.popover(isPresented: $showPopoverc, content: {
                         VStack(alignment: .leading) {
                             Text("Point name: Yongquan acupoint (湧泉穴)")
                             Text("symptom: Insomnia")
@@ -823,29 +917,34 @@ private extension ContentView{
     }
     @ViewBuilder var CodeTtr: some View{
         VStack(alignment: .leading) {
-            Text("Point name: Yongquan acupoint (足三里穴)")
+            Text("Point name: Zusanli acupoint (足三里穴)")
             ZStack {
                 Image("15081")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(maxWidth: 600)
                 VStack {
-                    Button{
-                        showPopover = true
-                    } label:{
-                        Text("")
-                            .frame(width: 10, height: 10)
-                            .background(Color.red)
-                            .cornerRadius(50)
-                    }.popover(isPresented: $showPopover, content: {
-                        VStack(alignment: .leading) {
-                            Text("Point name: Yongquan acupoint (足三里穴)")
-                            Text("symptom: Insomnia")
-                            Text("detail: wwwwwww")
-                        }.padding()
+                    HStack {
+                        Color.clear
+                            .frame(height: 50)
+                            .frame(width: 320)
+                        Button{
+                            showPopovera = true
+                        } label:{
+                            Text("")
+                                .frame(width: 10, height: 10)
+                                .background(Color.red)
+                                .cornerRadius(50)
+                        }.popover(isPresented: $showPopovera, content: {
+                            VStack(alignment: .leading) {
+                                Text("Point name: Zusanli acupoint (足三里穴)")
+                                Text("symptom: Insomnia")
+                                Text("detail: wwwwwww")
+                            }.padding()
                     })
+                    }
                     Color.clear
-                        .frame(height: 100)
+                        .frame(height: 50)
                         .frame(maxWidth: 600)
                 }
             }
