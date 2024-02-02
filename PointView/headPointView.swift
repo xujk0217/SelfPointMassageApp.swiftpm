@@ -10,6 +10,10 @@ import SwiftUI
 struct headPointView: View {
     @State private var headPoint = Point.hexamples
     @State private var showSheet = false
+    @State private var showPopovera = false
+    @State private var showPopoverb = false
+    @State private var showPopoverc = false
+    @State private var showPopoverd = false
     @Environment (\.colorScheme) var colorScaheme
     
     var body: some View {
@@ -19,11 +23,96 @@ struct headPointView: View {
                 
                 let layout = shouldVStack ? AnyLayout(VStackLayout()) : AnyLayout(HStackLayout())
                 layout {
-                    Image("194")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(maxWidth: 900)
+                    ZStack {
+                        Image("194")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(maxWidth: 600)
                         .navigationTitle("Head Point")
+                        VStack {
+                            Button{
+                                showPopoverd = true
+                            } label:{
+                                Text("4")
+                                    .font(.title3.bold())
+                                    .frame(width: 30, height: 30)
+                                    .background(Color.red)
+                                    .cornerRadius(50)
+                            }.popover(isPresented: $showPopoverd, content: {
+                                VStack(alignment: .leading) {
+                                    Text("Point name: Baihui acupoint (百會穴)")
+                                    Text("symptom: Insomnia")
+                                    Text("detail: wwwwwww")
+                                }.padding()
+                            })
+                            Color.clear
+                                .frame(width: 200, height: 50)
+                            HStack {
+                                Button{
+                                    showPopovera = true
+                                } label:{
+                                    Text("1")
+                                        .font(.title3.bold())
+                                        .frame(width: 30, height: 30)
+                                        .background(Color.red)
+                                        .cornerRadius(50)
+                                }.popover(isPresented: $showPopovera, content: {
+                                    VStack(alignment: .leading) {
+                                        Text("Point name: Yintang acupoint (印堂穴)")
+                                        Text("symptom: Insomnia")
+                                        Text("detail: wwwwwww")
+                                    }.padding()
+                                })
+                                Color.clear
+                                    .frame(width: 70, height: 50)
+                                VStack {
+                                    Color.clear
+                                        .frame(width: 10, height: 10)
+                                    Button{
+                                        showPopoverb = true
+                                    } label:{
+                                        Text("2")
+                                            .font(.title3.bold())
+                                            .frame(width: 30, height: 30)
+                                            .background(Color.red)
+                                            .cornerRadius(50)
+                                    }.popover(isPresented: $showPopoverb, content: {
+                                        VStack(alignment: .leading) {
+                                            Text("Point name: temples acupoint (太陽穴)")
+                                            Text("symptom: Insomnia")
+                                            Text("detail: wwwwwww")
+                                        }.padding()
+                                })
+                                }
+                                Color.clear
+                                    .frame(width: 200, height: 50)
+                            }
+                            Color.clear
+                                .frame(width: 100, height: 70)
+                            HStack {
+                                Color.clear
+                                    .frame(width: 100, height: 30)
+                                Button{
+                                    showPopoverc = true
+                                } label:{
+                                    Text("3")
+                                        .font(.title3.bold())
+                                        .frame(width: 30, height: 30)
+                                        .background(Color.red)
+                                        .cornerRadius(50)
+                                }.popover(isPresented: $showPopoverc, content: {
+                                    VStack(alignment: .leading) {
+                                        Text("Point name: Fengchi acupoint (風池穴)")
+                                        Text("symptom: Insomnia")
+                                        Text("detail: wwwwwww")
+                                    }.padding()
+                            })
+                            }
+                            Color.clear
+                                .frame(width: 100, height: 90)
+                        }
+                        
+                    }
                     VStack(alignment: .leading) {
                         if shouldVStack{
                             ForEach($headPoint){ $headPoint in

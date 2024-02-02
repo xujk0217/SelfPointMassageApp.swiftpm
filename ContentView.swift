@@ -14,6 +14,7 @@ struct ContentView: View {
     @State private var shouldSmallImage = false
     
     @State private var shouldShowTips = false
+    @State private var shouldShowArr = false
     
     @Environment (\.colorScheme) var colorScaheme
     
@@ -68,6 +69,76 @@ private extension ContentView{
                 .padding()
             .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
             
+            Button{
+                shouldShowArr = true
+                if whichView == 4{
+                    whichView = 1
+                }
+            } label: {
+                Image(systemName: "exclamationmark.triangle.fill")
+                    .padding(.horizontal)
+                    .font(.title2)
+            }
+            .sheet(isPresented: $shouldShowArr){
+                VStack {
+                    Color.gray
+                        .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 5, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .cornerRadius(10)
+                        .padding(.top, 15)
+                    HStack {
+                        Text("")
+                            .frame(width: 50)
+                        Spacer()
+                        Text("Precautions for Acupressure Massage")
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.1)
+                            .font(.title.bold())
+                            .padding(.bottom, -5)
+                        Spacer()
+                        Button{
+                            shouldShowArr = false
+                        }label: {
+                            Text("skip")
+                                .padding(.horizontal)
+                        }
+                    }
+                    ScrollView{
+                        VStack(alignment: .leading){
+                            Text("Massages can be beneficial in many situations for providing relaxation and relief. However, it is advisable to avoid massaging in the following circumstances:")
+                                .padding()
+                            Text("1.Fever or Cold: ")
+                            Text("If experiencing a fever or symptoms of a cold, massaging may worsen discomfort. It is recommended to rest and consider massage once symptoms subside.")
+                                .padding(.bottom)
+                                .font(.title3)
+                            Text("2.Acute Injuries or Inflammation:")
+                            Text("Avoid massaging during the acute stage of injuries or inflammation, such as immediately after an injury occurs.")
+                                .padding(.bottom)
+                                .font(.title3)
+                            Text("3.Skin Issues: ")
+                            Text("If there are skin infections, eczema, herpes, or other skin problems, refrain from massaging the affected area to prevent worsening symptoms or spreading infection.")
+                                .padding(.bottom)
+                                .font(.title3)
+                            Text("4.Cardiovascular Problems:")
+                            Text("Individuals with cardiovascular issues or high blood pressure should consult a professional before getting a massage to avoid discomfort or unforeseen complications.")
+                                .padding(.bottom)
+                                .font(.title3)
+                            Text("5.Fractures or Severe Joint Problems: ")
+                            Text(" Avoid massaging areas with fractures or severe joint problems to prevent exacerbating injuries.")
+                                .padding(.bottom)
+                                .font(.title3)
+                            Text("6.Early Pregnancy:")
+                            Text("In the early stages of pregnancy, especially during the first trimester, it is advisable to avoid excessive massage, particularly in the abdominal and lumbar areas. It is recommended to consult with a healthcare professional before receiving a massage during pregnancy.")
+                                .padding(.bottom)
+                                .font(.title3)
+                            Text("In the above situations, if there is a need for massage, it is best to seek advice from a healthcare professional to ensure safety and suitability. During massage, use appropriate techniques and pressure to avoid discomfort or injury.")
+                                .padding()
+                        }
+                        .font(.title2.bold())
+                        .padding()
+                        .padding(.horizontal)
+                    }
+                }
+            }
             Button{
                 shouldShowTips = true
                 if whichView == 4{
