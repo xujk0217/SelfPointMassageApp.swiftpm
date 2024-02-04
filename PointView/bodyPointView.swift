@@ -47,9 +47,10 @@ struct bodyPointView: View {
                                         }.popover(isPresented: $showPopover, content: {
                                             VStack(alignment: .leading) {
                                                 Text("Point name: Tianshu acupoint (天樞穴)")
-                                                Text("symptom: Insomnia")
-                                                Text("detail: wwwwwww")
+                                                Text("symptom: The Tianshu acupoint is commonly used to alleviate abdominal discomfort, pain, bloating, and other digestive issues. Massaging this acupoint is believed to promote blood circulation in the abdominal region, regulate gastrointestinal function, and relieve symptoms related to the digestive system.")
+                                                Text("detail: Located on both sides of the abdomen, approximately three finger-widths away from the navel.")
                                             }.padding()
+                                                .frame(width: 600)
                                         })
                                         Color.clear
                                             .frame(height: 10)
@@ -65,9 +66,10 @@ struct bodyPointView: View {
                                         }.popover(isPresented: $showPopoverb, content: {
                                             VStack(alignment: .leading) {
                                                 Text("Point name: Tianshu acupoint (天樞穴)")
-                                                Text("symptom: Insomnia")
-                                                Text("detail: wwwwwww")
+                                                Text("symptom: The Tianshu acupoint is commonly used to alleviate abdominal discomfort, pain, bloating, and other digestive issues. Massaging this acupoint is believed to promote blood circulation in the abdominal region, regulate gastrointestinal function, and relieve symptoms related to the digestive system.")
+                                                Text("detail: Located on both sides of the abdomen, approximately three finger-widths away from the navel.")
                                             }.padding()
+                                                .frame(width: 600)
                                         })
                                         Color.clear
                                             .frame(height: 10)
@@ -89,9 +91,10 @@ struct bodyPointView: View {
                                     }.popover(isPresented: $showPopoverc, content: {
                                         VStack(alignment: .leading) {
                                             Text("Point name: Zhongwan acupoint (中脘穴)")
-                                            Text("symptom: Insomnia")
-                                            Text("detail: wwwwwww")
+                                            Text("symptom: Zhongwan acupoint is an important point for regulating gastrointestinal function. Massaging Zhongwan is believed to help alleviate stomach discomfort, stomach pain, and loss of appetite. Additionally, it can be used to relieve symptoms related to the digestive system and promote the normal functioning of the digestive system.")
+                                            Text("detail: Located on the abdomen, approximately four finger-widths above the navel. It can also be described as being about four horizontal fingers above the belly button.")
                                         }.padding()
+                                            .frame(width: 600)
                                     })
                                 }
                             }
@@ -116,9 +119,10 @@ struct bodyPointView: View {
                                 }.popover(isPresented: $showPopovera, content: {
                                     VStack(alignment: .leading) {
                                         Text("Point name: Yaoyan acupoint (腰眼穴)")
-                                        Text("symptom: Insomnia")
-                                        Text("detail: wwwwwww")
+                                        Text("symptom: Yaoyan acupoint is utilized for relieving discomfort and pain in the lumbar region. Massaging Yaoyan is believed to help relax the muscles in the lower back, alleviate tension around the lumbar vertebrae, and provide relief for issues such as lower back pain and stiffness.")
+                                        Text("detail: Located in the lumbar region, approximately three horizontal fingers below the lower edge of the lumbar vertebrae. It is generally described as being beside the spine, about three horizontal fingers away from the lower edge of the lumbar vertebrae.")
                                     }.padding()
+                                        .frame(width: 600)
                             })
                                 Color.clear
                                     .frame(height: 400)
@@ -134,9 +138,10 @@ struct bodyPointView: View {
                                 }.popover(isPresented: $showPopoverd, content: {
                                     VStack(alignment: .leading) {
                                         Text("Point name: Yaoyan acupoint (腰眼穴)")
-                                        Text("symptom: Insomnia")
-                                        Text("detail: wwwwwww")
+                                        Text("symptom: Yaoyan acupoint is utilized for relieving discomfort and pain in the lumbar region. Massaging Yaoyan is believed to help relax the muscles in the lower back, alleviate tension around the lumbar vertebrae, and provide relief for issues such as lower back pain and stiffness.")
+                                        Text("detail: Located in the lumbar region, approximately three horizontal fingers below the lower edge of the lumbar vertebrae. It is generally described as being beside the spine, about three horizontal fingers away from the lower edge of the lumbar vertebrae.")
                                     }.padding()
+                                        .frame(width: 600)
                             })
                             }
                         }

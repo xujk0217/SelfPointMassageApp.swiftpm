@@ -41,9 +41,10 @@ struct headPointView: View {
                             }.popover(isPresented: $showPopoverd, content: {
                                 VStack(alignment: .leading) {
                                     Text("Point name: Baihui acupoint (百會穴)")
-                                    Text("symptom: Insomnia")
-                                    Text("detail: wwwwwww")
+                                    Text("symptom: It is believed to be associated with regulating the nervous system, enhancing consciousness, and promoting overall harmony within the body's meridians and blood circulation.")
+                                    Text("detail: At the top of the head, at the intersection point of the midline and the line connecting the anterior hairline and the midpoint of the head.")
                                 }.padding()
+                                    .frame(width: 600)
                             })
                             Color.clear
                                 .frame(width: 200, height: 50)
@@ -59,9 +60,10 @@ struct headPointView: View {
                                 }.popover(isPresented: $showPopovera, content: {
                                     VStack(alignment: .leading) {
                                         Text("Point name: Yintang acupoint (印堂穴)")
-                                        Text("symptom: Insomnia")
-                                        Text("detail: wwwwwww")
+                                        Text("symptom: Commonly used to alleviate forehead discomfort, promote mental clarity, and is believed to benefit relaxation and relieve stress.")
+                                        Text("detail: In the center between the eyebrows, precisely at the midpoint of the forehead.")
                                     }.padding()
+                                        .frame(width: 600)
                                 })
                                 Color.clear
                                     .frame(width: 70, height: 50)
@@ -79,9 +81,10 @@ struct headPointView: View {
                                     }.popover(isPresented: $showPopoverb, content: {
                                         VStack(alignment: .leading) {
                                             Text("Point name: temples acupoint (太陽穴)")
-                                            Text("symptom: Insomnia")
-                                            Text("detail: wwwwwww")
+                                            Text("symptom: Used for relieving headaches, migraines, and eye discomfort. Massaging the temples helps relax head muscles, improve blood circulation, and alleviate tension.")
+                                            Text("detail: Approximately 1 inch behind the temples, find the hollow area known as the Temples.")
                                         }.padding()
+                                            .frame(width: 600)
                                 })
                                 }
                                 Color.clear
@@ -103,9 +106,10 @@ struct headPointView: View {
                                 }.popover(isPresented: $showPopoverc, content: {
                                     VStack(alignment: .leading) {
                                         Text("Point name: Fengchi acupoint (風池穴)")
-                                        Text("symptom: Insomnia")
-                                        Text("detail: wwwwwww")
+                                        Text("symptom: Known for regulating blood pressure, relieving discomfort in the back of the head, and improving overall head and neck well-being.")
+                                        Text("detail: On both sides of the neck, slightly below the level of the cervical vertebrae.")
                                     }.padding()
+                                        .frame(width: 600)
                             })
                             }
                             Color.clear
