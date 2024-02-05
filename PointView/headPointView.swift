@@ -158,6 +158,17 @@ struct headPointView: View {
                                     ScrollView{
                                         HStack {
                                             VStack(alignment: .leading) {
+                                                /*
+                                                if headPoint.code == 1{
+                                                    CodeOne
+                                                }else if headPoint.code == 2{
+                                                    CodeTwo
+                                                }else if headPoint.code == 3{
+                                                    CodeThree
+                                                }else if headPoint.code == 4{
+                                                    CodeFour
+                                                }
+                                                 */
                                                 Text("symptom: \(headPoint.symptom)")
                                                 Text("point detail: \(headPoint.detail)")
                                                 Text("massage detail: \(headPoint.massageTime)")
@@ -210,6 +221,17 @@ struct headPointView: View {
                                             ScrollView{
                                                 HStack {
                                                     VStack(alignment: .leading) {
+                                                        /*
+                                                        if headPoint.code == 1{
+                                                            CodeOne
+                                                        }else if headPoint.code == 2{
+                                                            CodeTwo
+                                                        }else if headPoint.code == 3{
+                                                            CodeThree
+                                                        }else if headPoint.code == 4{
+                                                            CodeFour
+                                                        }
+                                                         */
                                                         Text("symptom: \(headPoint.symptom)")
                                                         Text("point detail: \(headPoint.detail)")
                                                         Text("massage detail: \(headPoint.massageTime)")
@@ -229,6 +251,121 @@ struct headPointView: View {
         }
     }
 }
+
+private extension headPointView{
+    @ViewBuilder var CodeOne: some View{
+        VStack() {
+            ZStack {
+                Image("195")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 400)
+                VStack {
+                    HStack {
+                        Button{
+                            //showPopovera = true
+                        } label:{
+                            Text("")
+                                .frame(width: 20, height: 20)
+                                .background(Color.red)
+                                .cornerRadius(50)
+                        }
+                        Color.clear
+                            .frame(height: 10)
+                            .frame(width: 10)
+                    }
+                    Color.clear
+                        .frame(height: 100)
+                        .frame(maxWidth: 600)
+                }
+            }
+        }
+    }
+    @ViewBuilder var CodeTwo: some View{
+        VStack(alignment: .leading) {
+            Text("Point name: temples acupoint (太陽穴)")
+            ZStack {
+                Image("194")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 600)
+                VStack {
+                    HStack {
+                        Button{
+                            //showPopoverb = true
+                        } label:{
+                            Text("")
+                                .frame(width: 20, height: 20)
+                                .background(Color.red)
+                                .cornerRadius(50)
+                        }
+                        Color.clear
+                            .frame(height: 40)
+                            .frame(width: 120)
+                    }
+                    Color.clear
+                        .frame(height: 40)
+                        .frame(maxWidth: 600)
+                }
+            }
+        }
+    }
+    @ViewBuilder var CodeThree: some View{
+        VStack(alignment: .leading) {
+            Text("Point name: Fengchi acupoint (風池穴)")
+            ZStack {
+                Image("194")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 600)
+                VStack {
+                    Color.clear
+                        .frame(height: 110)
+                        .frame(maxWidth: 60)
+                    HStack {
+                        Color.clear
+                            .frame(height: 100)
+                            .frame(width: 180)
+                        Button{
+                            //showPopoverc = true
+                        } label:{
+                            Text("")
+                                .frame(width: 20, height: 20)
+                                .background(Color.red)
+                                .cornerRadius(50)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @ViewBuilder var CodeFour: some View{
+        VStack(alignment: .leading) {
+            Text("Point name: Baihui acupoint (百會穴)")
+            ZStack {
+                Image("194")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 600)
+                VStack {
+                    Button{
+                        //showPopoverb = true
+                    } label:{
+                        Text("")
+                            .frame(width: 20, height: 20)
+                            .background(Color.red)
+                            .cornerRadius(50)
+                    }
+                    Color.clear
+                        .frame(height: 320)
+                        .frame(maxWidth: 600)
+                }
+            }
+        }
+    }
+}
+
+
 
 #Preview {
     headPointView()
