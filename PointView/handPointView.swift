@@ -17,6 +17,8 @@ struct handPointView: View {
     @State private var showPopoverd = false
     @Environment (\.colorScheme) var colorScaheme
     
+    @State private var selected: Point?
+    
     var body: some View {
         GeometryReader { geometry in
             //ScrollView{
@@ -167,7 +169,7 @@ struct handPointView: View {
                             ScrollView{
                                 ForEach($handPoint){ $handPoint in
                                     Button{
-                                        showSheet = true
+                                        selected = handPoint
                                     } label: {
                                         HStack {
                                             Text("\(handPoint.code): \(handPoint.name)")
@@ -177,7 +179,7 @@ struct handPointView: View {
                                                 .foregroundColor(colorScaheme == .dark ? .white : .black)
                                                 .background(Color.white)
                                         }
-                                    }.sheet(isPresented: $showSheet){
+                                    }.sheet(item: $selected){handPoint in
                                         ZStack {
                                             Color.gray
                                                 .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 5, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
@@ -185,8 +187,6 @@ struct handPointView: View {
                                                 .padding(.top, 15)
                                         }
                                         HStack {
-                                            Text("")
-                                                .frame(width: 50)
                                             Spacer()
                                             Text(handPoint.name)
                                                 .lineLimit(1)
@@ -194,12 +194,6 @@ struct handPointView: View {
                                                 .font(.title.bold())
                                                 .padding(.bottom, -5)
                                             Spacer()
-                                            Button{
-                                                showSheet = false
-                                            }label: {
-                                                Text("close")
-                                                    .padding(.horizontal)
-                                            }
                                         }
                                         ScrollView{
                                             HStack {
@@ -233,7 +227,7 @@ struct handPointView: View {
                                 Section("head"){
                                     ForEach($handPoint){ $handPoint in
                                         Button{
-                                            showSheet = true
+                                            selected = handPoint
                                         } label: {
                                             HStack {
                                                 Text("\(handPoint.code): \(handPoint.name)")
@@ -242,7 +236,7 @@ struct handPointView: View {
                                                     .cornerRadius(6)
                                                     .foregroundColor(colorScaheme == .dark ? .white : .black)
                                             }
-                                        }.sheet(isPresented: $showSheet){
+                                        }.sheet(item: $selected){handPoint in
                                             ZStack {
                                                 Color.gray
                                                     .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 5, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
@@ -250,8 +244,6 @@ struct handPointView: View {
                                                 .padding(.top, 15)
                                             }
                                             HStack {
-                                                Text("")
-                                                    .frame(width: 50)
                                                 Spacer()
                                                 Text(handPoint.name)
                                                     .lineLimit(1)
@@ -259,12 +251,6 @@ struct handPointView: View {
                                                     .font(.title.bold())
                                                     .padding(.bottom, -5)
                                                 Spacer()
-                                                Button{
-                                                    showSheet = false
-                                                }label: {
-                                                    Text("close")
-                                                        .padding(.horizontal)
-                                                }
                                             }
                                             ScrollView{
                                                 HStack {

@@ -16,6 +16,8 @@ struct headPointView: View {
     @State private var showPopoverd = false
     @Environment (\.colorScheme) var colorScaheme
     
+    @State private var selected: Point?
+    
     var body: some View {
         GeometryReader { geometry in
             ScrollView{
@@ -121,7 +123,7 @@ struct headPointView: View {
                         if shouldVStack{
                             ForEach($headPoint){ $headPoint in
                                 Button{
-                                    showSheet = true
+                                    selected = headPoint
                                 } label: {
                                     HStack {
                                         Text("\(headPoint.code): \(headPoint.name)")
@@ -131,7 +133,7 @@ struct headPointView: View {
                                             .foregroundColor(colorScaheme == .dark ? .white : .black)
                                             .background(Color.white)
                                     }
-                                }.sheet(isPresented: $showSheet){
+                                }.sheet(item: $selected){headPoint in
                                     ZStack {
                                         Color.gray
                                             .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 5, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
@@ -139,8 +141,8 @@ struct headPointView: View {
                                         .padding(.top, 15)
                                     }
                                     HStack {
-                                        Text("")
-                                            .frame(width: 50)
+                                        //Text("")
+                                        //    .frame(width: 50)
                                         Spacer()
                                         Text(headPoint.name)
                                             .lineLimit(1)
@@ -148,12 +150,14 @@ struct headPointView: View {
                                             .font(.title.bold())
                                             .padding(.bottom, -5)
                                         Spacer()
+                                        /*
                                         Button{
-                                            showSheet = false
+                                            dismiss()
                                         }label: {
                                             Text("close")
                                                 .padding(.horizontal)
                                         }
+                                         */
                                     }
                                     ScrollView{
                                         HStack {
@@ -183,7 +187,7 @@ struct headPointView: View {
                                 Section("head"){
                                     ForEach($headPoint){ $headPoint in
                                         Button{
-                                            showSheet = true
+                                            selected = headPoint
                                         } label: {
                                             HStack {
                                                 Text("\(headPoint.code): \(headPoint.name)")
@@ -192,7 +196,7 @@ struct headPointView: View {
                                                     .cornerRadius(6)
                                                     .foregroundColor(colorScaheme == .dark ? .white : .black)
                                             }
-                                        }.sheet(isPresented: $showSheet){
+                                        }.sheet(item: $selected){headPoint in
                                             ZStack {
                                                 Color.gray
                                                     .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 5, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
@@ -200,8 +204,8 @@ struct headPointView: View {
                                                 .padding(.top, 15)
                                             }
                                             HStack {
-                                                Text("")
-                                                    .frame(width: 50)
+                                                //Text("")
+                                                //    .frame(width: 50)
                                                 Spacer()
                                                 Text(headPoint.name)
                                                     .lineLimit(1)
@@ -209,12 +213,19 @@ struct headPointView: View {
                                                     .font(.title.bold())
                                                     .padding(.bottom, -5)
                                                 Spacer()
+                                                /*
                                                 Button{
-                                                    showSheet = false
+                                                    dismiss()
                                                 }label: {
                                                     Text("close")
                                                         .padding(.horizontal)
                                                 }
+                                                Image(systemName: "xmark.circle.fill")
+                                                    .padding(.horizontal)
+                                                    .onTapGesture {
+                                                        dismiss()
+                                                    }
+                                                 */
                                             }
                                             ScrollView{
                                                 HStack {
