@@ -158,7 +158,6 @@ struct headPointView: View {
                                     ScrollView{
                                         HStack {
                                             VStack(alignment: .leading) {
-                                                /*
                                                 if headPoint.code == 1{
                                                     CodeOne
                                                 }else if headPoint.code == 2{
@@ -168,7 +167,6 @@ struct headPointView: View {
                                                 }else if headPoint.code == 4{
                                                     CodeFour
                                                 }
-                                                 */
                                                 Text("symptom: \(headPoint.symptom)")
                                                 Text("point detail: \(headPoint.detail)")
                                                 Text("massage detail: \(headPoint.massageTime)")
@@ -221,7 +219,6 @@ struct headPointView: View {
                                             ScrollView{
                                                 HStack {
                                                     VStack(alignment: .leading) {
-                                                        /*
                                                         if headPoint.code == 1{
                                                             CodeOne
                                                         }else if headPoint.code == 2{
@@ -231,7 +228,6 @@ struct headPointView: View {
                                                         }else if headPoint.code == 4{
                                                             CodeFour
                                                         }
-                                                         */
                                                         Text("symptom: \(headPoint.symptom)")
                                                         Text("point detail: \(headPoint.detail)")
                                                         Text("massage detail: \(headPoint.massageTime)")
@@ -279,11 +275,10 @@ private extension headPointView{
                         .frame(maxWidth: 600)
                 }
             }
-        }
+        }.padding(.top, -50)
     }
     @ViewBuilder var CodeTwo: some View{
         VStack(alignment: .leading) {
-            Text("Point name: temples acupoint (太陽穴)")
             ZStack {
                 Image("194")
                     .resizable()
@@ -308,11 +303,10 @@ private extension headPointView{
                         .frame(maxWidth: 600)
                 }
             }
-        }
+        }.padding(.top, -50)
     }
     @ViewBuilder var CodeThree: some View{
         VStack(alignment: .leading) {
-            Text("Point name: Fengchi acupoint (風池穴)")
             ZStack {
                 Image("194")
                     .resizable()
@@ -337,11 +331,10 @@ private extension headPointView{
                     }
                 }
             }
-        }
+        }.padding(.top, -50)
     }
     @ViewBuilder var CodeFour: some View{
         VStack(alignment: .leading) {
-            Text("Point name: Baihui acupoint (百會穴)")
             ZStack {
                 Image("194")
                     .resizable()
@@ -361,7 +354,7 @@ private extension headPointView{
                         .frame(maxWidth: 600)
                 }
             }
-        }
+        }.padding(.top, -50)
     }
 }
 

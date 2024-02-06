@@ -191,6 +191,13 @@ struct bodyPointView: View {
                                     ScrollView{
                                         HStack {
                                             VStack(alignment: .leading) {
+                                                if bodyPoint.code == 5{
+                                                    CodeFif
+                                                }else if bodyPoint.code == 6{
+                                                    CodeSix
+                                                }else if bodyPoint.code == 7{
+                                                    CodeSev
+                                                }
                                                 Text("symptom: \(bodyPoint.symptom)")
                                                 Text("point detail: \(bodyPoint.detail)")
                                                 Text("massage detail: \(bodyPoint.massageTime)")
@@ -246,6 +253,13 @@ struct bodyPointView: View {
                                             ScrollView{
                                                 HStack {
                                                     VStack(alignment: .leading) {
+                                                        if bodyPoint.code == 5{
+                                                            CodeFif
+                                                        }else if bodyPoint.code == 6{
+                                                            CodeSix
+                                                        }else if bodyPoint.code == 7{
+                                                            CodeSev
+                                                        }
                                                         Text("symptom: \(bodyPoint.symptom)")
                                                         Text("point detail: \(bodyPoint.detail)")
                                                         Text("massage detail: \(bodyPoint.massageTime)")
@@ -282,7 +296,6 @@ struct bodyPointView: View {
 private extension bodyPointView {
     @ViewBuilder var CodeFif: some View{
         VStack(alignment: .leading) {
-            Text("Point name: Tianshu acupoint (天樞穴)")
             ZStack {
                 Image("15041")
                     .resizable()
@@ -294,38 +307,24 @@ private extension bodyPointView {
                         .frame(maxWidth: 600)
                     HStack {
                         Button{
-                            showPopovera = true
+                            //showPopovera = true
                         } label:{
                             Text("")
                                 .frame(width: 20, height: 20)
                                 .background(Color.red)
                                 .cornerRadius(50)
-                        }.popover(isPresented: $showPopovera, content: {
-                            VStack(alignment: .leading) {
-                                Text("Point name: Tianshu acupoint (天樞穴)")
-                                Text("symptom: The Tianshu acupoint is commonly used to alleviate abdominal discomfort, pain, bloating, and other digestive issues. Massaging this acupoint is believed to promote blood circulation in the abdominal region, regulate gastrointestinal function, and relieve symptoms related to the digestive system.")
-                                Text("detail: Located on both sides of the abdomen, approximately three finger-widths away from the navel.")
-                            }.padding()
-                                .frame(width: 600)
-                    })
+                        }
                         Color.clear
                             .frame(height: 10)
                             .frame(width: 120)
                         Button{
-                            showPopoverb = true
+                            //showPopoverb = true
                         } label:{
                             Text("")
                                 .frame(width: 20, height: 20)
                                 .background(Color.red)
                                 .cornerRadius(50)
-                        }.popover(isPresented: $showPopoverb, content: {
-                            VStack(alignment: .leading) {
-                                Text("Point name: Tianshu acupoint (天樞穴)")
-                                Text("symptom: The Tianshu acupoint is commonly used to alleviate abdominal discomfort, pain, bloating, and other digestive issues. Massaging this acupoint is believed to promote blood circulation in the abdominal region, regulate gastrointestinal function, and relieve symptoms related to the digestive system.")
-                                Text("detail: Located on both sides of the abdomen, approximately three finger-widths away from the navel.")
-                            }.padding()
-                                .frame(width: 600)
-                        })
+                        }
                         Color.clear
                             .frame(height: 10)
                             .frame(width: 2)
@@ -336,7 +335,6 @@ private extension bodyPointView {
     }
     @ViewBuilder var CodeSix: some View{
         VStack(alignment: .leading) {
-            Text("Point name: Zhongwan acupoint (中脘穴)")
             ZStack {
                 Image("15041")
                     .resizable()
@@ -347,27 +345,19 @@ private extension bodyPointView {
                         .frame(height: 200)
                         .frame(maxWidth: 600)
                     Button{
-                        showPopoverc = true
+                        //showPopoverc = true
                     } label:{
                         Text("")
                             .frame(width: 20, height: 20)
                             .background(Color.red)
                             .cornerRadius(50)
-                    }.popover(isPresented: $showPopoverc, content: {
-                        VStack(alignment: .leading) {
-                            Text("Point name: Zhongwan acupoint (中脘穴)")
-                            Text("symptom: Zhongwan acupoint is an important point for regulating gastrointestinal function. Massaging Zhongwan is believed to help alleviate stomach discomfort, stomach pain, and loss of appetite. Additionally, it can be used to relieve symptoms related to the digestive system and promote the normal functioning of the digestive system.")
-                            Text("detail: Located on the abdomen, approximately four finger-widths above the navel. It can also be described as being about four horizontal fingers above the belly button.")
-                        }.padding()
-                            .frame(width: 600)
-                    })
+                    }
                 }
             }
         }
     }
     @ViewBuilder var CodeSev: some View{
         VStack(alignment: .leading) {
-            Text("Point name: Yaoyan acupoint (腰眼穴)")
             ZStack {
                 Image("15051")
                     .resizable()
@@ -379,38 +369,24 @@ private extension bodyPointView {
                         .frame(maxWidth: 600)
                     HStack {
                         Button{
-                            showPopoverb = true
+                            //showPopoverb = true
                         } label:{
                             Text("")
                                 .frame(width: 20, height: 20)
                                 .background(Color.red)
                                 .cornerRadius(50)
-                        }.popover(isPresented: $showPopoverb, content: {
-                            VStack(alignment: .leading) {
-                                Text("Point name: Yaoyan acupoint (腰眼穴)")
-                                Text("symptom: Yaoyan acupoint is utilized for relieving discomfort and pain in the lumbar region. Massaging Yaoyan is believed to help relax the muscles in the lower back, alleviate tension around the lumbar vertebrae, and provide relief for issues such as lower back pain and stiffness.")
-                                Text("detail: Located in the lumbar region, approximately three horizontal fingers below the lower edge of the lumbar vertebrae. It is generally described as being beside the spine, about three horizontal fingers away from the lower edge of the lumbar vertebrae.")
-                            }.padding()
-                                .frame(width: 600)
-                    })
+                        }
                         Color.clear
                             .frame(height: 400)
                             .frame(width: 170)
                         Button{
-                            showPopoverc = true
+                            //showPopoverc = true
                         } label:{
                             Text("")
                                 .frame(width: 20, height: 20)
                                 .background(Color.red)
                                 .cornerRadius(50)
-                        }.popover(isPresented: $showPopoverc, content: {
-                            VStack(alignment: .leading) {
-                                Text("Point name: Yaoyan acupoint (腰眼穴)")
-                                Text("symptom: Yaoyan acupoint is utilized for relieving discomfort and pain in the lumbar region. Massaging Yaoyan is believed to help relax the muscles in the lower back, alleviate tension around the lumbar vertebrae, and provide relief for issues such as lower back pain and stiffness.")
-                                Text("detail: Located in the lumbar region, approximately three horizontal fingers below the lower edge of the lumbar vertebrae. It is generally described as being beside the spine, about three horizontal fingers away from the lower edge of the lumbar vertebrae.")
-                            }.padding()
-                                .frame(width: 600)
-                    })
+                        }
                     }
                 }
             }

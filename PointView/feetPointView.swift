@@ -129,6 +129,11 @@ struct feetPointView: View {
                                     ScrollView{
                                         HStack {
                                             VStack(alignment: .leading) {
+                                                if feetPoint.code == 12{
+                                                    CodeTwe
+                                                }else if feetPoint.code == 13{
+                                                    CodeTtr
+                                                }
                                                 Text("symptom: \(feetPoint.symptom)")
                                                 Text("point detail: \(feetPoint.detail)")
                                                 Text("massage detail: \(feetPoint.massageTime)")
@@ -184,6 +189,11 @@ struct feetPointView: View {
                                             ScrollView{
                                                 HStack {
                                                     VStack(alignment: .leading) {
+                                                        if feetPoint.code == 12{
+                                                            CodeTwe
+                                                        }else if feetPoint.code == 13{
+                                                            CodeTtr
+                                                        }
                                                         Text("symptom: \(feetPoint.symptom)")
                                                         Text("point detail: \(feetPoint.detail)")
                                                         Text("massage detail: \(feetPoint.massageTime)")
@@ -207,7 +217,7 @@ struct feetPointView: View {
 private extension feetPointView{
     @ViewBuilder var CodeTwe: some View{
         VStack(alignment: .leading) {
-            Text("Point name: Yongquan acupoint (湧泉穴)")
+            
             ZStack {
                 Image("1502")
                     .resizable()
@@ -215,20 +225,13 @@ private extension feetPointView{
                     .frame(maxWidth: 600)
                 VStack {
                     Button{
-                        showPopoverc = true
+                        //showPopoverc = true
                     } label:{
                         Text("")
                             .frame(width: 20, height: 20)
                             .background(Color.red)
                             .cornerRadius(50)
-                    }.popover(isPresented: $showPopoverc, content: {
-                        VStack(alignment: .leading) {
-                            Text("Point name: Yongquan acupoint (湧泉穴)")
-                            Text("symptom: The Yongquan acupoint is part of the Kidney Meridian and is believed to be beneficial for regulating kidney energy and promoting the flow of the kidney meridian. This acupoint is often used to alleviate symptoms such as insomnia, anxiety, headaches, and dizziness.")
-                            Text("detail: Located on the sole of the foot, in the depression between the second and third toes, about one-third from the front of the foot.")
-                        }.padding()
-                            .frame(width: 600)
-                    })
+                    }
                     Color.clear
                         .frame(height: 100)
                         .frame(maxWidth: 600)
@@ -238,7 +241,7 @@ private extension feetPointView{
     }
     @ViewBuilder var CodeTtr: some View{
         VStack(alignment: .leading) {
-            Text("Point name: Zusanli acupoint (足三里穴)")
+            
             ZStack {
                 Image("15081")
                     .resizable()
@@ -250,20 +253,13 @@ private extension feetPointView{
                             .frame(height: 50)
                             .frame(width: 320)
                         Button{
-                            showPopovera = true
+                            //showPopovera = true
                         } label:{
                             Text("")
                                 .frame(width: 20, height: 20)
                                 .background(Color.red)
                                 .cornerRadius(50)
-                        }.popover(isPresented: $showPopovera, content: {
-                            VStack(alignment: .leading) {
-                                Text("Point name: Zusanli acupoint (足三里穴)")
-                                Text("symptom: Zusanli acupoint is part of the Stomach Meridian in traditional Chinese medicine. It is believed to be beneficial for strengthening the spleen and stomach functions, regulating gastrointestinal digestion, and enhancing the immune system. Additionally, Zusanli acupoint is often used to alleviate fatigue, boost energy, and reduce stress.")
-                                Text("detail: Located below the knee, three fingers below the lower edge of the fibula head, approximately four fingers away from the knee joint. It is situated in the depression between the lower edge of the fibula head and the anterior margin of the tibia.")
-                            }.padding()
-                                .frame(width: 600)
-                    })
+                        }
                     }
                     Color.clear
                         .frame(height: 50)

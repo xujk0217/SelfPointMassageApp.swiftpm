@@ -204,6 +204,15 @@ struct handPointView: View {
                                         ScrollView{
                                             HStack {
                                                 VStack(alignment: .leading) {
+                                                    if handPoint.code == 8{
+                                                        CodeEig
+                                                    }else if handPoint.code == 9{
+                                                        CodeNin
+                                                    }else if handPoint.code == 10{
+                                                        CodeTen
+                                                    }else if handPoint.code == 11{
+                                                        CodeEle
+                                                    }
                                                     Text("symptom: \(handPoint.symptom)")
                                                     Text("point detail: \(handPoint.detail)")
                                                     Text("massage detail: \(handPoint.massageTime)")
@@ -260,6 +269,15 @@ struct handPointView: View {
                                             ScrollView{
                                                 HStack {
                                                     VStack(alignment: .leading) {
+                                                        if handPoint.code == 8{
+                                                            CodeEig
+                                                        }else if handPoint.code == 9{
+                                                            CodeNin
+                                                        }else if handPoint.code == 10{
+                                                            CodeTen
+                                                        }else if handPoint.code == 11{
+                                                            CodeEle
+                                                        }
                                                         Text("symptom: \(handPoint.symptom)")
                                                         Text("point detail: \(handPoint.detail)")
                                                         Text("massage detail: \(handPoint.massageTime)")
@@ -283,7 +301,6 @@ struct handPointView: View {
 private extension handPointView{
     @ViewBuilder var CodeEig: some View{
         VStack(alignment: .leading) {
-            Text("Point name: Hegu acupoint (合谷穴)")
             ZStack {
                 Image("15061")
                     .resizable()
@@ -298,20 +315,13 @@ private extension handPointView{
                             .frame(height: 100)
                             .frame(width: 100)
                         Button{
-                            showPopoverb = true
+                            //showPopoverb = true
                         } label:{
                             Text("")
                                 .frame(width: 20, height: 20)
                                 .background(Color.red)
                                 .cornerRadius(50)
-                        }.popover(isPresented: $showPopoverb, content: {
-                            VStack(alignment: .leading) {
-                                Text("Point name: Hegu acupoint (合谷穴)")
-                                Text("symptom: Hegu acupoint is part of the Hand Shaoyin meridian and is commonly used to alleviate pain in the hands, headaches, toothaches, and other discomfort. Massaging Hegu is believed to help relieve pain and improve blood circulation in the hands.")
-                                Text("detail: Located on the back of the hand, in the depression between the index finger and the thumb, precisely at the highest point of the webbed area between the fingers.")
-                            }.padding()
-                                .frame(width: 600)
-                    })
+                        }
                     }
                 }
             }
@@ -319,7 +329,6 @@ private extension handPointView{
     }
     @ViewBuilder var CodeNin: some View{
         VStack(alignment: .leading) {
-            Text("Point name: Xiangqiang acupoint (項強穴)")
             ZStack {
                 Image("15061")
                     .resizable()
@@ -328,20 +337,13 @@ private extension handPointView{
                 VStack {
                     HStack {
                         Button{
-                            showPopovera = true
+                            //showPopovera = true
                         } label:{
                             Text("")
                                 .frame(width: 20, height: 20)
                                 .background(Color.red)
                                 .cornerRadius(50)
-                        }.popover(isPresented: $showPopovera, content: {
-                            VStack(alignment: .leading) {
-                                Text("Point name: Xiangqiang acupoint (項強穴)")
-                                Text("symptom: Effective in treating conditions such as numbness in the palm and fingers, inability to flex or extend muscles, and situations related to having a stiff neck.")
-                                Text("detail: located between the bones of the index and middle fingers, approximately one finger-width behind the knuckle.")
-                            }.padding()
-                                .frame(width: 600)
-                    })
+                        }
                         Color.clear
                             .frame(height: 100)
                             .frame(width: 10)
@@ -352,7 +354,6 @@ private extension handPointView{
     }
     @ViewBuilder var CodeTen: some View{
         VStack(alignment: .leading) {
-            Text("Point name: Waist and Leg Point (腰腿點穴)")
             ZStack {
                 Image("15061")
                     .resizable()
@@ -367,38 +368,24 @@ private extension handPointView{
                             .frame(height: 200)
                             .frame(width: 100)
                         Button{
-                            showPopovera = true
+                            //showPopovera = true
                         } label:{
                             Text("")
                                 .frame(width: 20, height: 20)
                                 .background(Color.red)
                                 .cornerRadius(50)
-                        }.popover(isPresented: $showPopovera, content: {
-                            VStack(alignment: .leading) {
-                                Text("Point name: Waist and Leg Point (腰腿點穴)")
-                                Text("symptom: Described as an effective acupoint for treating lower back and leg pain, especially effective for acute sprains.")
-                                Text("detail: There are two points for Waist and Leg Point, located respectively on the back of the hand, in the middle of the joint between the bones of the index and middle fingers on the back of the hand, and in the middle of the joint between the bones of the ring and little fingers.")
-                            }.padding()
-                                .frame(width: 600)
-                    })
+                        }
                         Color.clear
                             .frame(height: 200)
                             .frame(width: 100)
                         Button{
-                            showPopover = true
+                            //showPopover = true
                         } label:{
                             Text("")
                                 .frame(width: 20, height: 20)
                                 .background(Color.red)
                                 .cornerRadius(50)
-                        }.popover(isPresented: $showPopover, content: {
-                            VStack(alignment: .leading) {
-                                Text("Point name: Waist and Leg Point (腰腿點穴)")
-                                Text("symptom: Described as an effective acupoint for treating lower back and leg pain, especially effective for acute sprains.")
-                                Text("detail: There are two points for Waist and Leg Point, located respectively on the back of the hand, in the middle of the joint between the bones of the index and middle fingers on the back of the hand, and in the middle of the joint between the bones of the ring and little fingers.")
-                            }.padding()
-                                .frame(width: 600)
-                    })
+                        }
                         Color.clear
                             .frame(height: 200)
                             .frame(width: 200)
@@ -409,7 +396,6 @@ private extension handPointView{
     }
     @ViewBuilder var CodeEle: some View{
         VStack(alignment: .leading) {
-            Text("Point name: Neiguan acupoint (內關穴)")
             ZStack {
                 Image("15071")
                     .resizable()
@@ -420,20 +406,13 @@ private extension handPointView{
                         .frame(height: 300)
                         .frame(maxWidth: 600)
                     Button{
-                        showPopoverd = true
+                        //showPopoverd = true
                     } label:{
                         Text("")
                             .frame(width: 20, height: 20)
                             .background(Color.red)
                             .cornerRadius(50)
-                    }.popover(isPresented: $showPopoverd, content: {
-                        VStack(alignment: .leading) {
-                            Text("Point name: Neiguan acupoint (內關穴)")
-                            Text("symptom: Neiguan acupoint is part of the Pericardium Meridian and is commonly used to alleviate discomfort related to the heart, such as palpitations, anxiety, and nausea. This acupoint is also widely utilized to relieve feelings of fear, calm emotions, and regulate heartbeat.")
-                            Text("detail: Located on the inner side of the arm, three fingers below the wrist crease, precisely in the depression between the tendons of the forearm muscles.")
-                        }.padding()
-                            .frame(width: 600)
-                    })
+                    }
                 }
             }
         }
