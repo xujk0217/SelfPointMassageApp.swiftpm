@@ -21,9 +21,19 @@ struct ARViewContainer: UIViewRepresentable {
     typealias UIViewType = ARView
 
     func makeUIView(context: Context) -> ARView {
+        /*
         let arView = ARView(frame: .zero, cameraMode: .ar, automaticallyConfigureSession: true)
 
         arView.enableTapGesture()
+        return arView
+        */
+        
+        let arView = ARView(frame: .zero)
+
+        let people = try! People.loadBox() 
+
+        arView.scene.anchors.append(people)
+
         return arView
     }
 
