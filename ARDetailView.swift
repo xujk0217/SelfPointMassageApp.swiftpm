@@ -14,7 +14,7 @@ struct ARDetailView: View {
     @State private var selectedModel: String?
     @State private var modelConfirmedForPlacement: String?
     
-    private var models: [String] = ["People"]
+    private var models: [String] = ["People2"]
     /* 從file name 去取資料，現在無法取得
     {
         //get our model name
@@ -36,7 +36,7 @@ struct ARDetailView: View {
     
     var body: some View {
         ZStack(alignment: .bottom){
-            ARViewContainer()
+            ARViewContainer(modelConfirmedForPlacement: self.$modelConfirmedForPlacement)
             
             if self.isPlacementEnabled{
                 PlacementButtonView(isPlacementEnabled: self.$isPlacementEnabled, selectedModel: self.$selectedModel, modelConfirmedForPlacement: self.$modelConfirmedForPlacement)
@@ -50,28 +50,44 @@ struct ARDetailView: View {
 }
 
 struct ARViewContainer: UIViewRepresentable {
-
-    typealias UIViewType = ARView
+    @Binding var modelConfirmedForPlacement: String?
+    //typealias UIViewType = ARView
 
     func makeUIView(context: Context) -> ARView {
         
-        let arView = ARView(frame: .zero, cameraMode: .ar, automaticallyConfigureSession: true)
+        let arView = ARView(frame: .zero/*, cameraMode: .ar, automaticallyConfigureSession: true*/)
 
-        arView.enableTapGesture()
+        let config = ARWorldTrackingConfiguration()
+        config.planeDetection = [.horizontal, .vertical]
+        config.environmentTexturing = .automatic
+        
+        if ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh){
+            config.sceneReconstruction = .mesh
+        }
+        
+        arView.session.run(config)
+        //arView.enableTapGesture()
+        
         return arView
         
-         /*
-        let arView = ARView(frame: .zero)
-
-        let people = try! People.loadBox() 
-
-        arView.scene.anchors.append(people)
-        return arView
-          */
     }
 
     func updateUIView(_ uiView: ARView, context: Context) {
-
+        if let modelName = self.modelConfirmedForPlacement{
+            
+            print("DEBUG: adding model to scence -\(modelName)")
+            
+            let filename = modelName + ".usdz"
+            let modelEntity = try! ModelEntity.loadModel(named: filename)
+            let anchorEntity = AnchorEntity(.plane(.any, classification: .any, minimumBounds: .one))
+            anchorEntity.addChild(modelEntity)
+            
+            uiView.scene.addAnchor(anchorEntity)
+            
+            DispatchQueue.main.async {
+                self.modelConfirmedForPlacement = nil
+            }
+        }
     }
 
 }
@@ -88,6 +104,23 @@ struct ModelPickerView: View {
                 ForEach(0 ..< self.models.count) { index in
                     Button(action: {
                         print("DEBUG: selected model with name\(self.models[index])")
+                        if let path = Bundle.main.path(forResource: "People2", ofType: "usdz") {
+                            print("檔案存在於路徑: \(path)")
+                        } else {
+                            print("檔案不存在於資源束中")
+                        }
+                        if let usdzURL = Bundle.main.url(forResource: "People2", withExtension: "usdz") {
+                            print("檔案的 URL: \(usdzURL)")
+                        } else {
+                            print("檔案不存在於資源束中")
+                        }
+                        let path = Bundle.main.path(forResource: "People2", ofType: "usdz") ?? ""
+                        if FileManager.default.fileExists(atPath: path) {
+                            print("檔案存在")
+                        } else {
+                            print("檔案不存在")
+                        }
+
                         
                         self.selectModel = self.models[index]
                         
@@ -150,7 +183,7 @@ struct PlacementButtonView: View {
     }
 }
 
-
+/*
 extension ARView {
     //識別手勢
     func enableTapGesture() {
@@ -215,6 +248,7 @@ extension UIColor {
         return colors[randomIndex]
     }
 }
+ */
 
 #Preview {
     ARDetailView()
