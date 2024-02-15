@@ -204,8 +204,18 @@ private extension ContentView{
                                     VStack(alignment: .leading){
                                         HStack(alignment: .center) {
                                                 VStack(alignment: .leading){
-                                                    Text("name: \(hsym.symptom)")
-                                                        .padding(.bottom)
+                                                    HStack {
+                                                        Image(hsym.image)
+                                                            .resizable()
+                                                            .aspectRatio(contentMode: .fit)
+                                                            .frame(maxWidth: 120)
+                                                        Text("name: \(hsym.symptom)")
+                                                            .padding(.bottom)
+                                                        Spacer()
+                                                    }
+                                                    Divider()
+                                                        .padding(.horizontal, 20)
+                                                        .padding(.bottom, 10)
                                                     Text("symptom detail: \(hsym.exDetail)")
                                                         .padding(.bottom)
                                                 }
@@ -225,12 +235,14 @@ private extension ContentView{
                                     }
                                         .padding()
                                         .font(.headline)
+                                        .background(Color.white)
+                                        .cornerRadius(30)
                                     Spacer()
                                 }
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .padding()
                             }
-                            //.background(Color(.secondarySystemBackground))
+                            .background(Color(.secondarySystemBackground))
                             .navigationTitle(hsym.symptom)
                         } label: {
                             HStack {
@@ -256,8 +268,18 @@ private extension ContentView{
                                     VStack(alignment: .leading){
                                         HStack(alignment: .center) {
                                                 VStack(alignment: .leading){
-                                                    Text("name: \(bsym.symptom)")
-                                                        .padding(.bottom)
+                                                    HStack {
+                                                        Image(bsym.image)
+                                                            .resizable()
+                                                            .aspectRatio(contentMode: .fit)
+                                                            .frame(maxWidth: 120)
+                                                        Text("name: \(bsym.symptom)")
+                                                            .padding(.bottom)
+                                                        Spacer()
+                                                    }
+                                                    Divider()
+                                                        .padding(.horizontal, 20)
+                                                        .padding(.bottom, 10)
                                                     Text("symptom detail: \(bsym.exDetail)")
                                                         .padding(.bottom)
                                                 }
@@ -288,12 +310,14 @@ private extension ContentView{
                                     }
                                         .padding()
                                         .font(.headline)
+                                        .background(Color.white)
+                                        .cornerRadius(30)
                                     Spacer()
                                 }
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .padding()
                             }
-                            //.background(Color(.secondarySystemBackground))
+                            .background(Color(.secondarySystemBackground))
                             .navigationTitle(bsym.symptom)
                         } label: {
                             HStack {
@@ -319,8 +343,18 @@ private extension ContentView{
                                     VStack(alignment: .leading){
                                         HStack(alignment: .center) {
                                                 VStack(alignment: .leading){
-                                                    Text("name: \(osym.symptom)")
-                                                        .padding(.bottom)
+                                                    HStack {
+                                                        Image(osym.image)
+                                                            .resizable()
+                                                            .aspectRatio(contentMode: .fit)
+                                                            .frame(maxWidth: 120)
+                                                        Text("name: \(osym.symptom)")
+                                                            .padding(.bottom)
+                                                        Spacer()
+                                                    }
+                                                    Divider()
+                                                        .padding(.horizontal, 20)
+                                                        .padding(.bottom, 10)
                                                     Text("symptom detail: \(osym.exDetail)")
                                                         .padding(.bottom)
                                                 }
@@ -361,12 +395,14 @@ private extension ContentView{
                                     }
                                         .padding()
                                         .font(.headline)
+                                        .background(Color.white)
+                                        .cornerRadius(30)
                                     Spacer()
                                 }
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .padding()
                             }
-                            //.background(Color(.secondarySystemBackground))
+                            .background(Color(.secondarySystemBackground))
                             .navigationTitle(osym.symptom)
                         } label: {
                             HStack {
@@ -503,6 +539,9 @@ private extension ContentView{
     
     @ViewBuilder var CodeOne: some View{
         VStack(alignment: .leading) {
+            Divider()
+                .padding(.horizontal, 20)
+                .padding(.bottom, 10)
             Text("Point name: Yintang acupoint (印堂穴)")
             ZStack {
                 Image("195")
@@ -539,6 +578,9 @@ private extension ContentView{
     }
     @ViewBuilder var CodeTwo: some View{
         VStack(alignment: .leading) {
+            Divider()
+                .padding(.horizontal, 20)
+                .padding(.bottom, 10)
             Text("Point name: temples acupoint (太陽穴)")
             ZStack {
                 Image("194")
@@ -575,6 +617,9 @@ private extension ContentView{
     }
     @ViewBuilder var CodeThree: some View{
         VStack(alignment: .leading) {
+            Divider()
+                .padding(.horizontal, 20)
+                .padding(.bottom, 10)
             Text("Point name: Fengchi acupoint (風池穴)")
             ZStack {
                 Image("194")
@@ -611,6 +656,9 @@ private extension ContentView{
     }
     @ViewBuilder var CodeFour: some View{
         VStack(alignment: .leading) {
+            Divider()
+                .padding(.horizontal, 20)
+                .padding(.bottom, 10)
             Text("Point name: Baihui acupoint (百會穴)")
             ZStack {
                 Image("194")
@@ -642,6 +690,9 @@ private extension ContentView{
     }
     @ViewBuilder var CodeFif: some View{
         VStack(alignment: .leading) {
+            Divider()
+                .padding(.horizontal, 20)
+                .padding(.bottom, 10)
             Text("Point name: Tianshu acupoint (天樞穴)")
             ZStack {
                 Image("15041")
@@ -696,6 +747,9 @@ private extension ContentView{
     }
     @ViewBuilder var CodeSix: some View{
         VStack(alignment: .leading) {
+            Divider()
+                .padding(.horizontal, 20)
+                .padding(.bottom, 10)
             Text("Point name: Zhongwan acupoint (中脘穴)")
             ZStack {
                 Image("15041")
@@ -727,6 +781,9 @@ private extension ContentView{
     }
     @ViewBuilder var CodeSev: some View{
         VStack(alignment: .leading) {
+            Divider()
+                .padding(.horizontal, 20)
+                .padding(.bottom, 10)
             Text("Point name: Yaoyan acupoint (腰眼穴)")
             ZStack {
                 Image("15051")
@@ -778,6 +835,9 @@ private extension ContentView{
     }
     @ViewBuilder var CodeEig: some View{
         VStack(alignment: .leading) {
+            Divider()
+                .padding(.horizontal, 20)
+                .padding(.bottom, 10)
             Text("Point name: Hegu acupoint (合谷穴)")
             ZStack {
                 Image("15061")
@@ -814,6 +874,9 @@ private extension ContentView{
     }
     @ViewBuilder var CodeNin: some View{
         VStack(alignment: .leading) {
+            Divider()
+                .padding(.horizontal, 20)
+                .padding(.bottom, 10)
             Text("Point name: Xiangqiang acupoint (項強穴)")
             ZStack {
                 Image("15061")
@@ -847,6 +910,9 @@ private extension ContentView{
     }
     @ViewBuilder var CodeTen: some View{
         VStack(alignment: .leading) {
+            Divider()
+                .padding(.horizontal, 20)
+                .padding(.bottom, 10)
             Text("Point name: Waist and Leg Point (腰腿點穴)")
             ZStack {
                 Image("15061")
@@ -904,6 +970,9 @@ private extension ContentView{
     }
     @ViewBuilder var CodeEle: some View{
         VStack(alignment: .leading) {
+            Divider()
+                .padding(.horizontal, 20)
+                .padding(.bottom, 10)
             Text("Point name: Neiguan acupoint (內關穴)")
             ZStack {
                 Image("15071")
@@ -935,6 +1004,9 @@ private extension ContentView{
     }
     @ViewBuilder var CodeTwe: some View{
         VStack(alignment: .leading) {
+            Divider()
+                .padding(.horizontal, 20)
+                .padding(.bottom, 10)
             Text("Point name: Yongquan acupoint (湧泉穴)")
             ZStack {
                 Image("1502")
@@ -966,6 +1038,9 @@ private extension ContentView{
     }
     @ViewBuilder var CodeTtr: some View{
         VStack(alignment: .leading) {
+            Divider()
+                .padding(.horizontal, 20)
+                .padding(.bottom, 10)
             Text("Point name: Zusanli acupoint (足三里穴)")
             ZStack {
                 Image("15081")
