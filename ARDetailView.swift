@@ -11,10 +11,10 @@ import ARKit
 
 struct ARDetailView: View {
     @State private var isPlacementEnabled = false
-    @State private var selectedModel: String?
-    @State private var modelConfirmedForPlacement: String?
+    @State private var selectedModel: Model?
+    @State private var modelConfirmedForPlacement: Model?
     
-    private var models: [String] = ["People2", "PeopleS", "Hand", "Leg"]
+    private var models: [Model] = [Model(modelName: "People2"), Model(modelName: "PeopleS"), Model(modelName: "Hand"), Model(modelName: "Leg")]
     /* 從file name 去取資料，現在無法取得
     {
         //get our model name
@@ -50,7 +50,7 @@ struct ARDetailView: View {
 }
 
 struct ARViewContainer: UIViewRepresentable {
-    @Binding var modelConfirmedForPlacement: String?
+    @Binding var modelConfirmedForPlacement: Model?
     //typealias UIViewType = ARView
 
     func makeUIView(context: Context) -> ARView {
@@ -73,16 +73,21 @@ struct ARViewContainer: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: ARView, context: Context) {
-        if let modelName = self.modelConfirmedForPlacement{
+        if let model = self.modelConfirmedForPlacement{
             
-            print("DEBUG: adding model to scence -\(modelName)")
+            if let modelEntity = model.modelEntity{
+                print("DEBUG: adding model to scene - \(model.modelName)")
+                
+                let anchorEntity = AnchorEntity(.plane(.any, classification: .any, minimumBounds: .one))
+                
+                anchorEntity.addChild(modelEntity.clone(recursive: false))
+                
+                uiView.scene.addAnchor(anchorEntity)
+            }else{
+                print("DEBUG: failed to load model - \(model.modelName)")
+            }
             
-            let filename = modelName + ".usdz"
-            let modelEntity = try! ModelEntity.loadModel(named: filename)
-            let anchorEntity = AnchorEntity(.plane(.any, classification: .any, minimumBounds: .one))
-            anchorEntity.addChild(modelEntity)
             
-            uiView.scene.addAnchor(anchorEntity)
             
             DispatchQueue.main.async {
                 self.modelConfirmedForPlacement = nil
@@ -94,20 +99,20 @@ struct ARViewContainer: UIViewRepresentable {
 
 struct ModelPickerView: View {
     @Binding var isPlasementEnabled: Bool
-    @Binding var selectModel: String?
+    @Binding var selectModel: Model?
     
-    var models: [String]
+    var models: [Model]
     
     var body: some View{
         ScrollView(.horizontal, showsIndicators: false){
             HStack(spacing: 30){
-                ForEach(0 ..< self.models.count) { index in
-                    if self.models[index] == "People2"{
-                        Text("Put on\nfloor")
-                            .font(.headline)
-                    }
+                Text("Put on\nfloor")
+                    .font(.headline)
+                ForEach(0 ..< 4) { index in
                     Button(action: {
+                        
                         print("DEBUG: selected model with name\(self.models[index])")
+                        
                         if let path = Bundle.main.path(forResource: "Leg", ofType: "usdz") {
                             print("檔案存在於路徑: \(path)")
                         } else {
@@ -124,19 +129,18 @@ struct ModelPickerView: View {
                         } else {
                             print("檔案不存在")
                         }
-
                         
                         self.selectModel = self.models[index]
                         
                         self.isPlasementEnabled = true
                     }){
-                        Image(uiImage: UIImage(named: self.models[index])!)
+                        Image(uiImage: self.models[index].image)
                             .resizable()
                             .frame(height: 80)
                             .aspectRatio(1/1, contentMode: .fit)
                             .background(Color.white)
                             .cornerRadius(12)
-                        if self.models[index] == "People2"{
+                        if index == 0{
                             Divider()
                                 .frame(height: 80)
                                 .padding(.horizontal)
@@ -154,8 +158,8 @@ struct ModelPickerView: View {
 
 struct PlacementButtonView: View {
     @Binding var isPlacementEnabled: Bool
-    @Binding var selectedModel: String?
-    @Binding var modelConfirmedForPlacement: String?
+    @Binding var selectedModel: Model?
+    @Binding var modelConfirmedForPlacement: Model?
     
     var body: some View {
         HStack{
@@ -175,7 +179,9 @@ struct PlacementButtonView: View {
             
             Button(action: {
                 print("DEBUG: model Placement confirmed.")
+                
                 self.modelConfirmedForPlacement = self.selectedModel
+                
                 self.resetPlacementParameters()
             }, label: {
                 Image(systemName: "checkmark")
@@ -235,7 +241,7 @@ extension ARView {
     func placeCube(at  position: SIMD3<Float>) {
         let mesh = MeshResource.generateBox(size: 0.3)
         
-        let material = SimpleMaterial(color: UIColor.randomColor(), roughness: 0.3, isMetallic: true)
+        let material = SimpleMaterial(color: UIColor.white, roughness: 0.3, isMetallic: true)
         
         let modelEntity = ModelEntity(mesh: mesh, materials: [material])
         
@@ -247,16 +253,6 @@ extension ARView {
         
         self.scene.addAnchor(anchorEntity)
         
-    }
-}
-
-//物體顏色隨機
-extension UIColor {
-    class func randomColor() -> UIColor {
-        let colors: [UIColor] = [.white,.red,.blue,.yellow,.orange,.green]
-        let randomIndex = Int(arc4random_uniform(UInt32(colors.count)))
-        
-        return colors[randomIndex]
     }
 }
  */
