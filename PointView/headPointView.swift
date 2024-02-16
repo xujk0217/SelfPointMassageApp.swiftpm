@@ -291,10 +291,15 @@ private extension headPointView{
     @ViewBuilder var CodeTwo: some View{
         VStack(alignment: .leading) {
             ZStack {
-                Image("194")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(maxWidth: 600)
+                HStack {
+                    Color.clear
+                        .frame(height: 1)
+                        .frame(width: 50)
+                    Image("194")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 400)
+                }
                 VStack {
                     HStack {
                         Button{
@@ -307,7 +312,7 @@ private extension headPointView{
                         }
                         Color.clear
                             .frame(height: 40)
-                            .frame(width: 120)
+                            .frame(width: 10)
                     }
                     Color.clear
                         .frame(height: 40)
@@ -319,13 +324,18 @@ private extension headPointView{
     @ViewBuilder var CodeThree: some View{
         VStack(alignment: .leading) {
             ZStack {
-                Image("194")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(maxWidth: 600)
+                HStack {
+                    Color.clear
+                        .frame(height: 1)
+                        .frame(width: 120)
+                    Image("194")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 400)
+                }
                 VStack {
                     Color.clear
-                        .frame(height: 110)
+                        .frame(height: 100)
                         .frame(maxWidth: 60)
                     HStack {
                         Color.clear
@@ -347,21 +357,31 @@ private extension headPointView{
     @ViewBuilder var CodeFour: some View{
         VStack(alignment: .leading) {
             ZStack {
-                Image("194")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(maxWidth: 600)
+                HStack {
+                    Color.clear
+                        .frame(height: 1)
+                        .frame(width: 50)
+                    Image("194")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 400)
+                }
                 VStack {
-                    Button{
-                        //showPopoverb = true
-                    } label:{
-                        Text("")
-                            .frame(width: 20, height: 20)
-                            .background(Color.red)
-                            .cornerRadius(50)
+                    HStack {
+                        Color.clear
+                            .frame(height: 1)
+                            .frame(width: 30)
+                        Button{
+                            //showPopoverb = true
+                        } label:{
+                            Text("")
+                                .frame(width: 20, height: 20)
+                                .background(Color.red)
+                                .cornerRadius(50)
+                        }
                     }
                     Color.clear
-                        .frame(height: 320)
+                        .frame(height: 200)
                         .frame(maxWidth: 600)
                 }
             }

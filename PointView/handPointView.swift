@@ -286,20 +286,25 @@ struct handPointView: View {
 
 private extension handPointView{
     @ViewBuilder var CodeEig: some View{
-        VStack(alignment: .leading) {
+        VStack {
             ZStack {
-                Image("15061")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(maxWidth: 600)
+                HStack {
+                    Color.clear
+                        .frame(height: 100)
+                        .frame(width: 100)
+                    Image("15061")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 400)
+                }
                 VStack {
                     Color.clear
-                        .frame(height: 200)
+                        .frame(height: 130)
                         .frame(maxWidth: 600)
                     HStack {
                         Color.clear
                             .frame(height: 100)
-                            .frame(width: 100)
+                            .frame(width: 190)
                         Button{
                             //showPopoverb = true
                         } label:{
@@ -316,12 +321,20 @@ private extension handPointView{
     @ViewBuilder var CodeNin: some View{
         VStack(alignment: .leading) {
             ZStack {
-                Image("15061")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(maxWidth: 600)
+                HStack {
+                    Color.clear
+                        .frame(height: 100)
+                        .frame(width: 140)
+                    Image("15061")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 400)
+                }
                 VStack {
                     HStack {
+                        Color.clear
+                            .frame(height: 100)
+                            .frame(width: 140)
                         Button{
                             //showPopovera = true
                         } label:{
@@ -341,18 +354,23 @@ private extension handPointView{
     @ViewBuilder var CodeTen: some View{
         VStack(alignment: .leading) {
             ZStack {
-                Image("15061")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(maxWidth: 600)
-                VStack {
+                HStack {
                     Color.clear
                         .frame(height: 200)
+                        .frame(width: 100)
+                    Image("15061")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 400)
+                }
+                VStack {
+                    Color.clear
+                        .frame(height: 120)
                         .frame(maxWidth: 600)
                     HStack {
                         Color.clear
                             .frame(height: 200)
-                            .frame(width: 100)
+                            .frame(width: 160)
                         Button{
                             //showPopovera = true
                         } label:{
@@ -363,7 +381,7 @@ private extension handPointView{
                         }
                         Color.clear
                             .frame(height: 200)
-                            .frame(width: 100)
+                            .frame(width: 70)
                         Button{
                             //showPopover = true
                         } label:{
@@ -374,7 +392,7 @@ private extension handPointView{
                         }
                         Color.clear
                             .frame(height: 200)
-                            .frame(width: 200)
+                            .frame(width: 110)
                     }
                 }
             }
@@ -383,21 +401,31 @@ private extension handPointView{
     @ViewBuilder var CodeEle: some View{
         VStack(alignment: .leading) {
             ZStack {
-                Image("15071")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(maxWidth: 600)
-                VStack {
+                HStack {
                     Color.clear
                         .frame(height: 300)
+                        .frame(width: 60)
+                    Image("15071")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 400)
+                }
+                VStack {
+                    Color.clear
+                        .frame(height: 200)
                         .frame(maxWidth: 600)
-                    Button{
-                        //showPopoverd = true
-                    } label:{
-                        Text("")
-                            .frame(width: 20, height: 20)
-                            .background(Color.red)
-                            .cornerRadius(50)
+                    HStack {
+                        Color.clear
+                            .frame(height: 1)
+                            .frame(width: 60)
+                        Button{
+                            //showPopoverd = true
+                        } label:{
+                            Text("")
+                                .frame(width: 20, height: 20)
+                                .background(Color.red)
+                                .cornerRadius(50)
+                        }
                     }
                 }
             }

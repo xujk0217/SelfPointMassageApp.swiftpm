@@ -283,15 +283,23 @@ private extension bodyPointView {
     @ViewBuilder var CodeFif: some View{
         VStack(alignment: .leading) {
             ZStack {
-                Image("15041")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(maxWidth: 600)
+                HStack {
+                    Color.clear
+                        .frame(height: 10)
+                        .frame(width: 30)
+                    Image("15041")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 400)
+                }
                 VStack {
                     Color.clear
-                        .frame(height: 450)
+                        .frame(height: 300)
                         .frame(maxWidth: 600)
                     HStack {
+                        Color.clear
+                            .frame(height: 10)
+                            .frame(width: 30)
                         Button{
                             //showPopovera = true
                         } label:{
@@ -302,7 +310,73 @@ private extension bodyPointView {
                         }
                         Color.clear
                             .frame(height: 10)
-                            .frame(width: 120)
+                            .frame(width: 70)
+                        Button{
+                            //showPopoverb = true
+                        } label:{
+                            Text("")
+                                .frame(width: 20, height: 20)
+                                .background(Color.red)
+                                .cornerRadius(50)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @ViewBuilder var CodeSix: some View{
+        VStack(alignment: .leading) {
+            ZStack {
+                HStack {
+                    Color.clear
+                        .frame(height: 10)
+                        .frame(width: 30)
+                    Image("15041")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 400)
+                }
+                VStack {
+                    Color.clear
+                        .frame(height: 130)
+                        .frame(maxWidth: 600)
+                    HStack {
+                        Color.clear
+                            .frame(height: 10)
+                            .frame(width: 30)
+                        Button{
+                            //showPopoverc = true
+                        } label:{
+                            Text("")
+                                .frame(width: 20, height: 20)
+                                .background(Color.red)
+                                .cornerRadius(50)
+                    }
+                    }
+                }
+            }
+        }
+    }
+    @ViewBuilder var CodeSev: some View{
+        VStack(alignment: .leading) {
+            ZStack {
+                HStack {
+                    Color.clear
+                        .frame(height: 10)
+                        .frame(width: 120)
+                    Image("15051")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 400)
+                }
+                VStack {
+                    Color.clear
+                        .frame(height: 270)
+                        .frame(width: 30)
+                    HStack {
+                        Color.clear
+                            .frame(height: 10)
+                            .frame(width: 130)
                         Button{
                             //showPopoverb = true
                         } label:{
@@ -313,58 +387,7 @@ private extension bodyPointView {
                         }
                         Color.clear
                             .frame(height: 10)
-                            .frame(width: 2)
-                    }
-                }
-            }
-        }
-    }
-    @ViewBuilder var CodeSix: some View{
-        VStack(alignment: .leading) {
-            ZStack {
-                Image("15041")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(maxWidth: 600)
-                VStack {
-                    Color.clear
-                        .frame(height: 200)
-                        .frame(maxWidth: 600)
-                    Button{
-                        //showPopoverc = true
-                    } label:{
-                        Text("")
-                            .frame(width: 20, height: 20)
-                            .background(Color.red)
-                            .cornerRadius(50)
-                    }
-                }
-            }
-        }
-    }
-    @ViewBuilder var CodeSev: some View{
-        VStack(alignment: .leading) {
-            ZStack {
-                Image("15051")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(maxWidth: 600)
-                VStack {
-                    Color.clear
-                        .frame(height: 400)
-                        .frame(maxWidth: 600)
-                    HStack {
-                        Button{
-                            //showPopoverb = true
-                        } label:{
-                            Text("")
-                                .frame(width: 20, height: 20)
-                                .background(Color.red)
-                                .cornerRadius(50)
-                        }
-                        Color.clear
-                            .frame(height: 400)
-                            .frame(width: 170)
+                            .frame(width: 110)
                         Button{
                             //showPopoverc = true
                         } label:{

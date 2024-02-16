@@ -205,21 +205,31 @@ private extension feetPointView{
         VStack(alignment: .leading) {
             
             ZStack {
-                Image("1502")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(maxWidth: 600)
+                HStack {
+                    Color.clear
+                        .frame(height: 10)
+                        .frame(width: 60)
+                    Image("1502")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 400)
+                }
                 VStack {
-                    Button{
-                        //showPopoverc = true
-                    } label:{
-                        Text("")
-                            .frame(width: 20, height: 20)
-                            .background(Color.red)
-                            .cornerRadius(50)
+                    HStack {
+                        Color.clear
+                            .frame(height: 10)
+                            .frame(width: 60)
+                        Button{
+                            //showPopoverc = true
+                        } label:{
+                            Text("")
+                                .frame(width: 20, height: 20)
+                                .background(Color.red)
+                                .cornerRadius(50)
+                        }
                     }
                     Color.clear
-                        .frame(height: 100)
+                        .frame(height: 70)
                         .frame(maxWidth: 600)
                 }
             }
@@ -229,15 +239,20 @@ private extension feetPointView{
         VStack(alignment: .leading) {
             
             ZStack {
-                Image("15081")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(maxWidth: 600)
+                HStack {
+                    Color.clear
+                        .frame(height: 10)
+                        .frame(width: 20)
+                    Image("15081")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 400)
+                }
                 VStack {
                     HStack {
                         Color.clear
                             .frame(height: 50)
-                            .frame(width: 320)
+                            .frame(width: 240)
                         Button{
                             //showPopovera = true
                         } label:{
@@ -248,7 +263,7 @@ private extension feetPointView{
                         }
                     }
                     Color.clear
-                        .frame(height: 50)
+                        .frame(height: 30)
                         .frame(maxWidth: 600)
                 }
             }

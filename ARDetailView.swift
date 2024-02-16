@@ -14,7 +14,7 @@ struct ARDetailView: View {
     @State private var selectedModel: String?
     @State private var modelConfirmedForPlacement: String?
     
-    private var models: [String] = ["People2"]
+    private var models: [String] = ["People2", "PeopleS", "Hand", "Leg"]
     /* 從file name 去取資料，現在無法取得
     {
         //get our model name
@@ -102,19 +102,23 @@ struct ModelPickerView: View {
         ScrollView(.horizontal, showsIndicators: false){
             HStack(spacing: 30){
                 ForEach(0 ..< self.models.count) { index in
+                    if self.models[index] == "People2"{
+                        Text("Put on\nfloor")
+                            .font(.headline)
+                    }
                     Button(action: {
                         print("DEBUG: selected model with name\(self.models[index])")
-                        if let path = Bundle.main.path(forResource: "People2", ofType: "usdz") {
+                        if let path = Bundle.main.path(forResource: "Leg", ofType: "usdz") {
                             print("檔案存在於路徑: \(path)")
                         } else {
                             print("檔案不存在於資源束中")
                         }
-                        if let usdzURL = Bundle.main.url(forResource: "People2", withExtension: "usdz") {
+                        if let usdzURL = Bundle.main.url(forResource: "Leg", withExtension: "usdz") {
                             print("檔案的 URL: \(usdzURL)")
                         } else {
                             print("檔案不存在於資源束中")
                         }
-                        let path = Bundle.main.path(forResource: "People2", ofType: "usdz") ?? ""
+                        let path = Bundle.main.path(forResource: "Leg", ofType: "usdz") ?? ""
                         if FileManager.default.fileExists(atPath: path) {
                             print("檔案存在")
                         } else {
@@ -132,6 +136,13 @@ struct ModelPickerView: View {
                             .aspectRatio(1/1, contentMode: .fit)
                             .background(Color.white)
                             .cornerRadius(12)
+                        if self.models[index] == "People2"{
+                            Divider()
+                                .frame(height: 80)
+                                .padding(.horizontal)
+                            Text("Put on\ntable\n(Point name)")
+                                .font(.headline)
+                        }
                     }.buttonStyle(PlainButtonStyle())
                 }
             }
