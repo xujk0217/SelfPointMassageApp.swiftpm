@@ -81,7 +81,7 @@ struct ARViewContainer: UIViewRepresentable {
             if let modelEntity = model.modelEntity{
                 print("DEBUG: adding model to scene - \(model.modelName)")
                 
-                let anchorEntity = AnchorEntity(.plane(.any, classification: .any, minimumBounds: .one))
+                let anchorEntity = AnchorEntity(.plane(.horizontal, classification: .any, minimumBounds: [0.2, 0.2]))
                 
                 anchorEntity.addChild(modelEntity.clone(recursive: false))
                 
