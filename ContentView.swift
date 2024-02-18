@@ -209,14 +209,18 @@ private extension ContentView{
                                                             .resizable()
                                                             .aspectRatio(contentMode: .fit)
                                                             .frame(maxWidth: 120)
-                                                        Text("name: \(hsym.symptom)")
+                                                        Text("\(hsym.symptom)")
+                                                            .font(.title2.bold())
                                                             .padding(.bottom)
                                                         Spacer()
                                                     }
                                                     Divider()
                                                         .padding(.horizontal, 20)
                                                         .padding(.bottom, 10)
-                                                    Text("symptom detail: \(hsym.exDetail)")
+                                                    Text("symptom detail:")
+                                                        .font(.title2.bold())
+                                                    Text("\(hsym.exDetail)")
+                                                        .font(.headline)
                                                         .padding(.bottom)
                                                 }
                                             }
@@ -234,7 +238,7 @@ private extension ContentView{
                                         }
                                     }
                                         .padding()
-                                        .font(.headline)
+                                        .font(.title2.bold())
                                         .background(Color.white)
                                         .cornerRadius(30)
                                     Spacer()
@@ -273,14 +277,18 @@ private extension ContentView{
                                                             .resizable()
                                                             .aspectRatio(contentMode: .fit)
                                                             .frame(maxWidth: 120)
-                                                        Text("name: \(bsym.symptom)")
+                                                        Text("\(bsym.symptom)")
+                                                            .font(.title2.bold())
                                                             .padding(.bottom)
                                                         Spacer()
                                                     }
                                                     Divider()
                                                         .padding(.horizontal, 20)
                                                         .padding(.bottom, 10)
-                                                    Text("symptom detail: \(bsym.exDetail)")
+                                                    Text("symptom detail: ")
+                                                        .font(.title2.bold())
+                                                    Text("\(bsym.exDetail)")
+                                                        .font(.headline)
                                                         .padding(.bottom)
                                                 }
                                             }
@@ -309,7 +317,7 @@ private extension ContentView{
                                         }
                                     }
                                         .padding()
-                                        .font(.headline)
+                                        .font(.title2.bold())
                                         .background(Color.white)
                                         .cornerRadius(30)
                                     Spacer()
@@ -348,14 +356,18 @@ private extension ContentView{
                                                             .resizable()
                                                             .aspectRatio(contentMode: .fit)
                                                             .frame(maxWidth: 120)
-                                                        Text("name: \(osym.symptom)")
+                                                        Text("\(osym.symptom)")
+                                                            .font(.title2.bold())
                                                             .padding(.bottom)
                                                         Spacer()
                                                     }
                                                     Divider()
                                                         .padding(.horizontal, 20)
                                                         .padding(.bottom, 10)
-                                                    Text("symptom detail: \(osym.exDetail)")
+                                                    Text("symptom detail: ")
+                                                        .font(.title2.bold())
+                                                    Text("\(osym.exDetail)")
+                                                        .font(.headline)
                                                         .padding(.bottom)
                                                 }
                                             }
@@ -394,7 +406,7 @@ private extension ContentView{
                                         }
                                     }
                                         .padding()
-                                        .font(.headline)
+                                        .font(.title2.bold())
                                         .background(Color.white)
                                         .cornerRadius(30)
                                     Spacer()

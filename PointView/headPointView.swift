@@ -171,9 +171,27 @@ struct headPointView: View {
                                                 }else if headPoint.code == 4{
                                                     CodeFour
                                                 }
-                                                Text("symptom: \(headPoint.symptom)")
-                                                Text("point detail: \(headPoint.detail)")
-                                                Text("massage detail: \(headPoint.massageTime)")
+                                                Divider()
+                                                    .padding(.horizontal, 20)
+                                                    .padding(.bottom, 10)
+                                                Text("symptom:")
+                                                    .font(.title2.bold())
+                                                Text("\(headPoint.symptom)")
+                                                    .font(.headline)
+                                                Divider()
+                                                    .padding(.horizontal, 20)
+                                                    .padding(.bottom, 10)
+                                                Text("point detail:")
+                                                    .font(.title2.bold())
+                                                Text("\(headPoint.detail)")
+                                                    .font(.headline)
+                                                Divider()
+                                                    .padding(.horizontal, 20)
+                                                    .padding(.bottom, 10)
+                                                Text("massage detail:")
+                                                    .font(.title2.bold())
+                                                Text("\(headPoint.massageTime)")
+                                                    .font(.headline)
                                             }.padding(.leading, 20)
                                             Spacer()
                                         }
@@ -239,9 +257,27 @@ struct headPointView: View {
                                                         }else if headPoint.code == 4{
                                                             CodeFour
                                                         }
-                                                        Text("symptom: \(headPoint.symptom)")
-                                                        Text("point detail: \(headPoint.detail)")
-                                                        Text("massage detail: \(headPoint.massageTime)")
+                                                        Divider()
+                                                            .padding(.horizontal, 20)
+                                                            .padding(.bottom, 10)
+                                                        Text("symptom:")
+                                                            .font(.title2.bold())
+                                                        Text("\(headPoint.symptom)")
+                                                            .font(.headline)
+                                                        Divider()
+                                                            .padding(.horizontal, 20)
+                                                            .padding(.bottom, 10)
+                                                        Text("point detail:")
+                                                            .font(.title2.bold())
+                                                        Text("\(headPoint.detail)")
+                                                            .font(.headline)
+                                                        Divider()
+                                                            .padding(.horizontal, 20)
+                                                            .padding(.bottom, 10)
+                                                        Text("massage detail:")
+                                                            .font(.title2.bold())
+                                                        Text("\(headPoint.massageTime)")
+                                                            .font(.headline)
                                                     }.padding(.leading, 20)
                                                     Spacer()
                                                 }
@@ -263,12 +299,20 @@ private extension headPointView{
     @ViewBuilder var CodeOne: some View{
         VStack() {
             ZStack {
-                Image("195")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
+                HStack {
+                    Color.clear
+                        .frame(height: 10)
+                        .frame(width: 70)
+                    Image("195")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
                     .frame(maxWidth: 400)
+                }
                 VStack {
                     HStack {
+                        Color.clear
+                            .frame(height: 10)
+                            .frame(width: 60)
                         Button{
                             //showPopovera = true
                         } label:{
@@ -277,9 +321,6 @@ private extension headPointView{
                                 .background(Color.red)
                                 .cornerRadius(50)
                         }
-                        Color.clear
-                            .frame(height: 10)
-                            .frame(width: 10)
                     }
                     Color.clear
                         .frame(height: 100)
@@ -310,9 +351,6 @@ private extension headPointView{
                                 .background(Color.red)
                                 .cornerRadius(50)
                         }
-                        Color.clear
-                            .frame(height: 40)
-                            .frame(width: 10)
                     }
                     Color.clear
                         .frame(height: 40)

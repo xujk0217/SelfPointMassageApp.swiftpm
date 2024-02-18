@@ -8,6 +8,7 @@
 import SwiftUI
 import RealityKit
 import ARKit
+import FocusEntity
 
 struct ARDetailView: View {
     @State private var isPlacementEnabled = false
@@ -55,8 +56,9 @@ struct ARViewContainer: UIViewRepresentable {
 
     func makeUIView(context: Context) -> ARView {
         
-        let arView = ARView(frame: .zero/*, cameraMode: .ar, automaticallyConfigureSession: true*/)
+        let arView = CustomARView(frame: .zero)
 
+        /*
         let config = ARWorldTrackingConfiguration()
         config.planeDetection = [.horizontal, .vertical]
         config.environmentTexturing = .automatic
@@ -67,6 +69,7 @@ struct ARViewContainer: UIViewRepresentable {
         
         arView.session.run(config)
         //arView.enableTapGesture()
+         */
         
         return arView
         
@@ -96,6 +99,61 @@ struct ARViewContainer: UIViewRepresentable {
     }
 
 }
+
+class CustomARView: ARView, FocusEntityDelegate {
+    func toTrackingState() {
+        print("track")
+    }
+    
+    func toInitializingState() {
+        print("init")
+    }
+    
+    var focusEntity: FocusEntity?
+    
+    required init(frame frameRect: CGRect) {
+        super.init(frame: frameRect)
+        
+        //focusEntity?.moveTo(view: self)
+        focusEntity?.delegate = self
+        focusEntity?.setAutoUpdate(to: true)
+        
+        self.setUpFocusEntity()
+        self.setUpARView()
+    }
+    
+    @objc required dynamic init?(coder decoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setUpFocusEntity() {
+        self.focusEntity = FocusEntity(on: self, style: .classic(color: .yellow))
+    }
+    
+    func setUpARView() {
+        let config = ARWorldTrackingConfiguration()
+        config.planeDetection = [.horizontal, .vertical]
+        config.environmentTexturing = .automatic
+        
+        if ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh){
+            config.sceneReconstruction = .mesh
+        }
+        
+        self.session.run(config)
+        /*
+        let config = ARWorldTrackingConfiguration()
+        config.planeDetection = [.horizontal]
+        config.environmentTexturing = .automatic
+        
+        if ARWorldTrackingConfiguration.supportsSceneReconstruction(.meshWithClassification) {
+            config.sceneReconstruction = .meshWithClassification
+        }
+
+        self.session.run(config)
+        */
+    }
+}
+
 
 struct ModelPickerView: View {
     @Binding var isPlasementEnabled: Bool
