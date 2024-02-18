@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var whichView = 1
+    @State private var whichView2 = 1
     @State private var hsym = Symptom.hSymExamples
     @State private var bsym = Symptom.bSymExamples
     @State private var osym = Symptom.oSymExamples
@@ -188,6 +189,51 @@ private extension ContentView{
             Spacer()
         }.padding(.horizontal)
         Divider().padding(.horizontal, 20)
+    }
+    
+    @ViewBuilder var barButton2: some View{
+        VStack(alignment: .center) {
+            HStack(alignment: .center) {
+                Button() {
+                    whichView2 = 1
+                }label: {
+                    VStack {
+                        Text("Symptom")
+                            .font(.headline)
+                            .frame(width: 100, height: 50)
+                            .foregroundColor(whichView2 == 1 ? .white : .gray)
+                            .background(whichView2 == 1 ? Color.accentColor : Color.clear)
+                            .cornerRadius(20)
+                    }
+                }
+                
+                Button{
+                    whichView2 = 2
+                }label: {
+                    VStack {
+                        Text("Point")
+                            .font(.headline)
+                            .frame(width: 100, height: 50)
+                            .foregroundColor(whichView2 == 2 ? .white : .gray)
+                            .background(whichView2 == 2 ? Color.accentColor : Color.clear)
+                            .cornerRadius(20)
+                    }
+                }
+                
+                Button{
+                    whichView2 = 3
+                }label: {
+                    VStack {
+                        Text("AR")
+                            .font(.headline)
+                            .frame(width: 100, height: 50)
+                            .foregroundColor(whichView2 == 3 ? .white : .gray)
+                            .background(whichView2 == 3 ? Color.accentColor : Color.clear)
+                            .cornerRadius(20)
+                    }
+                }
+            }.padding(.horizontal)
+        }
     }
     
     @ViewBuilder var symptomView: some View{
@@ -538,15 +584,42 @@ private extension ContentView{
     }
     
     @ViewBuilder var tipsView: some View{
-        ScrollView{
-            VStack(alignment: .leading) {
-                Text("1. when you ...")
-                    .font(shouldShowTips ? .title3 :.subheadline)
-                Image("896")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-            }.padding()
+        VStack {
+            barButton2
+            ScrollView{
+                if whichView2 == 1{
+                    symTipView
+                }else if whichView2 == 2{
+                    pointTipView
+                }else if whichView2 == 3{
+                    arTipView
+                }
+            }
         }
+    }
+    
+    @ViewBuilder var symTipView: some View{
+        VStack {
+            Image("896")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+        }.padding()
+    }
+    
+    @ViewBuilder var pointTipView: some View{
+        VStack {
+            Image("image1")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+        }.padding()
+    }
+    
+    @ViewBuilder var arTipView: some View{
+        VStack {
+            Image("1434")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+        }.padding()
     }
     
     @ViewBuilder var CodeOne: some View{
