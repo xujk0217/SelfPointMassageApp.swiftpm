@@ -42,9 +42,15 @@ struct headPointView: View {
                                     .cornerRadius(50)
                             }.popover(isPresented: $showPopoverd, content: {
                                 VStack(alignment: .leading) {
-                                    Text("Point name: Baihui acupoint (百會穴)")
-                                    Text("symptom: It is believed to be associated with regulating the nervous system, enhancing consciousness, and promoting overall harmony within the body's meridians and blood circulation.")
-                                    Text("detail: At the top of the head, at the intersection point of the midline and the line connecting the anterior hairline and the midpoint of the head.")
+                                    Text("Point name:")
+                                    Text("Baihui acupoint (百會穴)")
+                                        .font(.title3)
+                                    Text("symptom:")
+                                    Text("It is believed to be associated with regulating the nervous system, enhancing consciousness, and promoting overall harmony within the body's meridians and blood circulation.")
+                                        .font(.title3)
+                                    Text("detail:")
+                                    Text("At the top of the head, at the intersection point of the midline and the line connecting the anterior hairline and the midpoint of the head.")
+                                        .font(.title3)
                                 }.padding()
                                     .frame(width: 600)
                             })
@@ -61,9 +67,15 @@ struct headPointView: View {
                                         .cornerRadius(50)
                                 }.popover(isPresented: $showPopovera, content: {
                                     VStack(alignment: .leading) {
-                                        Text("Point name: Yintang acupoint (印堂穴)")
-                                        Text("symptom: Commonly used to alleviate forehead discomfort, promote mental clarity, and is believed to benefit relaxation and relieve stress.")
-                                        Text("detail: In the center between the eyebrows, precisely at the midpoint of the forehead.")
+                                        Text("Point name:")
+                                        Text("Yintang acupoint (印堂穴)")
+                                            .font(.title3)
+                                        Text("symptom:")
+                                        Text("Commonly used to alleviate forehead discomfort, promote mental clarity, and is believed to benefit relaxation and relieve stress.")
+                                            .font(.title3)
+                                        Text("detail:")
+                                        Text("In the center between the eyebrows, precisely at the midpoint of the forehead.")
+                                            .font(.title3)
                                     }.padding()
                                         .frame(width: 600)
                                 })
@@ -82,9 +94,15 @@ struct headPointView: View {
                                             .cornerRadius(50)
                                     }.popover(isPresented: $showPopoverb, content: {
                                         VStack(alignment: .leading) {
-                                            Text("Point name: temples acupoint (太陽穴)")
-                                            Text("symptom: Used for relieving headaches, migraines, and eye discomfort. Massaging the temples helps relax head muscles, improve blood circulation, and alleviate tension.")
-                                            Text("detail: Approximately 1 inch behind the temples, find the hollow area known as the Temples.")
+                                            Text("Point name:")
+                                            Text("temples acupoint (太陽穴)")
+                                                .font(.title3)
+                                            Text("symptom:")
+                                            Text("Used for relieving headaches, migraines, and eye discomfort. Massaging the temples helps relax head muscles, improve blood circulation, and alleviate tension.")
+                                                .font(.title3)
+                                            Text("detail:")
+                                            Text("Approximately 1 inch behind the temples, find the hollow area known as the Temples.")
+                                                .font(.title3)
                                         }.padding()
                                             .frame(width: 600)
                                 })
@@ -107,16 +125,22 @@ struct headPointView: View {
                                         .cornerRadius(50)
                                 }.popover(isPresented: $showPopoverc, content: {
                                     VStack(alignment: .leading) {
-                                        Text("Point name: Fengchi acupoint (風池穴)")
-                                        Text("symptom: Known for regulating blood pressure, relieving discomfort in the back of the head, and improving overall head and neck well-being.")
-                                        Text("detail: On both sides of the neck, slightly below the level of the cervical vertebrae.")
+                                        Text("Point name:")
+                                        Text("Fengchi acupoint (風池穴)")
+                                            .font(.title3)
+                                        Text("symptom:")
+                                        Text("Known for regulating blood pressure, relieving discomfort in the back of the head, and improving overall head and neck well-being.")
+                                            .font(.title3)
+                                        Text("detail:")
+                                        Text("On both sides of the neck, slightly below the level of the cervical vertebrae.")
+                                            .font(.title3)
                                     }.padding()
                                         .frame(width: 600)
                             })
                             }
                             Color.clear
                                 .frame(width: 100, height: 90)
-                        }
+                        }.font(.title3.bold())
                         
                     }
                     VStack(alignment: .leading) {

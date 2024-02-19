@@ -53,9 +53,15 @@ struct handPointView: View {
                                                 .cornerRadius(50)
                                         }.popover(isPresented: $showPopovera, content: {
                                             VStack(alignment: .leading) {
-                                                Text("Point name: Hegu acupoint (合谷穴)")
-                                                Text("symptom: Hegu acupoint is part of the Hand Shaoyin meridian and is commonly used to alleviate pain in the hands, headaches, toothaches, and other discomfort. Massaging Hegu is believed to help relieve pain and improve blood circulation in the hands.")
-                                                Text("detail: Located on the back of the hand, in the depression between the index finger and the thumb, precisely at the highest point of the webbed area between the fingers.")
+                                                Text("Point name:")
+                                                Text("Hegu acupoint (合谷穴)")
+                                                    .font(.title3)
+                                                Text("symptom:")
+                                                Text("Hegu acupoint is part of the Hand Shaoyin meridian and is commonly used to alleviate pain in the hands, headaches, toothaches, and other discomfort. Massaging Hegu is believed to help relieve pain and improve blood circulation in the hands.")
+                                                    .font(.title3)
+                                                Text("detail:")
+                                                Text("Located on the back of the hand, in the depression between the index finger and the thumb, precisely at the highest point of the webbed area between the fingers.")
+                                                    .font(.title3)
                                             }.padding()
                                                 .frame(width: 600)
                                     })
@@ -73,9 +79,15 @@ struct handPointView: View {
                                                 .cornerRadius(50)
                                         }.popover(isPresented: $showPopoverb, content: {
                                             VStack(alignment: .leading) {
-                                                Text("Point name: Xiangqiang acupoint (項強穴)")
-                                                Text("symptom: Effective in treating conditions such as numbness in the palm and fingers, inability to flex or extend muscles, and situations related to having a stiff neck.")
-                                                Text("detail: located between the bones of the index and middle fingers, approximately one finger-width behind the knuckle.")
+                                                Text("Point name:")
+                                                Text("Xiangqiang acupoint (項強穴)")
+                                                    .font(.title3)
+                                                Text("symptom:")
+                                                Text("Effective in treating conditions such as numbness in the palm and fingers, inability to flex or extend muscles, and situations related to having a stiff neck.")
+                                                    .font(.title3)
+                                                Text("detail:")
+                                                Text("located between the bones of the index and middle fingers, approximately one finger-width behind the knuckle.")
+                                                    .font(.title3)
                                             }.padding()
                                                 .frame(width: 600)
                                     })
@@ -102,9 +114,15 @@ struct handPointView: View {
                                                 .cornerRadius(50)
                                         }.popover(isPresented: $showPopoverc, content: {
                                             VStack(alignment: .leading) {
-                                                Text("Point name: Waist and Leg Point (腰腿點穴)")
-                                                Text("symptom: Described as an effective acupoint for treating lower back and leg pain, especially effective for acute sprains.")
-                                                Text("detail: There are two points for Waist and Leg Point, located respectively on the back of the hand, in the middle of the joint between the bones of the index and middle fingers on the back of the hand, and in the middle of the joint between the bones of the ring and little fingers.")
+                                                Text("Point name:")
+                                                Text("Waist and Leg Point (腰腿點穴)")
+                                                    .font(.title3)
+                                                Text("symptom:")
+                                                Text("Described as an effective acupoint for treating lower back and leg pain, especially effective for acute sprains.")
+                                                    .font(.title3)
+                                                Text("detail:")
+                                                Text("There are two points for Waist and Leg Point, located respectively on the back of the hand, in the middle of the joint between the bones of the index and middle fingers on the back of the hand, and in the middle of the joint between the bones of the ring and little fingers.")
+                                                    .font(.title3)
                                             }.padding()
                                                 .frame(width: 600)
                                     })
@@ -121,9 +139,15 @@ struct handPointView: View {
                                                 .cornerRadius(50)
                                         }.popover(isPresented: $showPopover, content: {
                                             VStack(alignment: .leading) {
-                                                Text("Point name: Waist and Leg Point (腰腿點穴)")
-                                                Text("symptom: Described as an effective acupoint for treating lower back and leg pain, especially effective for acute sprains.")
-                                                Text("detail: There are two points for Waist and Leg Point, located respectively on the back of the hand, in the middle of the joint between the bones of the index and middle fingers on the back of the hand, and in the middle of the joint between the bones of the ring and little fingers.")
+                                                Text("Point name:")
+                                                Text("Waist and Leg Point (腰腿點穴)")
+                                                    .font(.title3)
+                                                Text("symptom:")
+                                                Text("Described as an effective acupoint for treating lower back and leg pain, especially effective for acute sprains.")
+                                                    .font(.title3)
+                                                Text("detail:")
+                                                Text("There are two points for Waist and Leg Point, located respectively on the back of the hand, in the middle of the joint between the bones of the index and middle fingers on the back of the hand, and in the middle of the joint between the bones of the ring and little fingers.")
+                                                    .font(.title3)
                                             }.padding()
                                                 .frame(width: 600)
                                     })
@@ -153,15 +177,22 @@ struct handPointView: View {
                                             .cornerRadius(50)
                                     }.popover(isPresented: $showPopoverd, content: {
                                         VStack(alignment: .leading) {
-                                            Text("Point name: Neiguan acupoint (內關穴)")
-                                            Text("symptom: Neiguan acupoint is part of the Pericardium Meridian and is commonly used to alleviate discomfort related to the heart, such as palpitations, anxiety, and nausea. This acupoint is also widely utilized to relieve feelings of fear, calm emotions, and regulate heartbeat.")
-                                            Text("detail: Located on the inner side of the arm, three fingers below the wrist crease, precisely in the depression between the tendons of the forearm muscles.")
+                                            Text("Point name:")
+                                            Text("Neiguan acupoint (內關穴)")
+                                                .font(.title3)
+                                            Text("symptom:")
+                                            Text("Neiguan acupoint is part of the Pericardium Meridian and is commonly used to alleviate discomfort related to the heart, such as palpitations, anxiety, and nausea. This acupoint is also widely utilized to relieve feelings of fear, calm emotions, and regulate heartbeat.")
+                                                .font(.title3)
+                                            Text("detail:")
+                                            Text("Located on the inner side of the arm, three fingers below the wrist crease, precisely in the depression between the tendons of the forearm muscles.")
+                                                .font(.title3)
                                         }.padding()
                                             .frame(width: 600)
                                     })
                                 }
                             }
                         }.frame(maxWidth: .infinity)
+                            .font(.title3.bold())
                     }
                     VStack(alignment: .leading) {
                         if shouldVStack{
