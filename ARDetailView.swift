@@ -15,7 +15,7 @@ struct ARDetailView: View {
     @State private var selectedModel: Model?
     @State private var modelConfirmedForPlacement: Model?
     
-    private var models: [Model] = [Model(modelName: "People2"), Model(modelName: "PeopleS"), Model(modelName: "Hand"), Model(modelName: "Leg")]
+    private var models: [Model] = [Model(modelName: "PeopleB"), Model(modelName: "PeopleSF"), Model(modelName: "PeopleSB"), Model(modelName: "HandSF"), Model(modelName: "HandSB"), Model(modelName: "LegS2")]
     /* 從file name 去取資料，現在無法取得
     {
         //get our model name
@@ -166,22 +166,22 @@ struct ModelPickerView: View {
             HStack(spacing: 30){
                 Text("Put on\nfloor")
                     .font(.headline)
-                ForEach(0 ..< 4) { index in
+                ForEach(0 ..< 6) { index in
                     Button(action: {
                         
                         print("DEBUG: selected model with name\(self.models[index])")
                         
-                        if let path = Bundle.main.path(forResource: "Leg", ofType: "usdz") {
+                        if let path = Bundle.main.path(forResource: "LegS2", ofType: "usdz") {
                             print("檔案存在於路徑: \(path)")
                         } else {
                             print("檔案不存在於資源束中")
                         }
-                        if let usdzURL = Bundle.main.url(forResource: "Leg", withExtension: "usdz") {
+                        if let usdzURL = Bundle.main.url(forResource: "LegS2", withExtension: "usdz") {
                             print("檔案的 URL: \(usdzURL)")
                         } else {
                             print("檔案不存在於資源束中")
                         }
-                        let path = Bundle.main.path(forResource: "Leg", ofType: "usdz") ?? ""
+                        let path = Bundle.main.path(forResource: "LegS2", ofType: "usdz") ?? ""
                         if FileManager.default.fileExists(atPath: path) {
                             print("檔案存在")
                         } else {
@@ -191,6 +191,7 @@ struct ModelPickerView: View {
                         self.selectModel = self.models[index]
                         
                         self.isPlasementEnabled = true
+                        
                     }){
                         Image(uiImage: self.models[index].image)
                             .resizable()
@@ -202,7 +203,7 @@ struct ModelPickerView: View {
                             Divider()
                                 .frame(height: 80)
                                 .padding(.horizontal)
-                            Text("Put on\ntable\n(Point name)")
+                            Text("Put on\ntable")
                                 .font(.headline)
                         }
                     }.buttonStyle(PlainButtonStyle())
