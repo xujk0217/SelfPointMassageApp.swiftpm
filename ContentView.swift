@@ -53,7 +53,6 @@ struct ContentView: View {
                             .font(.title2.bold())
                         tipsView
                     }
-                    
                 }.background(Color(.secondarySystemBackground))
             }
         }
@@ -545,6 +544,7 @@ private extension ContentView{
             }
         }
     }
+    
     @ViewBuilder var headPointButton: some View{
         NavigationLink(destination: headPointView()){
             VStack {
@@ -557,6 +557,7 @@ private extension ContentView{
             }
         }
     }
+    
     @ViewBuilder var feetOutPointButton: some View{
         NavigationLink(destination: feetPointView()){
             VStack {
@@ -570,6 +571,7 @@ private extension ContentView{
             }
         }
     }
+    
     @ViewBuilder var feetPointButton: some View{
         NavigationLink(destination: feetPointView()){
             VStack {
