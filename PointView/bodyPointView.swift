@@ -49,7 +49,7 @@ struct bodyPointView: View {
                                         }.popover(isPresented: $showPopover, content: {
                                             VStack(alignment: .leading) {
                                                 Text("Point name:")
-                                                Text("Tianshu acupoint (天樞穴)")
+                                                Text("Tianshu acupoint")
                                                     .font(.title3)
                                                 Text("symptom:")
                                                 Text("The Tianshu acupoint is commonly used to alleviate abdominal discomfort, pain, bloating, and other digestive issues. Massaging this acupoint is believed to promote blood circulation in the abdominal region, regulate gastrointestinal function, and relieve symptoms related to the digestive system.")
@@ -74,7 +74,7 @@ struct bodyPointView: View {
                                         }.popover(isPresented: $showPopoverb, content: {
                                             VStack(alignment: .leading) {
                                                 Text("Point name:")
-                                                Text("Tianshu acupoint (天樞穴)")
+                                                Text("Tianshu acupoint")
                                                     .font(.title3)
                                                 Text("symptom:")
                                                 Text("The Tianshu acupoint is commonly used to alleviate abdominal discomfort, pain, bloating, and other digestive issues. Massaging this acupoint is believed to promote blood circulation in the abdominal region, regulate gastrointestinal function, and relieve symptoms related to the digestive system.")
@@ -105,7 +105,7 @@ struct bodyPointView: View {
                                     }.popover(isPresented: $showPopoverc, content: {
                                         VStack(alignment: .leading) {
                                             Text("Point name:")
-                                            Text("Zhongwan acupoint (中脘穴)")
+                                            Text("Zhongwan acupoint")
                                                 .font(.title3)
                                             Text("symptom:")
                                             Text("Zhongwan acupoint is an important point for regulating gastrointestinal function. Massaging Zhongwan is believed to help alleviate stomach discomfort, stomach pain, and loss of appetite. Additionally, it can be used to relieve symptoms related to the digestive system and promote the normal functioning of the digestive system.")
@@ -139,7 +139,7 @@ struct bodyPointView: View {
                                 }.popover(isPresented: $showPopovera, content: {
                                     VStack(alignment: .leading) {
                                         Text("Point name:")
-                                        Text("Yaoyan acupoint (腰眼穴)")
+                                        Text("Yaoyan acupoint")
                                             .font(.title3)
                                         Text("symptom:")
                                         Text("Yaoyan acupoint is utilized for relieving discomfort and pain in the lumbar region. Massaging Yaoyan is believed to help relax the muscles in the lower back, alleviate tension around the lumbar vertebrae, and provide relief for issues such as lower back pain and stiffness.")
@@ -164,7 +164,7 @@ struct bodyPointView: View {
                                 }.popover(isPresented: $showPopoverd, content: {
                                     VStack(alignment: .leading) {
                                         Text("Point name:")
-                                        Text("Yaoyan acupoint (腰眼穴)")
+                                        Text("Yaoyan acupoint")
                                             .font(.title3)
                                         Text("symptom:")
                                         Text("Yaoyan acupoint is utilized for relieving discomfort and pain in the lumbar region. Massaging Yaoyan is believed to help relax the muscles in the lower back, alleviate tension around the lumbar vertebrae, and provide relief for issues such as lower back pain and stiffness.")

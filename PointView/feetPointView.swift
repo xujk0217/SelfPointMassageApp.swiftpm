@@ -44,7 +44,7 @@ struct feetPointView: View {
                                     }.popover(isPresented: $showPopoverc, content: {
                                         VStack(alignment: .leading) {
                                             Text("Point name:")
-                                            Text("Yongquan acupoint (湧泉穴)")
+                                            Text("Yongquan acupoint")
                                                 .font(.title3)
                                             Text("symptom:")
                                             Text("The Yongquan acupoint is part of the Kidney Meridian and is believed to be beneficial for regulating kidney energy and promoting the flow of the kidney meridian. This acupoint is often used to alleviate symptoms such as insomnia, anxiety, headaches, and dizziness.")
@@ -81,7 +81,7 @@ struct feetPointView: View {
                                         }.popover(isPresented: $showPopovera, content: {
                                             VStack(alignment: .leading) {
                                                 Text("Point name:")
-                                                Text("Zusanli acupoint (足三里穴)")
+                                                Text("Zusanli acupoint")
                                                     .font(.title3)
                                                 Text("symptom:")
                                                 Text("Zusanli acupoint is part of the Stomach Meridian in traditional Chinese medicine. It is believed to be beneficial for strengthening the spleen and stomach functions, regulating gastrointestinal digestion, and enhancing the immune system. Additionally, Zusanli acupoint is often used to alleviate fatigue, boost energy, and reduce stress.")

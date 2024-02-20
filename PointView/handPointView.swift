@@ -54,7 +54,7 @@ struct handPointView: View {
                                         }.popover(isPresented: $showPopovera, content: {
                                             VStack(alignment: .leading) {
                                                 Text("Point name:")
-                                                Text("Hegu acupoint (合谷穴)")
+                                                Text("Hegu acupoint")
                                                     .font(.title3)
                                                 Text("symptom:")
                                                 Text("Hegu acupoint is part of the Hand Shaoyin meridian and is commonly used to alleviate pain in the hands, headaches, toothaches, and other discomfort. Massaging Hegu is believed to help relieve pain and improve blood circulation in the hands.")
@@ -80,7 +80,7 @@ struct handPointView: View {
                                         }.popover(isPresented: $showPopoverb, content: {
                                             VStack(alignment: .leading) {
                                                 Text("Point name:")
-                                                Text("Xiangqiang acupoint (項強穴)")
+                                                Text("Xiangqiang acupoint")
                                                     .font(.title3)
                                                 Text("symptom:")
                                                 Text("Effective in treating conditions such as numbness in the palm and fingers, inability to flex or extend muscles, and situations related to having a stiff neck.")
@@ -115,7 +115,7 @@ struct handPointView: View {
                                         }.popover(isPresented: $showPopoverc, content: {
                                             VStack(alignment: .leading) {
                                                 Text("Point name:")
-                                                Text("Waist and Leg Point (腰腿點穴)")
+                                                Text("Waist and Leg Point")
                                                     .font(.title3)
                                                 Text("symptom:")
                                                 Text("Described as an effective acupoint for treating lower back and leg pain, especially effective for acute sprains.")
@@ -140,7 +140,7 @@ struct handPointView: View {
                                         }.popover(isPresented: $showPopover, content: {
                                             VStack(alignment: .leading) {
                                                 Text("Point name:")
-                                                Text("Waist and Leg Point (腰腿點穴)")
+                                                Text("Waist and Leg Point")
                                                     .font(.title3)
                                                 Text("symptom:")
                                                 Text("Described as an effective acupoint for treating lower back and leg pain, especially effective for acute sprains.")
@@ -178,7 +178,7 @@ struct handPointView: View {
                                     }.popover(isPresented: $showPopoverd, content: {
                                         VStack(alignment: .leading) {
                                             Text("Point name:")
-                                            Text("Neiguan acupoint (內關穴)")
+                                            Text("Neiguan acupoint")
                                                 .font(.title3)
                                             Text("symptom:")
                                             Text("Neiguan acupoint is part of the Pericardium Meridian and is commonly used to alleviate discomfort related to the heart, such as palpitations, anxiety, and nausea. This acupoint is also widely utilized to relieve feelings of fear, calm emotions, and regulate heartbeat.")

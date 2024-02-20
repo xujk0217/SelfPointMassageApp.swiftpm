@@ -629,7 +629,7 @@ private extension ContentView{
             Divider()
                 .padding(.horizontal, 20)
                 .padding(.bottom, 10)
-            Text("Point name: Yintang acupoint (印堂穴)")
+            Text("Point name: Yintang acupoint")
             ZStack {
                 Image("195")
                     .resizable()
@@ -647,7 +647,7 @@ private extension ContentView{
                         }.popover(isPresented: $showPopovera, content: {
                             VStack(alignment: .leading) {
                                 Text("Point name:")
-                                Text("Yintang acupoint (印堂穴)")
+                                Text("Yintang acupoint")
                                     .font(.title3)
                                 Text("symptom:")
                                 Text("Commonly used to alleviate forehead discomfort, promote mental clarity, and is believed to benefit relaxation and relieve stress.")
@@ -674,7 +674,7 @@ private extension ContentView{
             Divider()
                 .padding(.horizontal, 20)
                 .padding(.bottom, 10)
-            Text("Point name: temples acupoint (太陽穴)")
+            Text("Point name: temples acupoint")
             ZStack {
                 Image("194")
                     .resizable()
@@ -692,7 +692,7 @@ private extension ContentView{
                         }.popover(isPresented: $showPopoverb, content: {
                             VStack(alignment: .leading) {
                                 Text("Point name:")
-                                Text("temples acupoint (太陽穴)")
+                                Text("temples acupoint")
                                     .font(.title3)
                                 Text("symptom:")
                                 Text("Used for relieving headaches, migraines, and eye discomfort. Massaging the temples helps relax head muscles, improve blood circulation, and alleviate tension.")
@@ -719,7 +719,7 @@ private extension ContentView{
             Divider()
                 .padding(.horizontal, 20)
                 .padding(.bottom, 10)
-            Text("Point name: Fengchi acupoint (風池穴)")
+            Text("Point name: Fengchi acupoint")
             ZStack {
                 Image("194")
                     .resizable()
@@ -743,7 +743,7 @@ private extension ContentView{
                         }.popover(isPresented: $showPopoverc, content: {
                             VStack(alignment: .leading) {
                                 Text("Point name:")
-                                Text("Fengchi acupoint (風池穴)")
+                                Text("Fengchi acupoint")
                                     .font(.title3)
                                 Text("symptom:")
                                 Text("Known for regulating blood pressure, relieving discomfort in the back of the head, and improving overall head and neck well-being.")
@@ -764,7 +764,7 @@ private extension ContentView{
             Divider()
                 .padding(.horizontal, 20)
                 .padding(.bottom, 10)
-            Text("Point name: Baihui acupoint (百會穴)")
+            Text("Point name: Baihui acupoint")
             ZStack {
                 Image("194")
                     .resizable()
@@ -781,7 +781,7 @@ private extension ContentView{
                     }.popover(isPresented: $showPopoverb, content: {
                         VStack(alignment: .leading) {
                             Text("Point name:")
-                            Text("Baihui acupoint (百會穴)")
+                            Text("Baihui acupoint")
                                 .font(.title3)
                             Text("symptom:")
                             Text("It is believed to be associated with regulating the nervous system, enhancing consciousness, and promoting overall harmony within the body's meridians and blood circulation.")
@@ -804,7 +804,7 @@ private extension ContentView{
             Divider()
                 .padding(.horizontal, 20)
                 .padding(.bottom, 10)
-            Text("Point name: Tianshu acupoint (天樞穴)")
+            Text("Point name: Tianshu acupoint")
             ZStack {
                 Image("15041")
                     .resizable()
@@ -825,7 +825,7 @@ private extension ContentView{
                         }.popover(isPresented: $showPopovera, content: {
                             VStack(alignment: .leading) {
                                 Text("Point name:")
-                                Text("Tianshu acupoint (天樞穴)")
+                                Text("Tianshu acupoint")
                                     .font(.title3)
                                 Text("symptom:")
                                 Text("The Tianshu acupoint is commonly used to alleviate abdominal discomfort, pain, bloating, and other digestive issues. Massaging this acupoint is believed to promote blood circulation in the abdominal region, regulate gastrointestinal function, and relieve symptoms related to the digestive system.")
@@ -849,7 +849,7 @@ private extension ContentView{
                         }.popover(isPresented: $showPopoverb, content: {
                             VStack(alignment: .leading) {
                                 Text("Point name:")
-                                Text("Tianshu acupoint (天樞穴)")
+                                Text("Tianshu acupoint")
                                     .font(.title3)
                                 Text("symptom:")
                                 Text("The Tianshu acupoint is commonly used to alleviate abdominal discomfort, pain, bloating, and other digestive issues. Massaging this acupoint is believed to promote blood circulation in the abdominal region, regulate gastrointestinal function, and relieve symptoms related to the digestive system.")
@@ -873,7 +873,7 @@ private extension ContentView{
             Divider()
                 .padding(.horizontal, 20)
                 .padding(.bottom, 10)
-            Text("Point name: Zhongwan acupoint (中脘穴)")
+            Text("Point name: Zhongwan acupoint")
             ZStack {
                 Image("15041")
                     .resizable()
@@ -893,7 +893,7 @@ private extension ContentView{
                     }.popover(isPresented: $showPopoverc, content: {
                         VStack(alignment: .leading) {
                             Text("Point name:")
-                            Text("Zhongwan acupoint (中脘穴)")
+                            Text("Zhongwan acupoint")
                                 .font(.title3)
                             Text("symptom:")
                             Text("Zhongwan acupoint is an important point for regulating gastrointestinal function. Massaging Zhongwan is believed to help alleviate stomach discomfort, stomach pain, and loss of appetite. Additionally, it can be used to relieve symptoms related to the digestive system and promote the normal functioning of the digestive system.")
@@ -913,7 +913,7 @@ private extension ContentView{
             Divider()
                 .padding(.horizontal, 20)
                 .padding(.bottom, 10)
-            Text("Point name: Yaoyan acupoint (腰眼穴)")
+            Text("Point name: Yaoyan acupoint")
             ZStack {
                 Image("15051")
                     .resizable()
@@ -934,7 +934,7 @@ private extension ContentView{
                         }.popover(isPresented: $showPopoverb, content: {
                             VStack(alignment: .leading) {
                                 Text("Point name:")
-                                Text("Yaoyan acupoint (腰眼穴)")
+                                Text("Yaoyan acupoint")
                                     .font(.title3)
                                 Text("symptom:")
                                 Text("Yaoyan acupoint is utilized for relieving discomfort and pain in the lumbar region. Massaging Yaoyan is believed to help relax the muscles in the lower back, alleviate tension around the lumbar vertebrae, and provide relief for issues such as lower back pain and stiffness.")
@@ -958,7 +958,7 @@ private extension ContentView{
                         }.popover(isPresented: $showPopoverc, content: {
                             VStack(alignment: .leading) {
                                 Text("Point name:")
-                                Text("Yaoyan acupoint (腰眼穴)")
+                                Text("Yaoyan acupoint")
                                     .font(.title3)
                                 Text("symptom:")
                                 Text("Yaoyan acupoint is utilized for relieving discomfort and pain in the lumbar region. Massaging Yaoyan is believed to help relax the muscles in the lower back, alleviate tension around the lumbar vertebrae, and provide relief for issues such as lower back pain and stiffness.")
@@ -979,7 +979,7 @@ private extension ContentView{
             Divider()
                 .padding(.horizontal, 20)
                 .padding(.bottom, 10)
-            Text("Point name: Hegu acupoint (合谷穴)")
+            Text("Point name: Hegu acupoint")
             ZStack {
                 Image("15061")
                     .resizable()
@@ -1003,7 +1003,7 @@ private extension ContentView{
                         }.popover(isPresented: $showPopoverb, content: {
                             VStack(alignment: .leading) {
                                 Text("Point name:")
-                                Text("Hegu acupoint (合谷穴)")
+                                Text("Hegu acupoint")
                                     .font(.title3)
                                 Text("symptom:")
                                 Text("Hegu acupoint is part of the Hand Shaoyin meridian and is commonly used to alleviate pain in the hands, headaches, toothaches, and other discomfort. Massaging Hegu is believed to help relieve pain and improve blood circulation in the hands.")
@@ -1024,7 +1024,7 @@ private extension ContentView{
             Divider()
                 .padding(.horizontal, 20)
                 .padding(.bottom, 10)
-            Text("Point name: Xiangqiang acupoint (項強穴)")
+            Text("Point name: Xiangqiang acupoint")
             ZStack {
                 Image("15061")
                     .resizable()
@@ -1042,7 +1042,7 @@ private extension ContentView{
                         }.popover(isPresented: $showPopovera, content: {
                             VStack(alignment: .leading) {
                                 Text("Point name:")
-                                Text("Xiangqiang acupoint (項強穴)")
+                                Text("Xiangqiang acupoint ")
                                     .font(.title3)
                                 Text("symptom:")
                                 Text("Effective in treating conditions such as numbness in the palm and fingers, inability to flex or extend muscles, and situations related to having a stiff neck.")
@@ -1066,7 +1066,7 @@ private extension ContentView{
             Divider()
                 .padding(.horizontal, 20)
                 .padding(.bottom, 10)
-            Text("Point name: Waist and Leg Point (腰腿點穴)")
+            Text("Point name: Waist and Leg Point")
             ZStack {
                 Image("15061")
                     .resizable()
@@ -1090,7 +1090,7 @@ private extension ContentView{
                         }.popover(isPresented: $showPopovera, content: {
                             VStack(alignment: .leading) {
                                 Text("Point name:")
-                                Text("Waist and Leg Point (腰腿點穴)")
+                                Text("Waist and Leg Point")
                                     .font(.title3)
                                 Text("symptom:")
                                 Text("Described as an effective acupoint for treating lower back and leg pain, especially effective for acute sprains.")
@@ -1114,7 +1114,7 @@ private extension ContentView{
                         }.popover(isPresented: $showPopover, content: {
                             VStack(alignment: .leading) {
                                 Text("Point name:")
-                                Text("Waist and Leg Point (腰腿點穴)")
+                                Text("Waist and Leg Point")
                                     .font(.title3)
                                 Text("symptom:")
                                 Text("Described as an effective acupoint for treating lower back and leg pain, especially effective for acute sprains.")
@@ -1138,7 +1138,7 @@ private extension ContentView{
             Divider()
                 .padding(.horizontal, 20)
                 .padding(.bottom, 10)
-            Text("Point name: Neiguan acupoint (內關穴)")
+            Text("Point name: Neiguan acupoint")
             ZStack {
                 Image("15071")
                     .resizable()
@@ -1158,7 +1158,7 @@ private extension ContentView{
                     }.popover(isPresented: $showPopoverd, content: {
                         VStack(alignment: .leading) {
                             Text("Point name:")
-                            Text("Neiguan acupoint (內關穴)")
+                            Text("Neiguan acupoint ")
                                 .font(.title3)
                             Text("symptom:")
                             Text("Neiguan acupoint is part of the Pericardium Meridian and is commonly used to alleviate discomfort related to the heart, such as palpitations, anxiety, and nausea. This acupoint is also widely utilized to relieve feelings of fear, calm emotions, and regulate heartbeat.")
@@ -1178,7 +1178,7 @@ private extension ContentView{
             Divider()
                 .padding(.horizontal, 20)
                 .padding(.bottom, 10)
-            Text("Point name: Yongquan acupoint (湧泉穴)")
+            Text("Point name: Yongquan acupoint")
             ZStack {
                 Image("1502")
                     .resizable()
@@ -1195,7 +1195,7 @@ private extension ContentView{
                     }.popover(isPresented: $showPopoverc, content: {
                         VStack(alignment: .leading) {
                             Text("Point name:")
-                            Text("Yongquan acupoint (湧泉穴)")
+                            Text("Yongquan acupoint")
                                 .font(.title3)
                             Text("symptom:")
                             Text("The Yongquan acupoint is part of the Kidney Meridian and is believed to be beneficial for regulating kidney energy and promoting the flow of the kidney meridian. This acupoint is often used to alleviate symptoms such as insomnia, anxiety, headaches, and dizziness.")
@@ -1218,7 +1218,7 @@ private extension ContentView{
             Divider()
                 .padding(.horizontal, 20)
                 .padding(.bottom, 10)
-            Text("Point name: Zusanli acupoint (足三里穴)")
+            Text("Point name: Zusanli acupoint")
             ZStack {
                 Image("15081")
                     .resizable()
@@ -1239,7 +1239,7 @@ private extension ContentView{
                         }.popover(isPresented: $showPopovera, content: {
                             VStack(alignment: .leading) {
                                 Text("Point name:")
-                                Text("Zusanli acupoint (足三里穴)")
+                                Text("Zusanli acupoint")
                                     .font(.title3)
                                 Text("symptom:")
                                 Text("Zusanli acupoint is part of the Stomach Meridian in traditional Chinese medicine. It is believed to be beneficial for strengthening the spleen and stomach functions, regulating gastrointestinal digestion, and enhancing the immune system. Additionally, Zusanli acupoint is often used to alleviate fatigue, boost energy, and reduce stress.")

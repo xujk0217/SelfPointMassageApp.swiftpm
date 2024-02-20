@@ -43,7 +43,7 @@ struct headPointView: View {
                             }.popover(isPresented: $showPopoverd, content: {
                                 VStack(alignment: .leading) {
                                     Text("Point name:")
-                                    Text("Baihui acupoint (百會穴)")
+                                    Text("Baihui acupoint")
                                         .font(.title3)
                                     Text("symptom:")
                                     Text("It is believed to be associated with regulating the nervous system, enhancing consciousness, and promoting overall harmony within the body's meridians and blood circulation.")
@@ -68,7 +68,7 @@ struct headPointView: View {
                                 }.popover(isPresented: $showPopovera, content: {
                                     VStack(alignment: .leading) {
                                         Text("Point name:")
-                                        Text("Yintang acupoint (印堂穴)")
+                                        Text("Yintang acupoint")
                                             .font(.title3)
                                         Text("symptom:")
                                         Text("Commonly used to alleviate forehead discomfort, promote mental clarity, and is believed to benefit relaxation and relieve stress.")
@@ -95,7 +95,7 @@ struct headPointView: View {
                                     }.popover(isPresented: $showPopoverb, content: {
                                         VStack(alignment: .leading) {
                                             Text("Point name:")
-                                            Text("temples acupoint (太陽穴)")
+                                            Text("temples acupoint")
                                                 .font(.title3)
                                             Text("symptom:")
                                             Text("Used for relieving headaches, migraines, and eye discomfort. Massaging the temples helps relax head muscles, improve blood circulation, and alleviate tension.")
@@ -126,7 +126,7 @@ struct headPointView: View {
                                 }.popover(isPresented: $showPopoverc, content: {
                                     VStack(alignment: .leading) {
                                         Text("Point name:")
-                                        Text("Fengchi acupoint (風池穴)")
+                                        Text("Fengchi acupoint")
                                             .font(.title3)
                                         Text("symptom:")
                                         Text("Known for regulating blood pressure, relieving discomfort in the back of the head, and improving overall head and neck well-being.")
