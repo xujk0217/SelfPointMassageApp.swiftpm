@@ -12,6 +12,9 @@ struct ContentView: View {
     @State private var showPopoverd = false
     @State private var showPopover = false
     
+    @State private var shouldShowIntro = true
+    @State private var whichIntro = 0
+    
     @State private var shouldSmallImage = false
     
     @State private var shouldShowTips = false
@@ -69,6 +72,99 @@ private extension ContentView{
                 .padding()
             .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
             
+            Button{
+                shouldShowIntro = true
+            } label: {
+                Image(systemName: "w.circle.fill")
+                    .padding(.horizontal)
+                    .font(.title2)
+            }
+            .sheet(isPresented: $shouldShowIntro){
+                VStack {
+                    Color.gray
+                        .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 5, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .cornerRadius(10)
+                        .padding(.top, 15)
+                    HStack {
+                        Text("")
+                            .frame(width: 50)
+                        Spacer()
+                        Text("Welcome")
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.1)
+                            .font(.title.bold())
+                            .padding(.bottom, -5)
+                        Spacer()
+                        Button{
+                            whichIntro = 0
+                            shouldShowIntro = false
+                        }label: {
+                            Text("skip")
+                                .padding(.horizontal)
+                        }
+                    }
+                    WelcomeView
+                    VStack {
+                        HStack {
+                            Image(systemName: whichIntro == 0 ? "circle.fill" : "circle")
+                            Image(systemName: whichIntro == 1 ? "circle.fill" : "circle")
+                            Image(systemName: whichIntro == 2 ? "circle.fill" : "circle")
+                            Image(systemName: whichIntro == 3 ? "circle.fill" : "circle")
+                            Image(systemName: whichIntro == 4 ? "circle.fill" : "circle")
+                        }
+                        .padding(.bottom, 100)
+                        .foregroundColor(.accentColor)
+                        HStack{
+                            Button {
+                                if whichIntro == 0{
+                                }else{
+                                    whichIntro-=1
+                                }
+                            } label: {
+                                if whichIntro == 0{
+                                    Color.clear
+                                        .frame(width: 100, height: 50)
+                                }else{
+                                    Text("Back")
+                                        .font(.title2.bold())
+                                        .frame(width: 100, height: 50)
+                                        .foregroundColor(.gray)
+                                        .padding(30)
+                                }
+                            }
+                            Spacer()
+                            Button {
+                                if whichIntro == 4{
+                                    whichIntro = 0
+                                    shouldShowIntro = false
+                                }else{
+                                    whichIntro += 1
+                                }
+                            } label: {
+                                if whichIntro == 4{
+                                    Text("Start!!")
+                                        .font(.title2.bold())
+                                        .frame(width: 100, height: 50)
+                                        .foregroundColor(.white)
+                                        .background(Color.accentColor)
+                                        .cornerRadius(10)
+                                        .padding(30)
+                                        
+                                }else{
+                                    Text("Next")
+                                        .font(.title2.bold())
+                                        .frame(width: 100, height: 50)
+                                        .foregroundColor(.white)
+                                        .background(Color.accentColor)
+                                        .cornerRadius(10)
+                                        .padding(30)
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
             Button{
                 shouldShowArr = true
             } label: {
@@ -622,6 +718,59 @@ private extension ContentView{
                 .resizable()
                 .aspectRatio(contentMode: .fit)
         }.padding()
+    }
+    
+    @ViewBuilder var WelcomeView: some View{
+        VStack {
+            ScrollView{
+                if whichIntro == 0{
+                    welzero
+                }else if whichIntro == 1{
+                    welone
+                }else if whichIntro == 2{
+                    weltwo
+                }else if whichIntro == 3{
+                    welthree
+                }else if whichIntro == 4{
+                    welfour
+                }
+            }
+        }
+    }
+    @ViewBuilder var welzero: some View{
+        VStack{
+            Image("image1")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+        }
+    }
+    @ViewBuilder var welone: some View{
+        VStack{
+            Image("120")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+        }
+    }
+    @ViewBuilder var weltwo: some View{
+        VStack{
+            Image("image1")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+        }
+    }
+    @ViewBuilder var welthree: some View{
+        VStack{
+            Image("120")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+        }
+    }
+    @ViewBuilder var welfour: some View{
+        VStack{
+            Image("image1")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+        }
     }
     
     @ViewBuilder var CodeOne: some View{
