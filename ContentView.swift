@@ -89,18 +89,38 @@ private extension ContentView{
                         Text("")
                             .frame(width: 50)
                         Spacer()
-                        Text("Welcome")
-                            .lineLimit(1)
-                            .minimumScaleFactor(0.1)
-                            .font(.title.bold())
-                            .padding(.bottom, -5)
+                        if whichIntro == 0{
+                            Text("Welcome to use Self Point Massage app")
+                                .font(.title.bold())
+                                .padding()
+                        }else if whichIntro == 1{
+                            Text("Address Your Minor Ailments")
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .padding()
+                        }else if whichIntro == 2{
+                            Text("Discover New Acupoints")
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .padding()
+                        }else if whichIntro == 3{
+                            Text("Explore in AR")
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .padding()
+                        }else if whichIntro == 4{
+                            Text("Start and Learn More")
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .padding()
+                        }
                         Spacer()
                         Button{
                             whichIntro = 0
                             shouldShowIntro = false
                         }label: {
                             Text("skip")
-                                .padding(.horizontal)
+                                .padding(.trailing, 40)
                         }
                     }
                     WelcomeView
@@ -112,13 +132,12 @@ private extension ContentView{
                             Image(systemName: whichIntro == 3 ? "circle.fill" : "circle")
                             Image(systemName: whichIntro == 4 ? "circle.fill" : "circle")
                         }
-                        .padding(.bottom, 100)
                         .foregroundColor(.accentColor)
                         HStack{
                             Button {
                                 if whichIntro == 0{
                                 }else{
-                                    whichIntro-=1
+                                    whichIntro -= 1
                                 }
                             } label: {
                                 if whichIntro == 0{
@@ -742,34 +761,64 @@ private extension ContentView{
             Image("image1")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
+                .frame(maxWidth: 570)
+                .padding()
+            Text("Welcome to this application. Let's explore what we can do here together.")
+                .font(.title2.bold())
+                .frame(maxWidth: 620)
+                .padding()
         }
     }
     @ViewBuilder var welone: some View{
         VStack{
-            Image("120")
+            Image("Intro1")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
+                .frame(maxWidth: 570)
+                .padding()
+            Text("On the symptom page, you can choose the discomfort you're experiencing. We will provide information on the causes or relief methods for that symptom, along with acupressure points you can massage.")
+                .font(.title2.bold())
+                .frame(maxWidth: 620)
+                .padding()
         }
     }
     @ViewBuilder var weltwo: some View{
         VStack{
-            Image("image1")
+            Image("Intro2")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
+                .frame(maxWidth: 570)
+                .padding()
+            Text("On the point page, you can explore acupressure points on the human body map. Click on the area you're interested in, and we will provide information on commonly used acupressure points in that area.")
+                .font(.title2.bold())
+                .frame(maxWidth: 620)
+                .padding()
         }
     }
     @ViewBuilder var welthree: some View{
         VStack{
-            Image("120")
+            Image("Intro3")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
+                .frame(maxWidth: 570)
+                .padding()
+            Text("Click the button to start exploring acupressure points using the 3D model. Choose the model you want to view and make sure it is placed on a flat surface to begin your exploration journey.")
+                .font(.title2.bold())
+                .frame(maxWidth: 620)
+                .padding()
         }
     }
     @ViewBuilder var welfour: some View{
         VStack{
-            Image("image1")
+            Image("Intro4")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
+                .frame(maxWidth: 570)
+                .padding()
+            Text("Before starting, please click \(Image(systemName:"exclamationmark.triangle.fill"))to understand the precautions. If you want to review this tutorial, click \(Image(systemName:"w.circle.fill")), and if there are still unclear areas, you can click [Tips] and \(Image(systemName:"questionmark.circle.fill")) to check more detailed tutorials.")
+                .font(.title2.bold())
+                .frame(maxWidth: 620)
+                .padding()
         }
     }
     
