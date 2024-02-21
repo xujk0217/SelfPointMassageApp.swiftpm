@@ -14,6 +14,7 @@ struct ContentView: View {
     
     @State private var shouldShowIntro = true
     @State private var whichIntro = 0
+    @State private var prewhichIntro = 0
     
     @State private var shouldSmallImage = false
     
@@ -82,7 +83,7 @@ private extension ContentView{
             .sheet(isPresented: $shouldShowIntro){
                 VStack {
                     Color.gray
-                        .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 5, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .frame(width: 100, height: 5, alignment: .center)
                         .cornerRadius(10)
                         .padding(.top, 15)
                     HStack {
@@ -90,7 +91,7 @@ private extension ContentView{
                             .frame(width: 50)
                         Spacer()
                         if whichIntro == 0{
-                            Text("Welcome to use Self Point Massage app")
+                            Text("Welcome to Self Point Massage app")
                                 .font(.title.bold())
                                 .padding()
                         }else if whichIntro == 1{
@@ -104,11 +105,16 @@ private extension ContentView{
                                 .fontWeight(.bold)
                                 .padding()
                         }else if whichIntro == 3{
-                            Text("Explore in AR")
+                            Text("Explore more acupoint information")
                                 .font(.title)
                                 .fontWeight(.bold)
                                 .padding()
                         }else if whichIntro == 4{
+                            Text("Explore in AR")
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .padding()
+                        }else if whichIntro == 5{
                             Text("Start and Learn More")
                                 .font(.title)
                                 .fontWeight(.bold)
@@ -117,13 +123,16 @@ private extension ContentView{
                         Spacer()
                         Button{
                             whichIntro = 0
+                            prewhichIntro = 0
                             shouldShowIntro = false
                         }label: {
                             Text("skip")
                                 .padding(.trailing, 40)
                         }
                     }
+                    .animation(.snappy, value: whichIntro)
                     WelcomeView
+                        .animation(.snappy, value: whichIntro)
                     VStack {
                         HStack {
                             Image(systemName: whichIntro == 0 ? "circle.fill" : "circle")
@@ -131,12 +140,14 @@ private extension ContentView{
                             Image(systemName: whichIntro == 2 ? "circle.fill" : "circle")
                             Image(systemName: whichIntro == 3 ? "circle.fill" : "circle")
                             Image(systemName: whichIntro == 4 ? "circle.fill" : "circle")
+                            Image(systemName: whichIntro == 5 ? "circle.fill" : "circle")
                         }
                         .foregroundColor(.accentColor)
                         HStack{
                             Button {
                                 if whichIntro == 0{
                                 }else{
+                                    prewhichIntro = whichIntro
                                     whichIntro -= 1
                                 }
                             } label: {
@@ -153,14 +164,16 @@ private extension ContentView{
                             }
                             Spacer()
                             Button {
-                                if whichIntro == 4{
+                                if whichIntro == 5{
                                     whichIntro = 0
+                                    prewhichIntro = 0
                                     shouldShowIntro = false
                                 }else{
+                                    prewhichIntro = whichIntro
                                     whichIntro += 1
                                 }
                             } label: {
-                                if whichIntro == 4{
+                                if whichIntro == 5{
                                     Text("Start!!")
                                         .font(.title2.bold())
                                         .frame(width: 100, height: 50)
@@ -703,40 +716,147 @@ private extension ContentView{
     @ViewBuilder var tipsView: some View{
         VStack {
             barButton2
-            ScrollView{
-                if whichView2 == 1{
-                    symTipView
-                }else if whichView2 == 2{
-                    pointTipView
-                }else if whichView2 == 3{
-                    arTipView
-                }
+            if whichView2 == 1{
+                symTipView
+            }else if whichView2 == 2{
+                pointTipView
+            }else if whichView2 == 3{
+                arTipView
             }
         }
     }
     
     @ViewBuilder var symTipView: some View{
-        VStack {
-            Image("896")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-        }.padding()
+        ScrollView{
+            VStack{
+                Text("STEP1:")
+                    .font(.title.bold())
+                Text("Choose the symptom that is bothering you today.")
+                    .font(.title2.bold())
+                Image("tip1")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 570)
+                Divider()
+                    .padding(20)
+                Text("STEP2:")
+                    .font(.title.bold())
+                Text("On this page, we provide information on the causes or relief methods for the selected symptom, along with acupressure points. If you want more details about a specific acupressure point, please click on that point.")
+                    .font(.title2.bold())
+                Image("tip2")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 570)
+                Divider()
+                    .padding(20)
+                Text("STEP3:")
+                    .font(.title.bold())
+                Text("After clicking, detailed information about the acupressure point will be displayed.")
+                    .font(.title2.bold())
+                Image("tip3")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 570)
+                    .padding(.bottom)
+            }.padding()
+        }
     }
     
     @ViewBuilder var pointTipView: some View{
-        VStack {
-            Image("image1")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-        }.padding()
+        ScrollView{
+            VStack {
+                Text("STEP1:")
+                    .font(.title.bold())
+                Text("Choose the place of the point you want to know")
+                    .font(.title2.bold())
+                Image("tip4")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 570)
+                Divider()
+                    .padding(20)
+                Text("STEP2:")
+                    .font(.title.bold())
+                Text("On this page, a localized acupressure point map will be provided. You can click on the red dots on the map or in the list to get more information.")
+                    .font(.title2.bold())
+                Image("tip5")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 570)
+                Divider()
+                    .padding(20)
+                Text("if you click on the red dots:")
+                    .font(.title.bold())
+                Text("After clicking, detailed information about the acupressure point will be displayed.")
+                    .font(.title2.bold())
+                Image("tip6")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 570)
+                Divider()
+                    .padding(20)
+                Text("if you click  the list:")
+                    .font(.title.bold())
+                Text("After clicking, detailed information about the acupressure point will be displayed.")
+                    .font(.title2.bold())
+                Image("tip7")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 570)
+                    .padding(.bottom)
+            }.padding()
+        }
     }
     
     @ViewBuilder var arTipView: some View{
-        VStack {
-            Image("1434")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-        }.padding()
+        ScrollView{
+            VStack {
+                Text("STEP1:")
+                    .font(.title.bold())
+                Text("Click the button to enter the AR interface.")
+                    .font(.title2.bold())
+                Image("tip8")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 570)
+                Divider()
+                    .padding(20)
+                Text("STEP2:")
+                    .font(.title.bold())
+                Text("Click on the model you want to place.")
+                    .font(.title2.bold())
+                Image("tip9")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 570)
+                Divider()
+                    .padding(20)
+                Text("STEP3:")
+                    .font(.title.bold())
+                Text("After ensuring that the square in the screen aligns with the surface, click on the checkmark symbol.")
+                    .font(.title2.bold())
+                Image("tip10")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 570)
+                Divider()
+                    .padding(20)
+                Text("STEP4:")
+                    .font(.title.bold())
+                Text("The model will now appear on the screen.")
+                    .font(.title2.bold())
+                Image("tip11")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 570)
+                Divider()
+                    .padding(20)
+                Text("We have six models, including a large human body model placed on the ground, small human body models (front and back views) on the table, small hand models (front and back views) on the table, and a small foot model on the table.")
+                    .frame(maxWidth: 620)
+                    .font(.title2.bold())
+                    .padding(.bottom)
+            }.padding()
+        }
     }
     
     @ViewBuilder var WelcomeView: some View{
@@ -749,8 +869,10 @@ private extension ContentView{
                 }else if whichIntro == 2{
                     weltwo
                 }else if whichIntro == 3{
-                    welthree
+                    welex
                 }else if whichIntro == 4{
+                    welthree
+                }else if whichIntro == 5{
                     welfour
                 }
             }
@@ -790,6 +912,19 @@ private extension ContentView{
                 .frame(maxWidth: 570)
                 .padding()
             Text("On the point page, you can explore acupressure points on the human body map. Click on the area you're interested in, and we will provide information on commonly used acupressure points in that area.")
+                .font(.title2.bold())
+                .frame(maxWidth: 620)
+                .padding()
+        }
+    }
+    @ViewBuilder var welex: some View{
+        VStack{
+            Image("Introex")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(maxWidth: 570)
+                .padding()
+            Text("Click on the red dot on the body map to learn more about acupoints.")
                 .font(.title2.bold())
                 .frame(maxWidth: 620)
                 .padding()
