@@ -25,4 +25,4 @@ The inspiration behind SelfPointMassageApp is to provide assistance to elderly f
 
 For more information on how to contribute or use the app, please refer to the documentation provided in the repository. Contributions and feedback are welcomed and encouraged to enhance the app's functionality and accessibility.
 
-![photo1](https://raw.githubusercontent.com/xujk0217/repository/main/Assets.xcassets/tip1.jpg)
+![photo1](https://raw.githubusercontent.com/xujk0217/SelfPointMassageApp.swiftpm/main/Assets.xcassets/tip1.jpg)
