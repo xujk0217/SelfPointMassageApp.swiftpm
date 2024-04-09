@@ -35,6 +35,11 @@ For more information on how to contribute or use the app, please refer to the do
 ### AR view
 <img src="https://raw.githubusercontent.com/xujk0217/SelfPointMassageApp.swiftpm/master/Assets.xcassets/tip/tip8.imageset/tip8.png" alt="图片描述" width="400"> <img src="https://raw.githubusercontent.com/xujk0217/SelfPointMassageApp.swiftpm/master/Assets.xcassets/tip/tip9.imageset/tip9.png" alt="图片描述" width="400"> 
 
+### Author
+
+- 許君愷（ XU, JUN-KAI ）
+- Email: kevin16021777@gmail.com, s411285047@gm.ntpu.edu.tw
+- GitHub: [@xujk0217](https://github.com/xujk0217)
 
 
 
