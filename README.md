@@ -26,10 +26,13 @@ The inspiration behind SelfPointMassageApp is to provide assistance to elderly f
 For more information on how to contribute or use the app, please refer to the documentation provided in the repository. Contributions and feedback are welcomed and encouraged to enhance the app's functionality and accessibility.
 
 ## Project Screenshots
-![photo1](https://raw.githubusercontent.com/xujk0217/SelfPointMassageApp.swiftpm/master/Assets.xcassets/tip/tip1.imageset/tip1.png)
-![photo2](https://raw.githubusercontent.com/xujk0217/SelfPointMassageApp.swiftpm/master/Assets.xcassets/tip/tip3.imageset/tip3.png)
-![photo3](https://raw.githubusercontent.com/xujk0217/SelfPointMassageApp.swiftpm/master/Assets.xcassets/tip/tip4.imageset/tip4.png)
 <img src="https://raw.githubusercontent.com/xujk0217/SelfPointMassageApp.swiftpm/master/Assets.xcassets/tip/tip1.imageset/tip1.png" alt="图片描述" width="400">
+<img src="https://raw.githubusercontent.com/xujk0217/SelfPointMassageApp.swiftpm/master/Assets.xcassets/tip/tip3.imageset/tip3.png" alt="图片描述" width="400">
+<img src="https://raw.githubusercontent.com/xujk0217/SelfPointMassageApp.swiftpm/master/Assets.xcassets/tip/tip4.imageset/tip4.png" alt="图片描述" width="400">
+<img src="https://raw.githubusercontent.com/xujk0217/SelfPointMassageApp.swiftpm/master/Assets.xcassets/tip/tip6.imageset/tip6.png" alt="图片描述" width="400">
+<img src="https://raw.githubusercontent.com/xujk0217/SelfPointMassageApp.swiftpm/master/Assets.xcassets/tip/tip7.imageset/tip7.png" alt="图片描述" width="400">
+<img src="https://raw.githubusercontent.com/xujk0217/SelfPointMassageApp.swiftpm/master/Assets.xcassets/tip/tip8.imageset/tip8.png" alt="图片描述" width="400">
+
 
 
 
