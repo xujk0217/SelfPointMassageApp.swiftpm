@@ -27,7 +27,7 @@ For more information on how to contribute or use the app, please refer to the do
 
 ## Project Screenshots
 ![photo1](https://raw.githubusercontent.com/xujk0217/SelfPointMassageApp.swiftpm/master/Assets.xcassets/tip/tip1.imageset/tip1.png)
-![photo1](https://raw.githubusercontent.com/xujk0217/SelfPointMassageApp.swiftpm/master/Assets.xcassets/tip/tip2.imageset/tip2.png)
 ![photo1](https://raw.githubusercontent.com/xujk0217/SelfPointMassageApp.swiftpm/master/Assets.xcassets/tip/tip3.imageset/tip3.png)
+![photo1](https://raw.githubusercontent.com/xujk0217/SelfPointMassageApp.swiftpm/master/Assets.xcassets/tip/tip4.imageset/tip4.png)
 
 
