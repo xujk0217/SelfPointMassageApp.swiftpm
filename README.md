@@ -24,3 +24,5 @@ SelfPointMassageApp is an iOS application designed to introduce common acupoints
 The inspiration behind SelfPointMassageApp is to provide assistance to elderly family members who often experience bodily discomfort or symptoms. By offering information on acupoints and acupressure massage techniques, the app aims to minimize reliance on medication and doctor visits, promoting natural methods for symptom relief and improved well-being. Though the project is currently in its initial stages, the ultimate goal is to empower users with accessible and effective self-care solutions.
 
 For more information on how to contribute or use the app, please refer to the documentation provided in the repository. Contributions and feedback are welcomed and encouraged to enhance the app's functionality and accessibility.
+
+![photo1](https://raw.githubusercontent.com/xujk0217/repository/main/images/image1.jpg)
