@@ -41,7 +41,7 @@ struct ContentView: View {
                                 .aspectRatio(contentMode: .fit)
                                 .frame(maxWidth: 600)
                                 NavigationLink(destination: ARDetailView()){
-                                    Text("Start AR point map!!")
+                                    Text("Start AR point map!!!")
                                         .font(geometry.size.width >= 400 ? .title.bold(): .title2.bold())
                                         .frame(width: geometry.size.width >= 400 ? geometry.size.width-100: geometry.size.width-50, height: 100, alignment: .center)
                                         .frame(maxWidth: 700)
