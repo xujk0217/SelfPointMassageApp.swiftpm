@@ -100,34 +100,75 @@ private extension ContentView{
                             .frame(width: 50)
                         Spacer()
                         if whichIntro == 0{
-                            Text("Welcome to Self Point Massage app")
-                                .font(.title.bold())
-                                .padding()
+                            if screenWidth > 800{
+                                Text("Welcome to Self Point Massage app")
+                                    .font(.title.bold())
+                                    .padding(.top)
+                            }else{
+                                Text("Welcome to Self Point Massage app")
+                                    .font(.title2.bold())
+                                    .padding(.top)
+                            }
                         }else if whichIntro == 1{
-                            Text("Address Your Minor Ailments")
-                                .font(.title)
-                                .fontWeight(.bold)
-                                .padding()
+                            if screenWidth > 800{
+                                Text("Address Your Minor Ailments")
+                                    .font(.title)
+                                    .fontWeight(.bold)
+                                    .padding(.top)
+                            }else{
+                                Text("Address Your Minor Ailments")
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                    .padding(.top)
+                            }
                         }else if whichIntro == 2{
-                            Text("Discover New Acupoints")
-                                .font(.title)
-                                .fontWeight(.bold)
-                                .padding()
+                            if screenWidth > 800{
+                                Text("Discover New Acupoints")
+                                    .font(.title)
+                                    .fontWeight(.bold)
+                                    .padding(.top)
+                            }else{
+                                Text("Discover New Acupoints")
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                    .padding(.top)
+                            }
                         }else if whichIntro == 3{
-                            Text("Explore more acupoint information")
-                                .font(.title)
-                                .fontWeight(.bold)
-                                .padding()
+                            if screenWidth > 800{
+                                Text("Explore more acupoint information")
+                                    .font(.title)
+                                    .fontWeight(.bold)
+                                    .padding(.top)
+                            }else{
+                                Text("Explore more acupoint information")
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                    .padding(.top)
+                            }
                         }else if whichIntro == 4{
-                            Text("Explore in AR")
-                                .font(.title)
-                                .fontWeight(.bold)
-                                .padding()
+                            if screenWidth > 800{
+                                Text("Explore in AR")
+                                    .font(.title)
+                                    .fontWeight(.bold)
+                                    .padding(.top)
+                            }else{
+                                Text("Explore in AR")
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                    .padding(.top)
+                            }
                         }else if whichIntro == 5{
-                            Text("Start and Learn More")
-                                .font(.title)
-                                .fontWeight(.bold)
-                                .padding()
+                            if screenWidth > 800{
+                                Text("Start and Learn More")
+                                    .font(.title)
+                                    .fontWeight(.bold)
+                                    .padding(.top)
+                            }else{
+                                Text("Start and Learn More")
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                    .padding(.top)
+                            }
                         }
                         Spacer()
                         Button{
