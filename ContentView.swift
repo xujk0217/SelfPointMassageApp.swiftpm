@@ -23,6 +23,8 @@ struct ContentView: View {
     
     @Environment (\.colorScheme) var colorScaheme
     
+    let screenWidth = UIScreen.main.bounds.width
+
     var body: some View {
         GeometryReader { geometry in
             NavigationStack{
@@ -68,10 +70,17 @@ struct ContentView: View {
 private extension ContentView{
     var Apptitle: some View{
         HStack {
-            Text("Self Point Massage")
-                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/.bold())
-                .padding()
-            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+            if(screenWidth > 800){
+                Text("Self Point Massage")
+                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/.bold())
+                    .padding()
+                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+            }else{
+                Text("SPM")
+                    .font(.title.bold())
+                    .padding()
+                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+            }
             
             Button{
                 shouldShowIntro = true
