@@ -193,6 +193,7 @@ private extension ContentView{
                             Image(systemName: whichIntro == 5 ? "circle.fill" : "circle")
                         }
                         .foregroundColor(.accentColor)
+                        .padding(.top)
                         HStack{
                             Button {
                                 if whichIntro == 0{
@@ -202,14 +203,32 @@ private extension ContentView{
                                 }
                             } label: {
                                 if whichIntro == 0{
-                                    Color.clear
-                                        .frame(width: 100, height: 50)
+                                    if screenWidth > 800{
+                                        Color.clear
+                                            .frame(width: 100, height: 50)
+
+                                    }else{
+                                        Color.clear
+                                            .frame(width: 70, height: 35)
+
+                                    }
                                 }else{
-                                    Text("Back")
-                                        .font(.title2.bold())
-                                        .frame(width: 100, height: 50)
-                                        .foregroundColor(.gray)
-                                        .padding(30)
+                                    if screenWidth > 800{
+                                        Text("Back")
+                                            .font(.title2.bold())
+                                            .frame(width: 100, height: 50)
+                                            .foregroundColor(.gray)
+                                            .padding(30)
+
+                                    }else{
+                                        Text("Back")
+                                            .font(.title3.bold())
+                                            .frame(width: 70, height: 35)
+                                            .foregroundColor(.gray)
+                                            .padding(15)
+                                            .padding(.horizontal)
+
+                                    }
                                 }
                             }
                             Spacer()
@@ -224,22 +243,46 @@ private extension ContentView{
                                 }
                             } label: {
                                 if whichIntro == 5{
-                                    Text("Start!!")
-                                        .font(.title2.bold())
-                                        .frame(width: 100, height: 50)
-                                        .foregroundColor(.white)
-                                        .background(Color.accentColor)
-                                        .cornerRadius(10)
-                                        .padding(30)
+                                    if screenWidth > 800{
+                                        Text("Start!!")
+                                            .font(.title2.bold())
+                                            .frame(width: 100, height: 50)
+                                            .foregroundColor(.white)
+                                            .background(Color.accentColor)
+                                            .cornerRadius(10)
+                                            .padding(30)
+
+                                    }else{
+                                        Text("Start!")
+                                            .font(.title3.bold())
+                                            .frame(width: 70, height: 35)
+                                            .foregroundColor(.white)
+                                            .background(Color.accentColor)
+                                            .cornerRadius(10)
+                                            .padding(15)
+                                            .padding(.horizontal)
+                                    }
                                         
                                 }else{
-                                    Text("Next")
-                                        .font(.title2.bold())
-                                        .frame(width: 100, height: 50)
-                                        .foregroundColor(.white)
-                                        .background(Color.accentColor)
-                                        .cornerRadius(10)
-                                        .padding(30)
+                                    if screenWidth > 800{
+                                        Text("Next")
+                                            .font(.title2.bold())
+                                            .frame(width: 100, height: 50)
+                                            .foregroundColor(.white)
+                                            .background(Color.accentColor)
+                                            .cornerRadius(10)
+                                            .padding(30)
+
+                                    }else{
+                                        Text("Next")
+                                            .font(.title3.bold())
+                                            .frame(width: 70, height: 35)
+                                            .foregroundColor(.white)
+                                            .background(Color.accentColor)
+                                            .cornerRadius(10)
+                                            .padding(15)
+                                            .padding(.horizontal)
+                                    }
                                 }
                             }
 
