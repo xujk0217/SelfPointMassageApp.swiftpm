@@ -978,10 +978,17 @@ private extension ContentView{
                 .aspectRatio(contentMode: .fit)
                 .frame(maxWidth: 570)
                 .padding()
-            Text("Welcome to this application. Let's explore what we can do here together.")
-                .font(.title2.bold())
-                .frame(maxWidth: 620)
-                .padding()
+            if screenWidth > 800{
+                Text("Welcome to this application. Let's explore what we can do here together.")
+                    .font(.title2.bold())
+                    .frame(maxWidth: 620)
+                    .padding()
+            }else{
+                Text("Welcome to this application. Let's explore what we can do here together.")
+                    .font(.title3.bold())
+                    .frame(maxWidth: 620)
+                    .padding()
+            }
         }
     }
     @ViewBuilder var welone: some View{
@@ -991,10 +998,17 @@ private extension ContentView{
                 .aspectRatio(contentMode: .fit)
                 .frame(maxWidth: 570)
                 .padding()
-            Text("On the symptom page, you can choose the discomfort you're experiencing. We will provide information on the causes or relief methods for that symptom, along with acupressure points you can massage.")
-                .font(.title2.bold())
-                .frame(maxWidth: 620)
-                .padding()
+            if screenWidth > 800{
+                Text("On the symptom page, you can choose the discomfort you're experiencing. We will provide information on the causes or relief methods for that symptom, along with acupressure points you can massage.")
+                    .font(.title2.bold())
+                    .frame(maxWidth: 620)
+                    .padding()
+            }else{
+                Text("On the symptom page, you can choose the discomfort you're experiencing. We will provide information on the causes or relief methods for that symptom, along with acupressure points you can massage.")
+                    .font(.title3.bold())
+                    .frame(maxWidth: 620)
+                    .padding()
+            }
         }
     }
     @ViewBuilder var weltwo: some View{
@@ -1004,10 +1018,17 @@ private extension ContentView{
                 .aspectRatio(contentMode: .fit)
                 .frame(maxWidth: 570)
                 .padding()
-            Text("On the point page, you can explore acupressure points on the human body map. Click on the area you're interested in, and we will provide information on commonly used acupressure points in that area.")
-                .font(.title2.bold())
-                .frame(maxWidth: 620)
-                .padding()
+            if screenWidth > 800{
+                Text("On the point page, you can explore acupressure points on the human body map. Click on the area you're interested in, and we will provide information on commonly used acupressure points in that area.")
+                    .font(.title2.bold())
+                    .frame(maxWidth: 620)
+                    .padding()
+            }else{
+                Text("On the point page, you can explore acupressure points on the human body map. Click on the area you're interested in, and we will provide information on commonly used acupressure points in that area.")
+                    .font(.title3.bold())
+                    .frame(maxWidth: 620)
+                    .padding()
+            }
         }
     }
     @ViewBuilder var welex: some View{
@@ -1017,10 +1038,17 @@ private extension ContentView{
                 .aspectRatio(contentMode: .fit)
                 .frame(maxWidth: 570)
                 .padding()
-            Text("Click on the red dot on the body map to learn more about acupoints.")
-                .font(.title2.bold())
-                .frame(maxWidth: 620)
-                .padding()
+            if screenWidth > 800{
+                Text("Click on the red dot on the body map to learn more about acupoints.")
+                    .font(.title2.bold())
+                    .frame(maxWidth: 620)
+                    .padding()
+            }else{
+                Text("Click on the red dot on the body map to learn more about acupoints.")
+                    .font(.title3.bold())
+                    .frame(maxWidth: 620)
+                    .padding()
+            }
         }
     }
     @ViewBuilder var welthree: some View{
@@ -1030,10 +1058,17 @@ private extension ContentView{
                 .aspectRatio(contentMode: .fit)
                 .frame(maxWidth: 570)
                 .padding()
-            Text("Click the button to start exploring acupressure points using the 3D model. Choose the model you want to view and make sure it is placed on a flat surface to begin your exploration journey.")
-                .font(.title2.bold())
-                .frame(maxWidth: 620)
-                .padding()
+            if screenWidth > 800{
+                Text("Click the button to start exploring acupressure points using the 3D model. Choose the model you want to view and make sure it is placed on a flat surface to begin your exploration journey.")
+                    .font(.title2.bold())
+                    .frame(maxWidth: 620)
+                    .padding()
+            }else{
+                Text("Click the button to start exploring acupressure points using the 3D model. Choose the model you want to view and make sure it is placed on a flat surface to begin your exploration journey.")
+                    .font(.title3.bold())
+                    .frame(maxWidth: 620)
+                    .padding()
+            }
         }
     }
     @ViewBuilder var welfour: some View{
@@ -1043,10 +1078,17 @@ private extension ContentView{
                 .aspectRatio(contentMode: .fit)
                 .frame(maxWidth: 570)
                 .padding()
-            Text("Before starting, please click \(Image(systemName:"exclamationmark.triangle.fill"))to understand the precautions. If you want to review this tutorial, click \(Image(systemName:"w.circle.fill")), and if there are still unclear areas, you can click [Tips] and \(Image(systemName:"questionmark.circle.fill")) to check more detailed tutorials.")
-                .font(.title2.bold())
-                .frame(maxWidth: 620)
-                .padding()
+            if screenWidth > 800{
+                Text("Before starting, please click \(Image(systemName:"exclamationmark.triangle.fill"))to understand the precautions. If you want to review this tutorial, click \(Image(systemName:"w.circle.fill")), and if there are still unclear areas, you can click [Tips] and \(Image(systemName:"questionmark.circle.fill")) to check more detailed tutorials.")
+                    .font(.title2.bold())
+                    .frame(maxWidth: 620)
+                    .padding()
+            }else{
+                Text("Before starting, please click \(Image(systemName:"exclamationmark.triangle.fill"))to understand the precautions. If you want to review this tutorial, click \(Image(systemName:"w.circle.fill")), and if there are still unclear areas, you can click [Tips] and \(Image(systemName:"questionmark.circle.fill")) to check more detailed tutorials.")
+                    .font(.title3.bold())
+                    .frame(maxWidth: 620)
+                    .padding()
+            }
         }
     }
     
