@@ -18,6 +18,8 @@ struct headPointView: View {
     
     @State private var selected: Point?
     
+    let screenWidth = UIScreen.main.bounds.width
+    
     var body: some View {
         GeometryReader { geometry in
             ScrollView{

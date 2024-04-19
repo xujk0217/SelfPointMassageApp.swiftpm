@@ -19,6 +19,8 @@ struct bodyPointView: View {
     
     @State private var selected: Point?
     
+    let screenWidth = UIScreen.main.bounds.width
+    
     var body: some View {
         GeometryReader { geometry in
                 let shouldVStack = geometry.size.width <= geometry.size.height
