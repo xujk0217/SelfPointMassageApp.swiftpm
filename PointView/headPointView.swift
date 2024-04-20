@@ -34,6 +34,10 @@ struct headPointView: View {
                             .frame(maxWidth: 600)
                         .navigationTitle("Head Point")
                         VStack {
+                            if screenWidth < 800{
+                                Color.clear
+                                    .frame(width: 100, height: 70)
+                            }
                             Button{
                                 showPopoverd = true
                             } label:{
@@ -56,9 +60,18 @@ struct headPointView: View {
                                 }.padding()
                                     .frame(width: 600)
                             })
-                            Color.clear
-                                .frame(width: 200, height: 50)
+                            if screenWidth > 800{
+                                Color.clear
+                                    .frame(width: 200, height: 50)
+                            }else{
+                                Color.clear
+                                    .frame(width: 100, height: 20)
+                            }
                             HStack {
+                                if screenWidth < 800{
+                                    Color.clear
+                                        .frame(width: 50, height: 50)
+                                }
                                 Button{
                                     showPopovera = true
                                 } label:{
@@ -81,8 +94,13 @@ struct headPointView: View {
                                     }.padding()
                                         .frame(width: 600)
                                 })
-                                Color.clear
-                                    .frame(width: 70, height: 50)
+                                if screenWidth > 800{
+                                    Color.clear
+                                        .frame(width: 70, height: 50)
+                                }else{
+                                    Color.clear
+                                        .frame(width: 30, height: 50)
+                                }
                                 VStack {
                                     Color.clear
                                         .frame(width: 10, height: 10)
@@ -112,8 +130,14 @@ struct headPointView: View {
                                 Color.clear
                                     .frame(width: 200, height: 50)
                             }
-                            Color.clear
-                                .frame(width: 100, height: 70)
+                            if screenWidth > 800{
+                                Color.clear
+                                    .frame(width: 100, height: 70)
+                            }else{
+                                Color.clear
+                                    .frame(width: 100, height: 40)
+                            }
+                            
                             HStack {
                                 Color.clear
                                     .frame(width: 100, height: 30)
@@ -140,8 +164,14 @@ struct headPointView: View {
                                         .frame(width: 600)
                             })
                             }
-                            Color.clear
-                                .frame(width: 100, height: 90)
+                            if screenWidth > 800{
+                                Color.clear
+                                    .frame(width: 100, height: 90)
+                            }else{
+                                Color.clear
+                                    .frame(width: 100, height: 120)
+                            }
+                            
                         }.font(.title3.bold())
                         
                     }
