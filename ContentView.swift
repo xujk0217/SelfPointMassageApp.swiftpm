@@ -36,24 +36,7 @@ struct ContentView: View {
                     }else if whichView == 2{
                         pointView
                     }else if whichView == 3{
-                        ScrollView{
-                            VStack{
-                            Image("1434")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(maxWidth: 600)
-                                NavigationLink(destination: ARDetailView()){
-                                    Text("Start AR point map!!!")
-                                        .font(geometry.size.width >= 400 ? .title.bold(): .title2.bold())
-                                        .frame(width: geometry.size.width >= 400 ? geometry.size.width-100: geometry.size.width-50, height: 100, alignment: .center)
-                                        .frame(maxWidth: 700)
-                                        .foregroundColor(.white)
-                                        .background(Color.accentColor.opacity(0.8))
-                                        .cornerRadius(50)
-                                        .padding()
-                                }
-                            }.frame(maxWidth: .infinity)
-                        }
+                        ARView
                     }else if whichView == 4{
                         Text("How to use this app?")
                             .font(.title2.bold())
@@ -68,6 +51,26 @@ struct ContentView: View {
 
 // MARK: - Subview
 private extension ContentView{
+    var ARView: some View{
+        ScrollView{
+            VStack{
+            Image("1434")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(maxWidth: 600)
+                NavigationLink(destination: ARDetailView()){
+                    Text("Start AR point map!!!")
+                        .font(screenWidth >= 400 ? .title.bold(): .title2.bold())
+                        .frame(width: screenWidth >= 400 ? screenWidth-100: screenWidth-50, height: 100, alignment: .center)
+                        .frame(maxWidth: 700)
+                        .foregroundColor(.white)
+                        .background(Color.accentColor.opacity(0.8))
+                        .cornerRadius(50)
+                        .padding()
+                }
+            }.frame(maxWidth: .infinity)
+        }
+    }
     var Apptitle: some View{
         HStack {
             if(screenWidth > 800){
@@ -79,7 +82,7 @@ private extension ContentView{
                 Text("SPM")
                     .font(.title.bold())
                     .padding()
-                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+                .frame(maxWidth: .infinity, alignment: .leading)
             }
             
             Button{
